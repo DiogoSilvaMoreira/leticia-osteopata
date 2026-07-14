@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Letícia Rocha — Osteopatia Adulto e Pediátrica | Posturologia</title>
+<meta name="description" content="Osteopatia adulto e pediátrica com atendimento humanizado. Tratamento que busca a causa da dor — de bebês com cólica e sono agitado a adultos com dores crônicas. Crefito2/25112F.">
+<meta name="theme-color" content="#CC2F89">
+<link rel="icon" href="assets/simbolo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/simbolo.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dra. Letícia Rocha — Osteopatia Adulto e Pediátrica">
+<meta property="og:description" content="Tratamos a causa, não só o sintoma. Osteopatia para bebês, crianças e adultos, com avaliação criteriosa e cuidado humanizado.">
+<meta property="og:image" content="assets/leticia-retrato.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   TOKENS — identidade visual oficial Letícia Rocha
+   ========================================================= */
+:root{
+  --magenta:#CC2F89;
+  --magenta-dark:#9E2069;
+  --coral:#FF8A98;
+  --coral-soft:#FFB8C1;
+  --cream:#FCEFEC;
+  --cream-deep:#F7E2DE;
+  --ink:#3B2130;
+  --muted:#8A6C7C;
+  --white:#fff;
+  --grad:linear-gradient(135deg,var(--coral) 0%,var(--magenta) 100%);
+  --grad-soft:linear-gradient(135deg,#FFD6DB 0%,#F7B6CE 100%);
+  --shadow-s:0 6px 20px rgba(159,40,110,.08);
+  --shadow-m:0 18px 44px rgba(159,40,110,.12);
+  --shadow-l:0 30px 70px rgba(159,40,110,.18);
+  --r-s:14px; --r-m:24px; --r-l:34px; --r-xl:48px;
+  --maxw:1180px;
+  --display:'Baloo 2',system-ui,sans-serif;
+  --body:'Nunito Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.12;margin:0;font-weight:700;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,5.4vw,3.65rem);font-weight:800}
+h2{font-size:clamp(1.75rem,3.9vw,2.7rem);font-weight:700}
+h3{font-size:1.28rem;font-weight:700}
+p{margin:0 0 1rem}
+:focus-visible{outline:3px solid var(--magenta);outline-offset:3px;border-radius:6px}
+
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+section{position:relative}
+.sec{padding:clamp(64px,9vw,116px) 0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--display);font-weight:700;font-size:.8rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--magenta);
+  background:rgba(204,47,137,.08);padding:8px 16px;border-radius:100px;margin-bottom:18px;
+}
+.eyebrow img{width:18px;height:auto}
+.lead{font-size:1.08rem;color:var(--muted);max-width:56ch}
+
+/* Botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--display);font-weight:700;font-size:1.02rem;
+  padding:15px 28px;border-radius:100px;transition:.28s cubic-bezier(.2,.8,.2,1);
+  white-space:nowrap;
+}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 12px 26px rgba(204,47,137,.28)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(204,47,137,.36)}
+.btn-ghost{border:2px solid rgba(204,47,137,.28);color:var(--magenta)}
+.btn-ghost:hover{background:rgba(204,47,137,.07);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--magenta);box-shadow:0 14px 30px rgba(0,0,0,.16)}
+.btn-white:hover{transform:translateY(-3px)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.hdr{position:fixed;inset:0 0 auto;z-index:60;transition:.3s}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;transition:.3s}
+.hdr.on{background:rgba(252,239,236,.86);backdrop-filter:blur(14px);box-shadow:0 6px 26px rgba(159,40,110,.07)}
+.hdr.on .hdr-in{padding:11px 0}
+.brand img{height:46px;width:auto;transition:.3s}
+.hdr.on .brand img{height:40px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{font-weight:600;font-size:.97rem;color:var(--ink);position:relative;opacity:.85}
+.nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--grad);border-radius:2px;transition:.3s}
+.nav a:hover{opacity:1}
+.nav a:hover::after{width:100%}
+.hdr .btn{padding:12px 22px;font-size:.95rem}
+.burger{display:none;width:46px;height:46px;border-radius:14px;background:#fff;box-shadow:var(--shadow-s);align-items:center;justify-content:center}
+.burger span{display:block;width:20px;height:2px;background:var(--magenta);border-radius:2px;position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--magenta);border-radius:2px;transition:.3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger.on span{background:transparent}
+.burger.on span::before{top:0;transform:rotate(45deg)}
+.burger.on span::after{top:0;transform:rotate(-45deg)}
+
+.drawer{
+  position:fixed;inset:0;z-index:55;background:var(--cream);
+  display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 30px;
+  transform:translateY(-102%);transition:transform .45s cubic-bezier(.7,0,.2,1);
+}
+.drawer.on{transform:translateY(0)}
+.drawer a{font-family:var(--display);font-weight:700;font-size:1.7rem;padding:12px 0;border-bottom:1px solid rgba(204,47,137,.12)}
+.drawer .btn{margin-top:26px;align-self:flex-start}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{padding:150px 0 70px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;top:-320px;right:-220px;width:760px;height:760px;
+  background:radial-gradient(circle,rgba(255,138,152,.34),transparent 62%);
+  border-radius:50%;pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.hero h1 span{
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{margin:22px 0 30px;font-size:1.14rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-proof{display:flex;align-items:center;gap:14px;margin-top:34px}
+.stars{color:#FFB400;letter-spacing:2px;font-size:1.05rem}
+.hero-proof b{font-family:var(--display);font-size:1.05rem}
+.hero-proof small{display:block;color:var(--muted);font-size:.87rem;line-height:1.35}
+
+/* foto orgânica */
+.hero-media{position:relative;justify-self:center;width:100%;max-width:420px}
+.blob{
+  position:relative;z-index:1;border-radius:58% 42% 46% 54%/48% 44% 56% 52%;
+  overflow:hidden;box-shadow:var(--shadow-l);
+  background:var(--grad-soft);animation:morph 16s ease-in-out infinite;
+}
+.blob img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+@keyframes morph{
+  0%,100%{border-radius:58% 42% 46% 54%/48% 44% 56% 52%}
+  50%{border-radius:44% 56% 58% 42%/56% 52% 48% 44%}
+}
+.hero-media::after{
+  content:"";position:absolute;inset:-16px;border-radius:50%;
+  border:2px dashed rgba(204,47,137,.18);z-index:0;pointer-events:none;
+}
+.float-card{
+  position:absolute;z-index:3;border-radius:18px;padding:11px 15px;
+  background:rgba(255,255,255,.62);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.75);
+  box-shadow:0 12px 30px rgba(159,40,110,.14);
+  display:flex;align-items:center;gap:11px;width:max-content;max-width:220px;
+}
+.float-card b{font-family:var(--display);display:block;font-size:.92rem;line-height:1.2}
+.float-card small{color:var(--muted);font-size:.76rem;line-height:1.35;display:block}
+.fc-ico{width:34px;height:34px;border-radius:11px}
+.fc-ico svg{width:17px;height:17px}
+.fc-1{left:-52px;bottom:26px;animation:floaty 5s ease-in-out infinite}
+.fc-2{right:-52px;top:56%;animation:floaty 6.5s ease-in-out infinite .8s}
+.fc-ico{width:40px;height:40px;border-radius:12px;background:var(--grad);display:grid;place-items:center;flex:none}
+.fc-ico svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* faixa de confiança */
+.strip{background:#fff;border-radius:var(--r-l);box-shadow:var(--shadow-s);padding:26px 30px;margin-top:64px}
+.strip ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.strip li{display:flex;align-items:center;gap:12px;font-size:.94rem;line-height:1.35}
+.strip li svg{width:24px;height:24px;stroke:var(--magenta);fill:none;stroke-width:1.8;flex:none}
+.strip b{font-family:var(--display);display:block;font-size:1rem}
+.strip small{color:var(--muted);font-size:.83rem}
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
+.about-media{position:relative;padding:0 0 40px 40px}
+.about-media .main{border-radius:var(--r-xl) var(--r-s) var(--r-xl) var(--r-xl);overflow:hidden;box-shadow:var(--shadow-m)}
+.about-media .main img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.about-media .mini{
+  position:absolute;left:0;bottom:0;width:46%;border-radius:var(--r-m);overflow:hidden;
+  border:7px solid #fff;box-shadow:var(--shadow-m);
+}
+.about-media .mini img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.crefito{
+  display:inline-flex;align-items:center;gap:10px;margin-top:8px;
+  background:var(--cream);border:1px dashed rgba(204,47,137,.35);
+  padding:10px 18px;border-radius:100px;font-size:.9rem;font-weight:600;color:var(--magenta);
+}
+.quote{
+  margin:26px 0 28px;padding:18px 24px;border-left:4px solid var(--coral);
+  background:var(--cream);border-radius:0 var(--r-s) var(--r-s) 0;
+  font-style:italic;color:var(--ink);font-size:1.04rem;
+}
+
+/* =========================================================
+   ESPECIALIDADES
+   ========================================================= */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.card{
+  background:#fff;border-radius:var(--r-l);padding:36px 30px 34px;
+  box-shadow:var(--shadow-s);position:relative;overflow:hidden;
+  transition:.35s cubic-bezier(.2,.8,.2,1);
+}
+.card::before{
+  content:"";position:absolute;inset:auto -40px -50px auto;width:150px;height:150px;
+  background:var(--cream);border-radius:50%;transition:.45s;
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-m)}
+.card:hover::before{background:var(--cream-deep);transform:scale(1.15)}
+.card > *{position:relative;z-index:1}
+.card-ico{width:60px;height:60px;border-radius:18px;background:var(--grad);display:grid;place-items:center;margin-bottom:20px;box-shadow:0 10px 22px rgba(204,47,137,.25)}
+.card-ico svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.7}
+.card h3{margin-bottom:10px}
+.card p{color:var(--muted);font-size:.98rem;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:0;padding:0}
+.tags li{font-size:.8rem;font-weight:600;color:var(--magenta);background:rgba(204,47,137,.08);padding:5px 12px;border-radius:100px}
+
+/* =========================================================
+   COMO FUNCIONA
+   ========================================================= */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;position:relative}
+.step{background:var(--cream);border-radius:var(--r-m);padding:32px 26px;position:relative}
+.about + .sec .step{background:var(--cream)}
+.step .n{
+  font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;margin-bottom:8px;
+}
+.step h3{margin-bottom:8px;font-size:1.15rem}
+.step p{color:var(--muted);font-size:.95rem;margin:0}
+
+/* =========================================================
+   DEPOIMENTOS
+   ========================================================= */
+.testi{background:var(--white)}
+.testi-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:44px;margin-top:48px;align-items:stretch}
+
+/* vídeo */
+.video-box{position:relative;border-radius:var(--r-l);overflow:hidden;background:var(--grad);padding:5px;box-shadow:var(--shadow-m)}
+.video-inner{position:relative;border-radius:calc(var(--r-l) - 5px);overflow:hidden;background:#2a1622;aspect-ratio:9/16}
+.video-inner iframe,.video-inner video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.video-ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  text-align:center;padding:28px;color:#fff;
+  background:linear-gradient(160deg,rgba(204,47,137,.92),rgba(255,138,152,.92));
+}
+.video-ph .play{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;border:2px solid rgba(255,255,255,.6);animation:pulse 2.6s infinite}
+.video-ph .play svg{width:26px;height:26px;fill:#fff;margin-left:4px}
+.video-ph b{font-family:var(--display);font-size:1.15rem}
+.video-ph small{opacity:.9;font-size:.88rem;max-width:24ch;line-height:1.45}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.4)}70%{box-shadow:0 0 0 22px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.video-cap{display:flex;align-items:center;gap:10px;margin-top:14px;color:var(--muted);font-size:.9rem}
+.video-cap svg{width:18px;height:18px;stroke:var(--magenta);fill:none;stroke-width:1.8}
+
+/* carrossel */
+.reviews{display:flex;flex-direction:column;min-width:0}
+.gbadge{display:flex;align-items:center;gap:14px;background:var(--cream);border-radius:var(--r-m);padding:16px 22px;margin-bottom:20px}
+.gbadge .g{width:42px;height:42px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow-s);font-family:var(--display);font-weight:800;color:var(--magenta);font-size:1.2rem}
+.gbadge b{font-family:var(--display);font-size:1.5rem;line-height:1}
+.gbadge small{display:block;color:var(--muted);font-size:.85rem}
+.carousel{position:relative;flex:1;min-width:0}
+.viewport{overflow:hidden;border-radius:var(--r-l);height:100%}
+.track{display:flex;transition:transform .6s cubic-bezier(.3,.9,.25,1);height:100%;touch-action:pan-y}
+.slide{min-width:100%;padding:4px}
+.review{
+  background:#fff;border:1px solid var(--cream-deep);border-radius:var(--r-l);
+  padding:34px 34px 28px;height:100%;display:flex;flex-direction:column;box-shadow:var(--shadow-s);
+}
+.review .qm{font-family:var(--display);font-size:3.4rem;line-height:.7;color:var(--coral-soft);margin-bottom:6px}
+.review p{font-size:1.06rem;line-height:1.68;flex:1}
+.review footer{display:flex;align-items:center;gap:14px;border-top:1px solid var(--cream-deep);padding-top:18px;margin-top:6px}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:700;flex:none}
+.review b{font-family:var(--display);font-size:1rem;display:block;line-height:1.2}
+.review small{color:var(--muted);font-size:.82rem}
+.review .stars{font-size:.95rem;margin-left:auto}
+.ctrls{display:flex;align-items:center;gap:16px;margin-top:22px}
+.arrow{width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:var(--shadow-s);display:grid;place-items:center;transition:.25s;border:1px solid var(--cream-deep)}
+.arrow:hover{background:var(--magenta);border-color:var(--magenta)}
+.arrow:hover svg{stroke:#fff}
+.arrow svg{width:18px;height:18px;stroke:var(--magenta);fill:none;stroke-width:2.2;transition:.25s}
+.dots{display:flex;gap:7px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cream-deep);transition:.3s;padding:0}
+.dot.on{width:26px;border-radius:5px;background:var(--grad)}
+
+/* whatsapp real */
+.wpp{margin-top:clamp(56px,7vw,90px);display:grid;grid-template-columns:1fr .9fr;gap:56px;align-items:center}
+.wpp-txt .eyebrow{background:rgba(37,211,102,.12);color:#128C4A}
+.phone{
+  justify-self:center;width:100%;max-width:330px;background:#fff;border-radius:38px;
+  padding:12px;box-shadow:var(--shadow-l);border:1px solid var(--cream-deep);
+}
+.phone-top{display:flex;align-items:center;gap:10px;padding:8px 8px 12px;border-bottom:1px solid var(--cream)}
+.phone-top .pf{width:36px;height:36px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:700;font-size:.85rem}
+.phone-top b{font-family:var(--display);font-size:.95rem;display:block;line-height:1.2}
+.phone-top small{color:#25D366;font-size:.75rem}
+.chat{background:#EDE4DB;border-radius:24px;margin-top:10px;padding:16px 12px;display:flex;flex-direction:column;gap:8px}
+.day{align-self:center;background:rgba(255,255,255,.8);color:var(--muted);font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:8px;margin-bottom:2px}
+.bub{max-width:86%;padding:9px 12px 6px;border-radius:12px;font-size:.9rem;line-height:1.45;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.bub.in{background:#fff;align-self:flex-start;border-top-left-radius:3px}
+.bub.out{background:#D9FDD3;align-self:flex-end;border-top-right-radius:3px}
+.bub time{display:block;text-align:right;font-size:.66rem;color:#7d8b93;margin-top:2px}
+.wpp-note{display:flex;align-items:center;gap:8px;margin-top:14px;justify-content:center;color:var(--muted);font-size:.82rem}
+
+/* =========================================================
+   ESPAÇO
+   ========================================================= */
+.space{background:var(--cream)}
+.gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px;margin-top:44px}
+.gal figure{margin:0;border-radius:var(--r-m);overflow:hidden;box-shadow:var(--shadow-s);position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:.7s cubic-bezier(.2,.8,.2,1)}
+.gal figure:first-child img{aspect-ratio:3/3.1}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{
+  position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
+  padding:7px 14px;border-radius:100px;font-size:.82rem;font-weight:700;font-family:var(--display);color:var(--magenta);
+}
+
+/* =========================================================
+   CTA + CONTATO
+   ========================================================= */
+.cta{background:var(--grad);color:#fff;overflow:hidden}
+.cta::before{content:"";position:absolute;top:-160px;left:-120px;width:520px;height:520px;border:60px solid rgba(255,255,255,.06);border-radius:50%}
+.cta-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative}
+.cta h2{margin-bottom:16px}
+.cta p{color:rgba(255,255,255,.9);max-width:50ch}
+.cta .btn{margin-top:12px}
+.info{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:var(--r-l);padding:30px;backdrop-filter:blur(6px)}
+.info ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px}
+.info li{display:flex;gap:14px;align-items:flex-start}
+.info svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8;flex:none;margin-top:3px}
+.info b{font-family:var(--display);display:block;font-size:1rem}
+.info span{color:rgba(255,255,255,.85);font-size:.93rem;line-height:1.5}
+.info a:hover{text-decoration:underline}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.ft{background:#2E1926;color:rgba(255,255,255,.62);padding:56px 0 26px;font-size:.92rem}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;align-items:start}
+.ft img{height:74px;width:auto;margin-bottom:14px}
+.ft h4{font-family:var(--display);color:#fff;font-size:1rem;margin-bottom:14px;letter-spacing:.04em}
+.ft ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.ft a:hover{color:var(--coral)}
+.ft-bottom{
+  margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.85rem;
+}
+.ft-bottom a{color:var(--coral-soft)}
+
+/* whatsapp flutuante */
+.float-wpp{
+  position:fixed;right:20px;bottom:20px;z-index:70;width:60px;height:60px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(37,211,102,.4);
+  transition:.3s;
+}
+.float-wpp:hover{transform:scale(1.08)}
+.float-wpp svg{width:32px;height:32px;fill:#fff}
+.float-wpp::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse2 2.4s infinite}
+@keyframes pulse2{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.show{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media(max-width:1000px){
+  .nav,.hdr .btn{display:none}
+  .burger{display:flex}
+  .hero-grid,.about-grid,.testi-grid,.wpp,.cta-grid{grid-template-columns:1fr}
+  .hero{padding:126px 0 56px;text-align:center}
+  .hero .lead{margin-inline:auto}
+  .hero-cta,.hero-proof{justify-content:center}
+  .hero-media{order:-1;max-width:330px;margin-bottom:12px}
+  .strip ul{grid-template-columns:1fr 1fr}
+  .cards,.steps{grid-template-columns:1fr}
+  .about-media{padding:0 0 40px 0;max-width:460px;margin:0 auto}
+  .about-media .mini{width:38%}
+  .video-box{max-width:330px;margin:0 auto}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal figure:first-child{grid-column:1/-1}
+  .gal figure:first-child img{aspect-ratio:16/10}
+  .ft-grid{grid-template-columns:1fr}
+  .wpp{gap:36px}
+}
+@media(max-width:560px){
+  body{font-size:16px}
+  .strip{padding:22px}
+  .strip ul{grid-template-columns:1fr}
+  .review{padding:26px 22px 22px}
+  .review p{font-size:1rem}
+  .btn{width:100%;padding:15px 20px}
+  .hero-cta{flex-direction:column;width:100%}
+  .fc-1{left:-16px;bottom:10px;transform:scale(.85);transform-origin:left bottom}
+  .fc-2{right:-16px;top:58%;transform:scale(.85);transform-origin:right top}
+  .gal{grid-template-columns:1fr}
+  .float-wpp{width:56px;height:56px;right:16px;bottom:16px}
+  .dots{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="#topo" class="brand" aria-label="Letícia Rocha — início">
+      <img src="assets/logo.png" alt="Letícia Rocha Fisioterapeuta">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#atendimento">Como funciona</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-primary js-wpp" href="#">Agendar avaliação</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#sobre">Sobre</a>
+  <a href="#especialidades">Especialidades</a>
+  <a href="#atendimento">Como funciona</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#contato">Contato</a>
+  <a class="btn btn-primary js-wpp" href="#">Agendar avaliação</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow rv"><img src="assets/simbolo.png" alt="">Osteopatia adulto e pediátrica</span>
+        <h1 class="rv d1">A dor tem uma causa.<br><span>É nela que eu cuido.</span></h1>
+        <p class="lead rv d2">Osteopatia e posturologia com avaliação criteriosa e mãos que escutam o corpo — do bebê que não dorme ao adulto que convive com dor há anos.</p>
+        <div class="hero-cta rv d2">
+          <a class="btn btn-primary js-wpp" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Agendar avaliação
+          </a>
+          <a class="btn btn-ghost" href="#depoimentos">Ver depoimentos</a>
+        </div>
+        <div class="hero-proof rv d3">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <div>
+            <b>5,0 no Google</b>
+            <small>Avaliações reais de pacientes e mães atendidas</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media rv d1">
+        <div class="blob">
+          <img src="assets/leticia-retrato.jpg" alt="Dra. Letícia Rocha, fisioterapeuta e osteopata" width="724" height="1020" fetchpriority="high">
+        </div>
+        <div class="float-card fc-1">
+          <div class="fc-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <div>
+            <b>Bebês e crianças</b>
+            <small>Sono, cólica e amamentação</small>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <div class="fc-ico"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div>
+            <b>Crefito2/25112F</b>
+            <small>Osteopatia • Posturologia</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- faixa de confiança -->
+    <div class="strip rv d2">
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+          <div><b>Atendimento humanizado</b><small>Uma pessoa por vez, sem pressa</small></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          <div><b>Avaliação criteriosa</b><small>A consulta começa pela escuta</small></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4z"/></svg>
+          <div><b>Tratamento da causa</b><small>Não apenas do sintoma</small></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 17.3 6.2 20l1.1-6.5-4.7-4.6 6.5-.9L12 2l2.9 6 6.5.9-4.7 4.6 1.1 6.5z"/></svg>
+          <div><b>Nota 5,0 no Google</b><small>Pacientes que voltam e indicam</small></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section class="sec about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-media rv">
+      <div class="main">
+        <img src="assets/atendimento-adulto.jpg" alt="Dra. Letícia Rocha em atendimento de osteopatia" loading="lazy">
+      </div>
+      <div class="mini">
+        <img src="assets/atendimento-bebe.jpg" alt="Atendimento de osteopatia pediátrica em um bebê" loading="lazy">
+      </div>
+    </div>
+
+    <div class="rv d1">
+      <span class="eyebrow"><img src="assets/simbolo.png" alt="">Quem cuida de você</span>
+      <h2>Mãos que escutam o corpo<br>antes de tratar</h2>
+      <p class="lead">Sou fisioterapeuta e osteopata, e trabalho com uma ideia simples: o corpo não sente dor por acaso. Cada sintoma tem uma origem — às vezes longe de onde dói — e é essa origem que a osteopatia procura.</p>
+      <div class="quote">"Entrei uma e saí completamente outra. A profissional sabe tudo o que está fazendo e te deixa segura em todo momento."<br><span style="font-style:normal;font-size:.88rem;color:var(--muted)">— Flávia Vasconcelos, paciente</span></div>
+      <p>No consultório, cada avaliação é individual e sem pressa: entender a história, o dia a dia, a postura, o sono. Com bebês, o cuidado é ainda mais delicado — e envolve a mãe tanto quanto a criança.</p>
+      <span class="crefito">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2"><path d="M20 6 9 17l-5-5"/></svg>
+        Fisioterapeuta • Osteopatia adulto e pediátrica • Crefito2/25112F
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESPECIALIDADES ================= -->
+<section class="sec" id="especialidades">
+  <div class="wrap">
+    <div style="max-width:640px" class="rv">
+      <span class="eyebrow"><img src="assets/simbolo.png" alt="">Especialidades</span>
+      <h2>Do primeiro mês de vida à dor que já virou rotina</h2>
+      <p class="lead">Três frentes de cuidado, o mesmo princípio: encontrar a causa e devolver movimento, conforto e sono.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card rv">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div>
+        <h3>Osteopatia pediátrica</h3>
+        <p>Bebês que choram muito, mamam pouco ou não dormem quase sempre estão dizendo algo com o corpo. O toque é suave e a avaliação, minuciosa.</p>
+        <ul class="tags"><li>Cólicas</li><li>Refluxo</li><li>Sono agitado</li><li>Amamentação</li><li>Torcicolo congênito</li></ul>
+      </article>
+
+      <article class="card rv d1">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M8 6.5 12 4l4 2.5"/><path d="M6 12h12"/><path d="M8 20l4-3 4 3"/></svg></div>
+        <h3>Osteopatia adulto</h3>
+        <p>Dores que voltam sempre, tensões de longas horas sentado, enxaquecas e limitações de movimento — tratadas na origem, não no lugar onde doem.</p>
+        <ul class="tags"><li>Dor lombar</li><li>Cervical</li><li>Enxaqueca</li><li>Dor crônica</li><li>Tensão do trabalho</li></ul>
+      </article>
+
+      <article class="card rv d2">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 20V8"/><path d="M12 8a4 4 0 1 0 0-4 4 4 0 0 0 0 4z" fill="none"/><path d="M7 14h10"/></svg></div>
+        <h3>Posturologia</h3>
+        <p>Avaliação global do equilíbrio do corpo: como você pisa, olha, respira e se sustenta. Os desequilíbrios se acumulam — e aparecem como dor.</p>
+        <ul class="tags"><li>Avaliação postural</li><li>Desequilíbrios</li><li>Reeducação</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="sec about" id="atendimento">
+  <div class="wrap">
+    <div style="max-width:640px" class="rv">
+      <span class="eyebrow"><img src="assets/simbolo.png" alt="">Como funciona</span>
+      <h2>Três etapas, na ordem que o corpo pede</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <span class="n">01</span>
+        <h3>Escuta e avaliação</h3>
+        <p>Conversa sobre sua história, rotina e queixas, seguida de uma avaliação osteopática e postural completa. Nada de tratar antes de entender.</p>
+      </div>
+      <div class="step rv d1">
+        <span class="n">02</span>
+        <h3>Tratamento da causa</h3>
+        <p>Técnicas manuais suaves e precisas, aplicadas onde a origem do problema realmente está — com explicação de cada etapa durante a sessão.</p>
+      </div>
+      <div class="step rv d2">
+        <span class="n">03</span>
+        <h3>Acompanhamento</h3>
+        <p>Orientações para casa e reavaliação do que mudou. O objetivo não é você voltar sempre: é o seu corpo se sustentar sozinho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEPOIMENTOS ================= -->
+<section class="sec testi" id="depoimentos">
+  <div class="wrap">
+    <div style="max-width:660px" class="rv">
+      <span class="eyebrow"><img src="assets/simbolo.png" alt="">Depoimentos</span>
+      <h2>O que muda depois da consulta</h2>
+      <p class="lead">Bebês que voltam a dormir, adultos que voltam a se mover. Quem conta são os pacientes.</p>
+    </div>
+
+    <div class="testi-grid">
+      <!-- VÍDEO -->
+      <div class="rv">
+        <div class="video-box">
+          <div class="video-inner" id="videoSlot">
+            <!-- TROCAR: o link do vídeo é definido em CONFIG.videoDepoimento, lá embaixo no <script> -->
+            <div class="video-ph" id="videoPh">
+              <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <b>Depoimento em vídeo</b>
+              <small>Espaço reservado para o vídeo de uma paciente. É só colar o link no arquivo.</small>
+            </div>
+          </div>
+        </div>
+        <div class="video-cap">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+          Depoimento gravado por uma paciente atendida no consultório
+        </div>
+      </div>
+
+      <!-- CARROSSEL GOOGLE -->
+      <div class="reviews rv d1">
+        <div class="gbadge">
+          <div class="g">G</div>
+          <div>
+            <b>5,0 <span class="stars" aria-hidden="true">★★★★★</span></b>
+            <small>Avaliações do Google — pacientes verificados</small>
+          </div>
+        </div>
+
+        <div class="carousel" id="carousel">
+          <div class="viewport">
+            <div class="track" id="track" aria-live="polite">
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Simplesmente o melhor atendimento que já tive. Uma profissional incrível, humana e atenciosa. Me senti muito bem após o atendimento e me ajudou muito com a minha questão. Recomendo de olhos fechados!</p>
+                <footer><div class="avatar">M</div><div><b>Maria Clara Menezes</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Letícia é uma profissional impecável. Tem muito talento para cuidar de bebês: carinhosa, acolhedora e competente em todas as etapas. Fiquei feliz de ver o tamanho do cuidado que ela teve com a minha bebê, do início ao fim do tratamento.</p>
+                <footer><div class="avatar">N</div><div><b>Nathalia Cerqueira</b><small>Mãe de paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Minha consulta foi excepcional. Entrei uma e saí completamente outra. Atendimento impecável, personalizado, cheio de atenção e acolhimento. Se tivesse 6 estrelas eu daria.</p>
+                <footer><div class="avatar">F</div><div><b>Flávia Vasconcelos</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Maravilhosa! Uma profissional totalmente humanizada. Ela não cuida só do seu bebê, ela cuida de você. Fez um trabalho incrível com a minha pequena.</p>
+                <footer><div class="avatar">S</div><div><b>Sabrina Moura</b><small>Mãe de paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Tenho sido atendido pela Dra. Letícia por dores vindas de muitas horas de trabalho em posição desconfortável. Graças a ela melhorei significativamente e sigo nas minhas atividades profissionais sem dores.</p>
+                <footer><div class="avatar">M</div><div><b>Marco Santos</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Melhor clínica de osteopatia da região. O atendimento é humanizado da recepção à consulta, e o diferencial é que não tratam apenas o sintoma: buscam a causa do problema. Vale cada centavo.</p>
+                <footer><div class="avatar">L</div><div><b>Lucas Guimarães</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Com sua técnica, mãos mágicas e muito carinho, ajudou na minha recuperação — fez sumir dores que me acompanhavam havia dias e me devolveu tranquilidade.</p>
+                <footer><div class="avatar">O</div><div><b>Olga Monnerat</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Excelente profissional. Atendimento nota 10: entrei toda torcida e saí caminhando. Altamente recomendada.</p>
+                <footer><div class="avatar">S</div><div><b>Simone Accorsi</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Consulta profunda, com avaliação criteriosa e um cuidado ao mesmo tempo amoroso e técnico. O tratamento chegou na causa da dor e a eliminou por completo.</p>
+                <footer><div class="avatar">H</div><div><b>Heryan Egito</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Melhor osteopata que conheço. Além de excelente profissional, o atendimento é super acolhedor. Já fui atendida em várias ocasiões e sempre saio 100%.</p>
+                <footer><div class="avatar">G</div><div><b>Gabriela Rocha Villalobos</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+            </div>
+          </div>
+
+          <div class="ctrls">
+            <button class="arrow" id="prev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="arrow" id="next" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+            <div class="dots" id="dots"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHATSAPP REAL -->
+    <div class="wpp">
+      <div class="wpp-txt rv">
+        <span class="eyebrow">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+          O resultado que chega no WhatsApp
+        </span>
+        <h2>"Ele mama e dorme.<br>Está outra criança."</h2>
+        <p class="lead">Na manhã seguinte ao atendimento, essa mãe mandou uma mensagem. O bebê voltou a mamar, passou a dormir de 3 em 3 horas e acordou sorrindo.</p>
+        <p style="color:var(--muted);font-size:.98rem">É esse o tipo de mudança que a osteopatia pediátrica busca: não silenciar o choro, mas resolver o que o está causando.</p>
+        <a class="btn btn-primary js-wpp" href="#">Falar sobre o meu caso</a>
+      </div>
+
+      <div class="phone rv d1" role="img" aria-label="Conversa de WhatsApp em que a mãe de um paciente relata que o bebê voltou a mamar e a dormir bem após o atendimento">
+        <div class="phone-top">
+          <div class="pf">M</div>
+          <div>
+            <b>Mãe de paciente</b>
+            <small>online</small>
+          </div>
+        </div>
+        <div class="chat">
+          <span class="day">sex., 8 de mai.</span>
+          <div class="bub in">Oie Dra. Letícia!! Bom dia…<br>Meu Deus!! Ele mama e dorme 🙏👏🙌<br><br>Glória a Deus, está outra criança!!<time>09:49</time></div>
+          <div class="bub in">Está de 3/3h<time>09:50</time></div>
+          <div class="bub in">Acordou de manhã, até sorriu, ficou no balanço e depois dormiu.<time>09:50</time></div>
+          <div class="bub in">Foi de Deus eu ter ido aí!!<time>09:50</time></div>
+          <div class="bub out">Graças a Deus!!!!<time>09:50 ✓✓</time></div>
+          <div class="bub out">Fico muito feliz!<time>09:51 ✓✓</time></div>
+        </div>
+        <div class="wpp-note">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2"><path d="M20 6 9 17l-5-5"/></svg>
+          Mensagem real, publicada com autorização
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESPAÇO ================= -->
+<section class="sec space">
+  <div class="wrap">
+    <div style="max-width:640px" class="rv">
+      <span class="eyebrow"><img src="assets/simbolo.png" alt="">O consultório</span>
+      <h2>Um espaço calmo — porque o corpo só solta onde se sente seguro</h2>
+    </div>
+    <div class="gal">
+      <figure class="rv"><img src="assets/sala-atendimento.jpg" alt="Sala de atendimento com maca e bola terapêutica" loading="lazy"><figcaption>Sala de atendimento</figcaption></figure>
+      <figure class="rv d1"><img src="assets/recepcao.jpg" alt="Recepção do consultório" loading="lazy"><figcaption>Recepção</figcaption></figure>
+      <figure class="rv d2"><img src="assets/consultorio.jpg" alt="Consultório onde é feita a avaliação" loading="lazy"><figcaption>Avaliação</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA + CONTATO ================= -->
+<section class="sec cta" id="contato">
+  <div class="wrap cta-grid">
+    <div class="rv">
+      <h2>Sua dor já esperou tempo demais</h2>
+      <p>Se você convive com dor, ou se o seu bebê chora e não dorme, uma avaliação osteopática pode mostrar o que ninguém olhou ainda. Me chame no WhatsApp e conte o seu caso — respondo pessoalmente.</p>
+      <a class="btn btn-white js-wpp" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+        Agendar minha avaliação
+      </a>
+    </div>
+
+    <div class="info rv d1">
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1 4.2 2 2 0 0 1 3 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L7.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 21 16.9z"/></svg>
+          <div><b>WhatsApp</b><span><a href="#" class="js-wpp" id="telText">Enviar mensagem</a></span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Endereço</b><span id="endereco">[ENDEREÇO DO CONSULTÓRIO]</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Horários</b><span id="horario">[SEG A SEX — 08H ÀS 18H]</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>
+          <div><b>Instagram</b><span><a href="https://instagram.com/leticiarochafisio" target="_blank" rel="noopener">@leticiarochafisio</a></span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <img src="assets/logo-branco.png" alt="Letícia Rocha Fisioterapeuta">
+        <p>Osteopatia adulto e pediátrica, posturologia e fisioterapia com atendimento humanizado.<br>Crefito2/25112F</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#atendimento">Como funciona</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" class="js-wpp">WhatsApp</a></li>
+          <li><a href="https://instagram.com/leticiarochafisio" target="_blank" rel="noopener">@leticiarochafisio</a></li>
+          <li><a href="#contato">Endereço e horários</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© <span id="ano">2026</span> Letícia Rocha • Todos os direitos reservados</span>
+      <span>Desenvolvido por <a href="https://devdiogomoreira.com.br" target="_blank" rel="noopener">Diogo Moreira</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wpp js-wpp" href="#" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm5.5-5.8c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MedicalBusiness",
+  "name":"Dra. Letícia Rocha — Osteopatia Adulto e Pediátrica | Posturologia",
+  "description":"Osteopatia adulto e pediátrica e posturologia com atendimento humanizado, focado na causa da dor.",
+  "image":"assets/leticia-retrato.jpg",
+  "medicalSpecialty":"Physiotherapy",
+  "priceRange":"$$",
+  "sameAs":["https://instagram.com/leticiarochafisio"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5","reviewCount":"21"}
+}
+</script>
+
+<script>
+/* =========================================================
+   ⚙️ CONFIGURAÇÃO — edite só aqui
+   ========================================================= */
+const CONFIG = {
+  // WhatsApp com DDI + DDD, só números
+  whatsapp: '5511999999999',                       // TROCAR: número real
+  mensagem: 'Olá, Dra. Letícia! Vim pelo site e gostaria de agendar uma avaliação.',
+
+  // Link do vídeo de depoimento. Aceita:
+  //  - arquivo mp4:  'assets/depoimento.mp4'
+  //  - YouTube:      'https://youtu.be/XXXXXXXX'
+  //  - Vimeo:        'https://vimeo.com/123456789'
+  // Deixe '' (vazio) para manter o espaço reservado.
+  videoDepoimento: ''                              // TROCAR quando tiver o vídeo
+};
+
+/* ---------- WhatsApp ---------- */
+const wppLink = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(CONFIG.mensagem);
+document.querySelectorAll('.js-wpp').forEach(a => { a.href = wppLink; a.target = '_blank'; a.rel = 'noopener'; });
+
+/* ---------- Vídeo ---------- */
+(function () {
+  const url = (CONFIG.videoDepoimento || '').trim();
+  if (!url) return;
+  const slot = document.getElementById('videoSlot');
+  const ph = document.getElementById('videoPh');
+  let el;
+  const yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+  const vm = url.match(/vimeo\.com\/(\d+)/);
+  if (yt) {
+    el = document.createElement('iframe');
+    el.src = 'https://www.youtube.com/embed/' + yt[1] + '?rel=0';
+    el.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
+    el.allowFullscreen = true;
+    el.loading = 'lazy';
+    el.title = 'Depoimento em vídeo';
+  } else if (vm) {
+    el = document.createElement('iframe');
+    el.src = 'https://player.vimeo.com/video/' + vm[1];
+    el.allowFullscreen = true;
+    el.loading = 'lazy';
+    el.title = 'Depoimento em vídeo';
+  } else {
+    el = document.createElement('video');
+    el.src = url;
+    el.controls = true;
+    el.playsInline = true;
+    el.preload = 'none';
+    el.setAttribute('poster', 'assets/leticia-retrato.jpg');
+  }
+  ph.remove();
+  slot.appendChild(el);
+})();
+
+/* ---------- Header + menu ---------- */
+const hdr = document.getElementById('hdr');
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+const onScroll = () => hdr.classList.toggle('on', window.scrollY > 20);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+const toggleMenu = (open) => {
+  const o = open ?? !drawer.classList.contains('on');
+  drawer.classList.toggle('on', o);
+  burger.classList.toggle('on', o);
+  burger.setAttribute('aria-expanded', o);
+  document.body.style.overflow = o ? 'hidden' : '';
+};
+burger.addEventListener('click', () => toggleMenu());
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+
+/* ---------- Reveal on scroll ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+}, { threshold: .14, rootMargin: '0px 0px -40px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ---------- Carrossel de avaliações ---------- */
+(function () {
+  const track = document.getElementById('track');
+  const slides = [...track.children];
+  const dotsBox = document.getElementById('dots');
+  const carousel = document.getElementById('carousel');
+  let i = 0, timer = null, dragging = false, startX = 0, deltaX = 0;
+
+  slides.forEach((_, n) => {
+    const b = document.createElement('button');
+    b.className = 'dot' + (n === 0 ? ' on' : '');
+    b.setAttribute('aria-label', 'Ir para a avaliação ' + (n + 1));
+    b.addEventListener('click', () => go(n));
+    dotsBox.appendChild(b);
+  });
+  const dots = [...dotsBox.children];
+
+  function render() {
+    track.style.transform = 'translateX(' + (-i * 100) + '%)';
+    dots.forEach((d, n) => d.classList.toggle('on', n === i));
+  }
+  function go(n) { i = (n + slides.length) % slides.length; render(); restart(); }
+  function next() { go(i + 1); }
+  function prev() { go(i - 1); }
+
+  document.getElementById('next').addEventListener('click', next);
+  document.getElementById('prev').addEventListener('click', prev);
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function start() { if (!reduce) timer = setInterval(() => { i = (i + 1) % slides.length; render(); }, 6000); }
+  function stop() { clearInterval(timer); }
+  function restart() { stop(); start(); }
+  start();
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+
+  // teclado
+  carousel.setAttribute('tabindex', '0');
+  carousel.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { next(); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { prev(); e.preventDefault(); }
+  });
+
+  // swipe / drag
+  const down = x => { dragging = true; startX = x; deltaX = 0; stop(); track.style.transition = 'none'; };
+  const move = x => {
+    if (!dragging) return;
+    deltaX = x - startX;
+    track.style.transform = 'translateX(calc(' + (-i * 100) + '% + ' + deltaX + 'px))';
+  };
+  const up = () => {
+    if (!dragging) return;
+    dragging = false;
+    track.style.transition = '';
+    if (Math.abs(deltaX) > 60) { deltaX < 0 ? next() : prev(); } else { render(); start(); }
+  };
+  track.addEventListener('touchstart', e => down(e.touches[0].clientX), { passive: true });
+  track.addEventListener('touchmove', e => move(e.touches[0].clientX), { passive: true });
+  track.addEventListener('touchend', up);
+  track.addEventListener('mousedown', e => { e.preventDefault(); down(e.clientX); });
+  window.addEventListener('mousemove', e => move(e.clientX));
+  window.addEventListener('mouseup', up);
+
+  render();
+})();
+
+/* ---------- Ano ---------- */
+document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
