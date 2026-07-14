@@ -1,1531 +1,1604 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diogo Moreira | Criação de Sites de Alta Conversão</title>
-    
-    <!-- SEO & Meta Tags -->
-    <meta name="description" content="Desenvolvedor web especialista na criação de sites profissionais e de alta conversão para psicólogos, terapeutas, advogados, clínicas e pequenos negócios em Alfenas - MG. Coloque sua marca no Google e atraia clientes via WhatsApp.">
-    <meta name="keywords" content="criação de sites, desenvolvedor web, sites para psicólogos, sites para terapeutas, sites para advogados, Alfenas MG, web design freelancer, landing page conversão, design de sites">
-    <meta name="author" content="Diogo Moreira">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://diogomoreira.dev.br/">
-    <meta property="og:title" content="Diogo Moreira | Sites Profissionais que Geram Clientes">
-    <meta property="og:description" content="Desenvolvo sites ultravelozes e otimizados para o Google, focados em converter visitantes em agendamentos pelo WhatsApp.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Diogo Moreira | Criação de Sites em Alfenas">
-    <meta property="twitter:description" content="Transforme a presença digital do seu negócio. Sites de alta conversão para profissionais liberais e pequenas empresas.">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Diogo Moreira - Desenvolvimento de Sites",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
-      "description": "Desenvolvimento de sites profissionais e landing pages de alta conversão para clínicas, advogados, terapeutas e pequenos negócios.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Alfenas",
-        "addressRegion": "MG",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-21.4251",
-        "longitude": "-45.9472"
-      },
-      "url": "https://diogomoreira.dev.br",
-      "priceRange": "R$500 - R$2.000"
-    }
-    </script>
-
-    <style>
-        /* =========================================
-           DESIGN SYSTEM PREMIUM (Linear, Vercel, Stripe)
-           ========================================= */
-        :root {
-            --bg-main: #030303;
-            --bg-card: #0a0a0a;
-            --bg-card-hover: #121212;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-primary: #f5f5f7;
-            --text-secondary: #8e8e93;
-            --brand-primary: #ffffff;
-            --brand-accent: #5e8aff;
-            --success: #34c759;
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-display: 'Sora', sans-serif;
-            --max-width: 1100px;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --radius: 16px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            font-family: var(--font-main);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .grid-bg {
-            background-image:
-                linear-gradient(rgba(94, 138, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(94, 138, 255, 0.02) 1px, transparent 1px);
-            background-size: 48px 48px;
-        }
-
-        /* =========================================
-           HEADER & NAVEGAÇÃO
-           ========================================= */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 16px;
-            transition: var(--transition);
-        }
-
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 50px;
-            padding: 12px 24px;
-            background: rgba(10, 14, 26, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .nav-inner.scrolled {
-            background: rgba(10, 14, 26, 0.92);
-            border-color: rgba(94, 138, 255, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: -0.5px;
-            text-decoration: none;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo span {
-            color: var(--brand-accent);
-        }
-
-        .logo .avatar-mini {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid var(--brand-accent);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-link:hover {
-            color: var(--brand-accent);
-        }
-
-        .nav-cta {
-            background: var(--brand-accent);
-            color: #0A0E1A;
-            padding: 9px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .nav-cta:hover {
-            background: #7fa0ff;
-            transform: translateY(-1px);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.3rem;
-            cursor: pointer;
-        }
-
-        /* Menu Mobile */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(3, 3, 3, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transform: translateY(-100%);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 40px;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .mobile-nav.open {
-            transform: translateY(0);
-        }
-
-        .mobile-nav a {
-            font-size: 1.5rem;
-            font-weight: 500;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: var(--transition);
-        }
-
-        .mobile-nav a:hover {
-            color: var(--brand-accent);
-        }
-
-        .mobile-close {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            font-size: 1.8rem;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            cursor: pointer;
-        }
-
-        /* =========================================
-           HERO SECTION
-           ========================================= */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 140px 0 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-glow {
-            position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 900px;
-            height: 600px;
-            pointer-events: none;
-            background: radial-gradient(ellipse, rgba(94, 138, 255, 0.12) 0%, transparent 65%);
-            z-index: 1;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 48px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--bg-card);
-            border: 1px solid rgba(94, 138, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            margin-bottom: 28px;
-        }
-
-        .hero-tag span {
-            width: 8px;
-            height: 8px;
-            background: var(--success);
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 8px var(--success);
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5.5vw, 3.8rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 24px;
-            background: linear-gradient(180deg, #ffffff 0%, #b5b5b5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero h1 span.acc {
-            background: linear-gradient(180deg, #7fa0ff 0%, #5e8aff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 36px;
-            max-width: 600px;
-            font-weight: 300;
-        }
-
-        .hero-ctas {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25d366;
-            color: #ffffff;
-            padding: 16px 32px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
-        }
-
-        .btn-primary:hover {
-            background: #1ebc59;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: transparent;
-            color: var(--text-primary);
-            padding: 16px 32px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: var(--transition);
-        }
-
-        .btn-secondary:hover {
-            border-color: rgba(94, 138, 255, 0.5);
-            color: var(--brand-accent);
-            background: rgba(94, 138, 255, 0.02);
-        }
-
-        .urgency-badge {
-            font-size: 0.85rem;
-            color: #ff453a;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            margin-bottom: 40px;
-        }
-
-        /* Avatar do Herói (Pequeno para não roubar o foco) */
-        .hero-image-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 20px;
-        }
-
-        .hero-avatar-box {
-            text-align: center;
-            background: var(--bg-card);
-            padding: 12px 24px 12px 12px;
-            border-radius: 50px;
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .hero-avatar-box img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--brand-accent);
-        }
-
-        .hero-avatar-text {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-align: left;
-        }
-
-        .hero-avatar-text strong {
-            color: var(--text-primary);
-            display: block;
-        }
-
-        .hero-social-proof {
-            border-top: 1px solid var(--border-color);
-            padding-top: 32px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            width: 100%;
-        }
-
-        .proof-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .proof-number {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--brand-accent);
-        }
-
-        .proof-text {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-        }
-
-        /* =========================================
-           SEÇÕES GERAIS
-           ========================================= */
-        section {
-            padding: 100px 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .section-header {
-            max-width: 650px;
-            margin-bottom: 56px;
-        }
-
-        .section-tag {
-            color: var(--brand-accent);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .section-title span {
-            color: var(--brand-accent);
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            font-weight: 300;
-        }
-
-        /* =========================================
-           CARDS (DIFERENCIAIS E SERVIÇOS)
-           ========================================= */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 32px;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            border-color: rgba(94, 138, 255, 0.3);
-            transform: translateY(-4px);
-            background: var(--bg-card-hover);
-        }
-
-        .card-icon {
-            font-size: 1.2rem;
-            color: var(--brand-accent);
-            margin-bottom: 24px;
-            background: rgba(255, 255, 255, 0.03);
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-        }
-
-        .card h3 {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        /* =========================================
-           CASES DE SUCESSO
-           ========================================= */
-        .cases-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-        }
-
-        .case-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .case-card:hover {
-            border-color: rgba(94, 138, 255, 0.3);
-            transform: translateY(-4px);
-        }
-
-        .case-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-color);
-            filter: brightness(0.85);
-        }
-
-        .case-content {
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .case-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .case-segment {
-            font-size: 0.7rem;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 6px 12px;
-            border-radius: 30px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-        }
-
-        .case-title {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .case-result-box {
-            background: rgba(52, 199, 89, 0.03);
-            border: 1px solid rgba(52, 199, 89, 0.12);
-            padding: 16px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .case-result-label {
-            font-size: 0.75rem;
-            color: var(--success);
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .case-result-text {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #e5e5ea;
-        }
-
-        .case-techs {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 28px;
-        }
-
-        .tech-badge {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .tech-badge:not(:last-child)::after {
-            content: '•';
-            margin-left: 8px;
-        }
-
-        .case-link {
-            margin-top: auto;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
-        }
-
-        .case-card:hover .case-link {
-            color: var(--brand-accent);
-        }
-
-        /* =========================================
-           COMO FUNCIONA
-           ========================================= */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .process-item {
-            position: relative;
-            text-align: center;
-        }
-
-        .process-number {
-            font-family: var(--font-display);
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-        }
-
-        .process-title {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .process-text {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
-
-        .process-item .card-icon {
-            margin: 0 auto 16px auto;
-            font-size: 1.5rem;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        /* =========================================
-           DEPOIMENTOS
-           ========================================= */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .testimonial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 36px;
-            border-radius: var(--radius);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .testimonial-text {
-            color: #e5e5ea;
-            font-size: 0.95rem;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 28px;
-            font-weight: 300;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .author-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        .author-info h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .author-info span {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        /* =========================================
-           SOBRE
-           ========================================= */
-        .about-inner {
-            max-width: 760px;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            font-size: 1.05rem;
-            color: #e5e5ea;
-            line-height: 1.75;
-            font-weight: 300;
-        }
-
-        .about-text p {
-            margin-bottom: 24px;
-        }
-
-        /* =========================================
-           CONTATO & FORMULÁRIO
-           ========================================= */
-        .contact-wrapper {
-            max-width: 580px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 44px;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: #e5e5ea;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .form-control {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 14px 16px;
-            color: var(--text-primary);
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: rgba(94, 138, 255, 0.5);
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .form-control.is-valid {
-            border-color: var(--success);
-        }
-
-        .form-control.is-invalid {
-            border-color: #ff453a;
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 110px;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: var(--brand-primary);
-            color: var(--bg-main);
-            border: none;
-            padding: 16px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .btn-submit:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .guarantee-box {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-top: 32px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .guarantee-box i {
-            color: var(--success);
-            font-size: 1.1rem;
-            margin-top: 3px;
-        }
-
-        .guarantee-text h5 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .guarantee-text p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .section-cta-block {
-            margin-top: 48px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .cta-text-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .cta-text-link:hover {
-            color: var(--text-primary);
-        }
-
-        /* =========================================
-           RODAPÉ
-           ========================================= */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            background: #010101;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        /* =========================================
-           WHATSAPP FLUTUANTE
-           ========================================= */
-        .whatsapp-floating {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            background: #25d366;
-            color: #ffffff;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-            text-decoration: none;
-            z-index: 999;
-            transition: var(--transition);
-        }
-
-        .whatsapp-floating:hover {
-            transform: scale(1.05) translateY(-4px);
-            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-        }
-
-        /* =========================================
-           ANIMAÇÕES E EFEITOS
-           ========================================= */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =========================================
-           RESPONSIVIDADE MOBILE
-           ========================================= */
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            
-            .hero h1, .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-ctas {
-                justify-content: center;
-                flex-direction: column;
-                width: 100%;
-                max-width: 320px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                justify-content: center;
-                padding: 18px 24px;
-            }
-
-            .hero-image-wrapper {
-                order: -1;
-                justify-content: center;
-            }
-
-            .hero-avatar-box {
-                padding: 8px 16px 8px 8px;
-            }
-            
-            .hero-avatar-box img {
-                width: 40px;
-                height: 40px;
-            }
-
-            .hero-social-proof {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
-
-            .cases-grid, .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-
-            section {
-                padding: 72px 0;
-            }
-
-            .contact-wrapper {
-                padding: 32px 24px;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-
-            .whatsapp-floating {
-                width: 48px;
-                height: 48px;
-                font-size: 1.3rem;
-                bottom: 24px;
-                right: 24px;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Letícia Rocha — Fisioterapeuta Osteopata | Bebês, gestantes, adultos e idosos</title>
+<meta name="description" content="Osteopatia com mais de 25 anos de experiência e +10 mil atendimentos. Especialidade em bebês, gestantes e todas as idades. Tratamento que busca a causa da dor. Consultório em Icaraí, Niterói (RJ). Crefito2/25112F.">
+<meta name="theme-color" content="#CC2F89">
+<link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/simbolo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/simbolo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dra. Letícia Rocha — Fisioterapeuta Osteopata">
+<meta property="og:description" content="A dor tem uma causa. É dela que eu cuido. Osteopatia para bebês, gestantes, adultos e idosos.">
+<meta property="og:image" content="assets/leticia-retrato.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   TOKENS — identidade oficial Letícia Rocha
+   ========================================================= */
+:root{
+  --magenta:#CC2F89;
+  --magenta-dark:#9E2069;
+  --coral:#FF8A98;
+  --coral-soft:#FFC2CA;
+  --cream:#FCEFEC;
+  --cream-deep:#F4DFDA;
+  --line:#EFDCD8;
+  --ink:#3B2130;
+  --muted:#8A6C7C;
+  --white:#fff;
+  --grad:linear-gradient(135deg,var(--coral) 0%,var(--magenta) 100%);
+  --shadow-s:0 4px 16px rgba(159,40,110,.06);
+  --shadow-m:0 16px 40px rgba(159,40,110,.10);
+  --shadow-l:0 28px 64px rgba(159,40,110,.16);
+  --r-s:14px; --r-m:22px; --r-l:30px; --r-xl:44px;
+  --maxw:1160px;
+  --display:'Baloo 2',system-ui,sans-serif;
+  --body:'Nunito Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.14;margin:0;font-weight:700;letter-spacing:-.012em}
+h1{font-size:clamp(2.05rem,5vw,3.5rem);font-weight:800}
+h2{font-size:clamp(1.7rem,3.6vw,2.55rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1rem}
+:focus-visible{outline:3px solid var(--magenta);outline-offset:3px;border-radius:8px}
+
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.sec{padding:clamp(62px,8.5vw,110px) 0;position:relative}
+.sec-head{max-width:660px;margin-bottom:48px}
+.sec-head.center{margin-inline:auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--display);font-weight:700;font-size:.78rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--magenta);
+  background:rgba(204,47,137,.08);padding:8px 16px;border-radius:100px;margin-bottom:18px;
+}
+.mark{width:15px;height:17px;flex:none;display:block;background:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20702%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22lrg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF8A98%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23CC2F89%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20fill%3D%22url%28%23lrg%29%22%20fill-rule%3D%22evenodd%22%20d%3D%22M294.5%20701.0C294.2%20700.5%20293.0%20700.0%20291.9%20700.0C285.6%20700.0%20280.5%20695.1%20162.4%20576.8C97.5%20511.7%2042.5%20456.2%2040.3%20453.5C30.9%20441.8%2019.2%20422.1%2011.7%20405.0C8.6%20398.1%204.2%20383.4%203.1%20376.0C2.4%20371.9%201.4%20366.9%200.9%20364.9C-0.3%20360.2%20-0.3%20334.2%200.9%20328.7C1.4%20326.4%202.4%20321.4%203.0%20317.5C5.6%20303.2%2013.3%20283.1%2021.5%20269.5C33.7%20249.3%2051.7%20231.1%2072.0%20218.5C94.4%20204.6%20123.6%20196.0%20148.5%20196.0C156.9%20196.0%20158.6%20195.5%20157.1%20193.6C156.6%20193.0%20156.0%20191.2%20155.7%20189.5C155.4%20187.8%20154.6%20184.0%20154.0%20181.0C151.7%20169.8%20151.2%20162.1%20151.5%20146.5C152.0%20123.0%20155.8%20107.2%20166.1%2085.3C177.3%2061.3%20200.0%2036.3%20223.0%2022.4C239.1%2012.6%20257.2%205.7%20273.5%203.1C277.4%202.4%20282.4%201.5%20284.8%201.0C290.6%20-0.3%20312.0%20-0.3%20319.4%201.1C354.0%207.4%20374.4%2016.1%20396.6%2034.1C418.8%2052.2%20439.6%2082.6%20446.1%20106.8C446.6%20108.5%20447.5%20111.7%20448.0%20113.8C450.9%20124.6%20452.0%20134.5%20451.9%20151.5C451.9%20166.7%20451.6%20171.2%20449.6%20180.5C448.3%20186.6%20446.9%20192.5%20446.5%20193.7C445.8%20195.9%20446.0%20196.0%20452.7%20196.0C472.8%20196.0%20498.5%20202.7%20518.7%20213.1C556.0%20232.5%20582.5%20265.2%20594.9%20307.5C595.4%20309.1%20596.3%20313.6%20597.0%20317.5C597.6%20321.4%20598.6%20325.9%20599.1%20327.6C600.3%20331.6%20600.3%20360.2%20599.1%20364.9C598.6%20366.9%20597.6%20371.9%20597.0%20376.0C593.0%20402.0%20579.7%20432.0%20561.9%20454.9C553.1%20466.3%20329.1%20691.4%20322.1%20695.9C319.5%20697.6%20315.9%20699.3%20314.2%20699.6C312.4%20700.0%20310.7%20700.7%20310.4%20701.1C309.7%20702.3%20295.3%20702.2%20294.5%20701.0ZM319.1%20610.7C323.9%20608.3%20339.7%20592.9%20421.2%20510.7C480.2%20451.2%20519.2%20411.1%20521.8%20407.4C526.7%20400.1%20532.0%20389.9%20532.0%20387.7C532.0%20386.8%20532.4%20385.9%20532.9%20385.6C533.4%20385.3%20534.0%20383.8%20534.3%20382.3C534.6%20380.7%20535.5%20376.4%20536.4%20372.5C538.9%20361.7%20538.6%20337.3%20535.9%20326.2C531.0%20306.0%20518.7%20287.4%20501.7%20274.7C494.4%20269.3%20479.4%20262.4%20469.8%20260.1C457.7%20257.2%20433.1%20257.1%20421.5%20260.0C413.3%20262.1%20405.4%20264.9%20398.7%20268.2L395.0%20270.1L408.4%20283.3C427.3%20301.9%20439.2%20320.5%20446.8%20343.5C453.1%20362.5%20454.4%20371.1%20454.4%20394.5C454.5%20417.3%20454.2%20418.7%20446.4%20427.0C439.7%20434.2%20434.4%20436.4%20423.9%20436.4C416.3%20436.4%20414.8%20436.1%20410.4%20433.6C404.1%20429.9%20398.9%20424.5%20396.2%20418.7C394.4%20414.8%20394.0%20412.2%20394.0%20403.3C393.9%20368.7%20385.7%20347.3%20365.0%20327.0C353.1%20315.3%20338.2%20307.1%20321.7%20303.1C316.1%20301.8%20286.6%20301.6%20282.4%20302.9C280.8%20303.4%20277.5%20304.3%20275.0%20305.1C263.3%20308.4%20246.4%20318.5%20237.5%20327.4C228.6%20336.3%20221.2%20347.5%20216.6%20359.0C212.2%20369.8%20211.0%20377.0%20210.2%20397.0C209.4%20416.7%20208.3%20420.3%20200.9%20427.9C194.9%20434.0%20188.9%20436.4%20179.5%20436.4C169.7%20436.4%20163.8%20433.9%20156.9%20426.9C148.9%20418.7%20146.7%20406.4%20148.9%20382.6C151.3%20357.7%20156.2%20340.4%20166.3%20321.0C174.7%20305.0%20189.5%20286.5%20202.0%20276.4C205.8%20273.3%20208.7%20270.4%20208.4%20269.9C207.0%20267.5%20192.1%20262.1%20180.0%20259.4C171.5%20257.6%20141.8%20257.6%20133.5%20259.4C101.6%20266.6%2077.8%20287.4%2066.5%20317.9C63.6%20325.9%2062.0%20336.0%2062.0%20347.1C62.0%20357.4%2062.5%20361.6%2065.2%20371.5C67.6%20380.7%2075.7%20396.8%2083.8%20408.7C86.1%20412.0%20130.2%20457.0%20185.1%20512.2C296.2%20623.5%20285.3%20614.2%20303.5%20613.7C312.2%20613.5%20314.2%20613.1%20319.1%20610.7ZM319.0%20238.6C347.0%20232.6%20370.0%20214.6%20382.3%20188.9C396.9%20158.5%20392.5%20121.4%20370.9%2094.5C358.0%2078.5%20337.9%2066.6%20317.4%2063.0C304.6%2060.7%20280.9%2062.8%20271.5%2066.9C256.1%2073.7%20247.2%2079.6%20238.3%2088.6C219.7%20107.7%20210.2%20134.4%20213.1%20159.7C214.3%20170.5%20215.2%20174.3%20219.2%20184.4C225.4%20200.1%20235.6%20212.9%20249.3%20222.3C263.3%20232.0%20271.8%20235.9%20284.5%20238.5C292.8%20240.2%20311.2%20240.3%20319.0%20238.6Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat}
+.mark.big{width:19px;height:22px}
+.lead{font-size:1.06rem;color:var(--muted);max-width:58ch}
+
+/* botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--display);font-weight:700;font-size:1rem;
+  padding:15px 28px;border-radius:100px;transition:.28s cubic-bezier(.2,.8,.2,1);
+}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 12px 26px rgba(204,47,137,.26)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(204,47,137,.34)}
+.btn-ghost{border:2px solid rgba(204,47,137,.25);color:var(--magenta)}
+.btn-ghost:hover{background:rgba(204,47,137,.06);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--magenta);box-shadow:0 14px 30px rgba(0,0,0,.15)}
+.btn-white:hover{transform:translateY(-3px)}
+.btn-wpp{background:#25D366;color:#fff;box-shadow:0 12px 26px rgba(37,211,102,.3)}
+.btn-wpp:hover{transform:translateY(-3px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn[disabled]{opacity:.45;pointer-events:none}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.hdr{position:fixed;inset:0 0 auto;z-index:60;transition:.3s}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;transition:.3s}
+.hdr.on{background:rgba(252,239,236,.88);backdrop-filter:blur(14px);box-shadow:0 4px 22px rgba(159,40,110,.07)}
+.hdr.on .hdr-in{padding:10px 0}
+.brand img{height:44px;width:auto;transition:.3s}
+.hdr.on .brand img{height:38px}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-weight:600;font-size:.95rem;position:relative;opacity:.82}
+.nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--grad);border-radius:2px;transition:.3s}
+.nav a:hover{opacity:1}
+.nav a:hover::after{width:100%}
+.hdr .btn{padding:11px 21px;font-size:.93rem}
+.burger{display:none;width:46px;height:46px;border-radius:14px;background:#fff;box-shadow:var(--shadow-s);align-items:center;justify-content:center}
+.burger span{display:block;width:20px;height:2px;background:var(--magenta);border-radius:2px;position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--magenta);border-radius:2px;transition:.3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger.on span{background:transparent}
+.burger.on span::before{top:0;transform:rotate(45deg)}
+.burger.on span::after{top:0;transform:rotate(-45deg)}
+.drawer{
+  position:fixed;inset:0;z-index:55;background:var(--cream);
+  display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 30px;
+  transform:translateY(-102%);transition:transform .45s cubic-bezier(.7,0,.2,1);
+}
+.drawer.on{transform:translateY(0)}
+.drawer a{font-family:var(--display);font-weight:700;font-size:1.55rem;padding:11px 0;border-bottom:1px solid rgba(204,47,137,.12)}
+.drawer .btn{margin-top:24px;align-self:stretch}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{padding:146px 0 70px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;top:-320px;right:-220px;width:740px;height:740px;
+  background:radial-gradient(circle,rgba(255,138,152,.30),transparent 62%);border-radius:50%;pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:22px 0 30px;font-size:1.12rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px}
+.hero-stats{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+.hstat b{font-family:var(--display);font-size:1.6rem;display:block;line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hstat small{color:var(--muted);font-size:.85rem;line-height:1.3;display:block}
+.hstat{padding-left:16px;border-left:2px solid var(--cream-deep)}
+.hstat:first-child{padding-left:0;border-left:0}
+
+.hero-media{position:relative;justify-self:center;width:100%;max-width:380px}
+.blob{
+  position:relative;z-index:1;overflow:hidden;background:var(--coral-soft);
+  border-radius:var(--r-xl);
+  box-shadow:var(--shadow-l);
+}
+.blob img{width:100%;object-fit:cover;object-position:center 22%;aspect-ratio:1/1}
+.hero-media::after{
+  content:"";position:absolute;inset:-14px;pointer-events:none;z-index:0;
+  border-radius:calc(var(--r-xl) + 14px);
+  border:2px solid rgba(204,47,137,.18);
+}
+.float-card{
+  position:absolute;z-index:3;border-radius:18px;padding:11px 15px;
+  background:rgba(255,255,255,.66);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 30px rgba(159,40,110,.14);
+  display:flex;align-items:center;gap:11px;width:max-content;max-width:215px;
+}
+.float-card b{font-family:var(--display);display:block;font-size:.9rem;line-height:1.2}
+.float-card small{color:var(--muted);font-size:.75rem;line-height:1.35;display:block}
+.fc-ico{width:34px;height:34px;border-radius:11px;background:var(--grad);display:grid;place-items:center;flex:none}
+.fc-ico svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2}
+.fc-1{left:-40px;bottom:22px;animation:floaty 5s ease-in-out infinite}
+.fc-2{right:-40px;top:58%;animation:floaty 6.5s ease-in-out infinite .8s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* faixa de confiança */
+.strip{background:#fff;border-radius:var(--r-l);box-shadow:var(--shadow-s);border:1px solid var(--line);padding:26px 30px;margin-top:62px}
+.strip ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.strip li{display:flex;align-items:center;gap:12px;line-height:1.35}
+.strip li + li{border-left:1px solid var(--line);padding-left:18px}
+.strip svg{width:23px;height:23px;stroke:var(--magenta);fill:none;stroke-width:1.7;flex:none}
+.strip b{font-family:var(--display);display:block;font-size:.98rem}
+.strip small{color:var(--muted);font-size:.82rem}
+
+/* =========================================================
+   AGENDAMENTO (wizard)
+   ========================================================= */
+.book{background:var(--white)}
+.book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.book-side .lead{margin-bottom:26px}
+.book-note{display:flex;gap:12px;align-items:flex-start;background:var(--cream);border-radius:var(--r-m);padding:16px 18px;font-size:.92rem;color:var(--muted);line-height:1.5}
+.book-note svg{width:20px;height:20px;stroke:var(--magenta);fill:none;stroke-width:1.8;flex:none;margin-top:2px}
+
+.wizard{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-xl);padding:34px;box-shadow:var(--shadow-m)}
+.wz-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
+.wz-top h3{font-size:1.35rem}
+.wz-count{font-size:.82rem;font-weight:700;color:var(--magenta);background:rgba(204,47,137,.09);padding:5px 12px;border-radius:100px;white-space:nowrap}
+.bar{height:5px;border-radius:100px;background:var(--cream-deep);overflow:hidden;margin:16px 0 26px}
+.bar i{display:block;height:100%;width:33.33%;background:var(--grad);border-radius:100px;transition:width .5s cubic-bezier(.3,.9,.25,1)}
+
+.wz-step{display:none;animation:fade .45s ease}
+.wz-step.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.wz-q{font-family:var(--display);font-weight:700;font-size:1.12rem;margin-bottom:4px}
+.wz-hint{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.opt{
+  display:flex;align-items:center;gap:12px;text-align:left;
+  background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:13px 15px;
+  transition:.22s;width:100%;
+}
+.opt:hover{border-color:var(--coral);transform:translateY(-2px);box-shadow:var(--shadow-s)}
+.opt.on{border-color:var(--magenta);background:rgba(204,47,137,.05);box-shadow:0 0 0 3px rgba(204,47,137,.08)}
+.opt .em{font-size:1.35rem;line-height:1;flex:none}
+.opt b{font-family:var(--display);font-size:.97rem;display:block;line-height:1.25}
+.opt small{color:var(--muted);font-size:.78rem;display:block;line-height:1.3}
+.opts.one{grid-template-columns:1fr}
+.opts.chips{display:flex;flex-wrap:wrap;gap:9px}
+.opts.chips .opt{width:auto;padding:10px 16px;border-radius:100px}
+
+.wz-nav{display:flex;align-items:center;gap:12px;margin-top:24px}
+.wz-back{font-weight:700;color:var(--muted);font-size:.92rem;display:inline-flex;align-items:center;gap:6px}
+.wz-back:hover{color:var(--magenta)}
+.wz-back svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.4}
+.wz-nav .btn{margin-left:auto}
+
+.resumo{background:#fff;border:1.5px dashed rgba(204,47,137,.3);border-radius:var(--r-m);padding:20px 22px;margin-bottom:18px}
+.resumo h4{font-family:var(--display);font-size:1rem;margin-bottom:14px}
+.resumo dl{margin:0;display:flex;flex-direction:column;gap:11px}
+.resumo .row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;border-bottom:1px dotted var(--line);padding-bottom:9px}
+.resumo .row:last-child{border:0;padding:0}
+.resumo dt{color:var(--muted);font-size:.88rem}
+.resumo dd{margin:0;font-family:var(--display);font-weight:700;font-size:.95rem;text-align:right;color:var(--magenta)}
+.wz-final{color:var(--muted);font-size:.85rem;line-height:1.5;margin-bottom:18px}
+.wz-send{width:100%}
+
+/* =========================================================
+   BEBÊS (destaque)
+   ========================================================= */
+.baby-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.baby-media{position:relative}
+.baby-media img{border-radius:var(--r-xl);box-shadow:var(--shadow-m);aspect-ratio:1/1;object-fit:cover;width:100%}
+.baby-badge{
+  position:absolute;right:-14px;bottom:-14px;background:#fff;border-radius:100px;
+  padding:12px 20px;box-shadow:var(--shadow-m);font-family:var(--display);font-weight:700;
+  color:var(--magenta);font-size:.92rem;display:flex;align-items:center;gap:8px;
+}
+
+.checks{list-style:none;margin:22px 0 26px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+.checks li{display:flex;align-items:flex-start;gap:10px;font-size:.97rem;line-height:1.4}
+.checks svg{width:19px;height:19px;stroke:var(--magenta);fill:none;stroke-width:2.4;flex:none;margin-top:3px}
+.callout{background:#fff;border-left:4px solid var(--coral);border-radius:0 var(--r-s) var(--r-s) 0;padding:18px 22px;font-size:.98rem;box-shadow:var(--shadow-s)}
+.callout b{color:var(--magenta)}
+
+/* =========================================================
+   ATENDIMENTOS (4 cards)
+   ========================================================= */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-l);padding:30px 26px;
+  box-shadow:var(--shadow-s);transition:.34s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-7px);box-shadow:var(--shadow-m);border-color:var(--coral-soft)}
+.card-ico{width:54px;height:54px;border-radius:16px;background:var(--grad);display:grid;place-items:center;margin-bottom:18px;box-shadow:0 10px 20px rgba(204,47,137,.22);font-size:1.5rem}
+.card h3{margin-bottom:9px;font-size:1.17rem}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:16px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.tags li{font-size:.77rem;font-weight:600;color:var(--magenta);background:rgba(204,47,137,.07);padding:5px 11px;border-radius:100px}
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.about-media{position:relative;padding:0 0 38px 38px}
+.about-media .main{border-radius:var(--r-xl) var(--r-s) var(--r-xl) var(--r-xl);overflow:hidden;box-shadow:var(--shadow-m)}
+.about-media .main img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.about-media .mini{position:absolute;left:0;bottom:0;width:44%;border-radius:var(--r-m);overflow:hidden;border:7px solid #fff;box-shadow:var(--shadow-m)}
+.about-media .mini img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.quote{
+  margin:24px 0 26px;padding:20px 24px;border-left:4px solid var(--coral);
+  background:var(--cream);border-radius:0 var(--r-s) var(--r-s) 0;font-size:1.05rem;
+}
+.quote b{color:var(--magenta)}
+.trail{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.trail li{background:var(--cream);border-radius:var(--r-s);padding:14px 16px}
+.trail b{font-family:var(--display);display:block;font-size:.98rem}
+.trail small{color:var(--muted);font-size:.83rem;line-height:1.4;display:block}
+.crefito{
+  display:inline-flex;align-items:center;gap:9px;background:var(--cream);
+  border:1px dashed rgba(204,47,137,.35);padding:10px 18px;border-radius:100px;
+  font-size:.88rem;font-weight:600;color:var(--magenta);
+}
+.crefito svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* =========================================================
+   CONSULTA (passos)
+   ========================================================= */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r-l);padding:30px 26px;box-shadow:var(--shadow-s)}
+.step .n{font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:6px}
+.step h3{margin-bottom:8px;font-size:1.12rem}
+.step p{color:var(--muted);font-size:.94rem;margin:0}
+
+/* =========================================================
+   DEPOIMENTOS
+   ========================================================= */
+.testi{background:var(--white)}
+.testi-grid{display:grid;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);gap:42px;align-items:start}
+.video-box{border-radius:var(--r-l);overflow:hidden;background:var(--grad);padding:5px;box-shadow:var(--shadow-m)}
+.video-inner{position:relative;border-radius:calc(var(--r-l) - 5px);overflow:hidden;background:#2a1622;aspect-ratio:9/16}
+.video-inner iframe,.video-inner video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:28px;color:#fff;background:linear-gradient(160deg,rgba(204,47,137,.92),rgba(255,138,152,.92))}
+.video-ph .play{width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;border:2px solid rgba(255,255,255,.6);animation:pulse 2.6s infinite}
+.video-ph .play svg{width:25px;height:25px;fill:#fff;margin-left:4px}
+.video-ph b{font-family:var(--display);font-size:1.1rem}
+.video-ph small{opacity:.9;font-size:.85rem;max-width:24ch;line-height:1.45}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.4)}70%{box-shadow:0 0 0 20px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.video-cap{display:flex;align-items:center;gap:9px;margin-top:14px;color:var(--muted);font-size:.87rem}
+.video-cap svg{width:17px;height:17px;stroke:var(--magenta);fill:none;stroke-width:1.8;flex:none}
+
+.reviews{display:flex;flex-direction:column;min-width:0}
+.gbadge{display:flex;align-items:center;gap:14px;background:var(--cream);border-radius:var(--r-m);padding:15px 20px;margin-bottom:18px}
+.gbadge .g{width:40px;height:40px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow-s);font-family:var(--display);font-weight:800;color:var(--magenta);font-size:1.15rem}
+.gbadge b{font-family:var(--display);font-size:1.4rem;line-height:1}
+.gbadge small{display:block;color:var(--muted);font-size:.83rem}
+.stars{color:#FFB400;letter-spacing:2px}
+.carousel{position:relative;min-width:0}
+.viewport{overflow:hidden;border-radius:var(--r-l);padding:3px;margin:-3px}
+.track{display:flex;align-items:stretch;transition:transform .6s cubic-bezier(.3,.9,.25,1);touch-action:pan-y}
+.slide{min-width:100%;display:flex}
+.review{background:#fff;border:1.5px solid var(--cream-deep);border-radius:var(--r-l);padding:28px 30px 22px;min-height:250px;width:100%;display:flex;flex-direction:column;box-shadow:var(--shadow-s)}
+.review .qm{font-family:var(--display);font-size:2.6rem;line-height:.7;color:var(--coral-soft);margin-bottom:6px}
+.review p{font-size:1.02rem;line-height:1.65;flex:1;margin-bottom:18px}
+.review footer{display:flex;align-items:center;gap:13px;border-top:1px solid var(--cream-deep);padding-top:15px;margin-top:auto}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:700;flex:none}
+.review b{font-family:var(--display);font-size:.98rem;display:block;line-height:1.2}
+.review small{color:var(--muted);font-size:.8rem}
+.review .stars{font-size:.9rem;margin-left:auto}
+.ctrls{display:flex;align-items:center;gap:14px;margin-top:20px}
+.arrow{width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:var(--shadow-s);display:grid;place-items:center;transition:.25s;border:1px solid var(--line)}
+.arrow:hover{background:var(--magenta);border-color:var(--magenta)}
+.arrow:hover svg{stroke:#fff}
+.arrow svg{width:17px;height:17px;stroke:var(--magenta);fill:none;stroke-width:2.2;transition:.25s}
+.dots{display:flex;gap:7px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cream-deep);transition:.3s;padding:0}
+.dot.on{width:24px;border-radius:5px;background:var(--grad)}
+
+/* whatsapp real */
+.wpp{margin-top:clamp(54px,7vw,86px);display:grid;grid-template-columns:1fr .88fr;gap:56px;align-items:center}
+.wpp-txt .eyebrow{background:rgba(37,211,102,.12);color:#128C4A}
+.phone{justify-self:center;width:100%;max-width:322px;background:#fff;border-radius:36px;padding:12px;box-shadow:var(--shadow-l);border:1px solid var(--line)}
+.phone-top{display:flex;align-items:center;gap:10px;padding:6px 6px 12px;border-bottom:1px solid var(--cream)}
+.phone-top .pf{width:36px;height:36px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:700;font-size:.85rem}
+.phone-top b{font-family:var(--display);font-size:.93rem;display:block;line-height:1.2}
+.phone-top small{color:#25D366;font-size:.74rem}
+.chat{background:#EDE4DB;border-radius:22px;margin-top:10px;padding:15px 12px;display:flex;flex-direction:column;gap:8px}
+.day{align-self:center;background:rgba(255,255,255,.8);color:var(--muted);font-size:.71rem;font-weight:600;padding:4px 12px;border-radius:8px;margin-bottom:2px}
+.bub{max-width:86%;padding:9px 12px 6px;border-radius:12px;font-size:.89rem;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.bub.in{background:#fff;align-self:flex-start;border-top-left-radius:3px}
+.bub.out{background:#D9FDD3;align-self:flex-end;border-top-right-radius:3px}
+.bub time{display:block;text-align:right;font-size:.65rem;color:#7d8b93;margin-top:2px}
+.wpp-note{display:flex;align-items:center;gap:8px;margin-top:13px;justify-content:center;color:var(--muted);font-size:.8rem}
+.wpp-note svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* =========================================================
+   ESPAÇO
+   ========================================================= */
+.space{background:var(--cream)}
+.gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px}
+.gal figure{margin:0;border-radius:var(--r-m);overflow:hidden;box-shadow:var(--shadow-s);position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:.7s cubic-bezier(.2,.8,.2,1)}
+.gal figure:first-child img{aspect-ratio:3/3.1}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.93);backdrop-filter:blur(6px);padding:7px 14px;border-radius:100px;font-size:.8rem;font-weight:700;font-family:var(--display);color:var(--magenta)}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq{background:var(--white)}
+.faq-list{display:grid;gap:12px;max-width:820px;margin:0 auto}
+details{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;transition:.3s}
+details[open]{background:#fff;box-shadow:var(--shadow-m);border-color:var(--coral-soft)}
+summary{
+  list-style:none;cursor:pointer;padding:20px 24px;display:flex;align-items:center;gap:16px;
+  font-family:var(--display);font-weight:700;font-size:1.04rem;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";margin-left:auto;font-size:1.5rem;color:var(--magenta);line-height:1;
+  transition:transform .3s;flex:none;
+}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 24px 20px;margin:0;color:var(--muted);font-size:.97rem}
+
+/* =========================================================
+   CTA + CONTATO
+   ========================================================= */
+.cta{background:var(--grad);color:#fff;overflow:hidden}
+.cta::before{content:"";position:absolute;top:-160px;left:-120px;width:500px;height:500px;border:58px solid rgba(255,255,255,.06);border-radius:50%}
+.cta-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:54px;align-items:center;position:relative}
+.cta h2{margin-bottom:14px}
+.cta p{color:rgba(255,255,255,.9);max-width:50ch}
+.cta .btn{margin-top:10px}
+.info{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:var(--r-l);padding:30px;backdrop-filter:blur(6px)}
+.info ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:19px}
+.info li{display:flex;gap:14px;align-items:flex-start}
+.info svg{width:21px;height:21px;stroke:#fff;fill:none;stroke-width:1.8;flex:none;margin-top:3px}
+.info b{font-family:var(--display);display:block;font-size:.98rem}
+.info span{color:rgba(255,255,255,.86);font-size:.92rem;line-height:1.5}
+.info a:hover{text-decoration:underline}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.ft{background:#2E1926;color:rgba(255,255,255,.62);padding:54px 0 24px;font-size:.91rem}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:34px;align-items:start}
+.ft img{height:70px;width:auto;margin-bottom:14px}
+.ft h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:13px}
+.ft ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ft a:hover{color:var(--coral)}
+.ft-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:.83rem}
+.ft-bottom a{color:var(--coral-soft)}
+.disclaimer{width:100%;color:rgba(255,255,255,.4);font-size:.79rem}
+
+.float-wpp{position:fixed;right:20px;bottom:20px;z-index:70;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(37,211,102,.4);transition:.3s}
+.float-wpp:hover{transform:scale(1.08)}
+.float-wpp svg{width:31px;height:31px;fill:#fff}
+.float-wpp::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse2 2.4s infinite}
+@keyframes pulse2{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.show{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media(max-width:1080px){
+  .cards{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- TABLET ---------- */
+@media(max-width:1000px){
+  .nav,.hdr .btn{display:none}
+  .burger{display:flex}
+  .brand img{height:42px}
+  .hero-grid,.book-grid,.baby-grid,.about-grid,.testi-grid,.wpp,.cta-grid{grid-template-columns:1fr}
+  .hero{padding:118px 0 52px;text-align:center}
+  .hero-grid{gap:36px}
+  .hero .lead{margin:18px auto 26px}
+  .hero-cta,.hero-stats{justify-content:center}
+  .hero-media{order:-1;max-width:300px;margin:0 auto 6px}
+  .hero-media::after{inset:-12px}
+  .strip{margin-top:44px;padding:24px}
+  .strip ul{grid-template-columns:1fr 1fr;gap:20px}
+  .strip li + li{border-left:0;padding-left:0}
+  .sec-head{margin-bottom:38px}
+  .book-grid{gap:34px}
+  .baby-grid{gap:44px}
+  .baby-media{max-width:440px;margin:0 auto}
+  .steps{grid-template-columns:1fr}
+  .about-grid{gap:44px}
+  .about-media{padding:0 0 34px 0;max-width:420px;margin:0 auto}
+  .testi-grid{gap:38px}
+  .video-box{max-width:320px;margin:0 auto}
+  .video-cap{justify-content:center;text-align:left}
+  .wpp{gap:38px}
+  .wpp-txt{text-align:center}
+  .wpp-txt .lead,.wpp-txt p{margin-inline:auto}
+  .gal{grid-template-columns:1fr 1fr;gap:14px}
+  .gal figure:first-child{grid-column:1/-1}
+  .gal figure:first-child img{aspect-ratio:16/10}
+  .cta-grid{gap:36px}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:30px;text-align:center}
+  .ft-grid > div:first-child{grid-column:1/-1}
+  .ft img{margin-inline:auto}
+  .ft ul{align-items:center}
+  .ft-bottom{justify-content:center;text-align:center}
+}
+
+/* ---------- CELULAR ---------- */
+@media(max-width:620px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .sec{padding:54px 0}
+  .sec-head{margin-bottom:30px}
+  h2{font-size:1.62rem}
+  .lead{font-size:1rem}
+
+  /* header */
+  .hdr-in{padding:12px 0}
+  .brand img{height:38px}
+  .hdr.on .brand img{height:34px}
+  .drawer{padding:0 24px;gap:0}
+  .drawer a{font-size:1.35rem;padding:14px 0}
+  .drawer .btn{margin-top:22px}
+
+  /* hero */
+  .hero{padding:100px 0 42px}
+  .hero h1{font-size:2.05rem}
+  .hero .lead{font-size:1.02rem;margin:16px auto 22px}
+  .hero-media{max-width:220px}
+  .blob{border-radius:28px}
+  .hero-media::after{border-radius:38px;inset:-9px}
+  .float-card{max-width:180px;padding:8px 12px;border-radius:14px;gap:9px}
+  .float-card b{font-size:.8rem}
+  .float-card small{font-size:.68rem}
+  .fc-ico{width:28px;height:28px;border-radius:9px}
+  .fc-ico svg{width:14px;height:14px}
+  .fc-1{left:-10px;bottom:-14px}
+  .fc-2{right:-10px;top:auto;bottom:42%}
+  .hero-cta{flex-direction:column;width:100%;gap:10px}
+  .btn{width:100%;padding:15px 20px;font-size:.98rem}
+  .hero-stats{gap:8px;margin-top:24px;flex-wrap:nowrap}
+  .hstat{flex:1;min-width:0;padding:12px 8px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:center}
+  .hstat:first-child{padding:12px 8px;border:1px solid var(--line)}
+  .hstat b{font-size:1.15rem}
+  .hstat small{font-size:.7rem;line-height:1.25}
+
+  /* faixa de confiança */
+  .strip{padding:8px 18px;margin-top:34px;border-radius:24px}
+  .strip ul{grid-template-columns:1fr;gap:0}
+  .strip li{padding:14px 0;gap:13px}
+  .strip li + li{border-top:1px solid var(--line)}
+  .strip b{font-size:.94rem}
+  .strip small{font-size:.8rem}
+
+  /* wizard */
+  .wizard{padding:22px 18px;border-radius:26px}
+  .wz-top{flex-direction:column;align-items:flex-start;gap:6px}
+  .wz-top h3{font-size:1.22rem}
+  .wz-q{font-size:1.05rem}
+  .wz-hint{font-size:.86rem;margin-bottom:16px}
+  .opts{grid-template-columns:1fr;gap:9px}
+  .opt{padding:14px;border-radius:14px}
+  .opts.chips .opt{width:100%;border-radius:14px;padding:14px}
+  .resumo{padding:18px}
+  .resumo .row{flex-direction:column;gap:2px}
+  .resumo dd{text-align:left}
+  .book-note{font-size:.87rem;padding:14px 16px}
+
+  /* bebês */
+  .baby-media{margin-bottom:26px}
+  .baby-badge{right:auto;left:50%;transform:translateX(-50%);bottom:-16px;white-space:nowrap;font-size:.85rem;padding:10px 16px}
+  .checks{grid-template-columns:1fr;gap:9px;margin:18px 0 22px}
+  .checks li{font-size:.94rem}
+  .callout{padding:16px 18px;font-size:.93rem}
+
+  /* cards */
+  .cards{grid-template-columns:1fr;gap:14px}
+  .card{padding:24px 22px;border-radius:24px}
+  .card-ico{width:46px;height:46px;border-radius:14px;font-size:1.3rem;margin-bottom:14px}
+  .card h3{font-size:1.1rem}
+  .card p{font-size:.93rem;margin-bottom:14px}
+
+  /* sobre */
+  .about-media{padding:0 0 28px 0;max-width:340px}
+  .about-media .mini{width:46%;border-width:5px}
+  .quote{padding:16px 18px;font-size:1rem;margin:20px 0 22px}
+  .trail{grid-template-columns:1fr;gap:10px}
+  .trail li{padding:12px 15px}
+  .crefito{font-size:.8rem;padding:10px 15px;line-height:1.35;align-items:flex-start;border-radius:18px}
+
+  /* passos */
+  .step{padding:24px 22px;border-radius:24px}
+  .step .n{font-size:2.1rem}
+
+  /* depoimentos */
+  .video-box{max-width:min(300px,82vw);padding:4px}
+  .video-cap{font-size:.83rem;padding:0 6px}
+  .gbadge{padding:13px 16px;gap:12px}
+  .gbadge b{font-size:1.25rem}
+  .gbadge small{font-size:.78rem}
+  .review{padding:24px 20px 18px;min-height:0;border-radius:24px}
+  .review .qm{font-size:2.2rem}
+  .review p{font-size:.97rem;line-height:1.6;margin-bottom:16px}
+  .review footer{gap:10px;padding-top:14px}
+  .avatar{width:38px;height:38px;font-size:.9rem}
+  .review b{font-size:.9rem}
+  .review small{font-size:.75rem}
+  .review .stars{font-size:.78rem}
+  .ctrls{gap:10px;margin-top:16px}
+  .arrow{width:40px;height:40px}
+  .dots{display:flex;gap:6px}
+  .dot{width:7px;height:7px}
+  .dot.on{width:20px}
+
+  /* whatsapp */
+  .phone{max-width:100%;border-radius:28px;padding:9px}
+  .chat{border-radius:18px;padding:13px 10px}
+  .bub{font-size:.85rem;max-width:92%}
+  .wpp-note{font-size:.76rem}
+
+  /* galeria */
+  .gal{grid-template-columns:1fr 1fr;gap:9px}
+  .gal img{aspect-ratio:1/1}
+  .gal figure:first-child img{aspect-ratio:4/3}
+  .gal figcaption{left:9px;bottom:9px;padding:6px 11px;font-size:.72rem}
+
+  /* faq */
+  summary{padding:16px 18px;font-size:.96rem;gap:10px}
+  summary::after{font-size:1.35rem}
+  details p{padding:0 18px 16px;font-size:.92rem}
+
+  /* contato */
+  .info{padding:24px 20px;border-radius:24px}
+  .info ul{gap:16px}
+  .info span{font-size:.89rem}
+
+  /* rodapé */
+  .ft{padding:44px 0 90px}
+  .ft-grid{grid-template-columns:1fr;gap:26px}
+  .ft img{height:60px}
+  .ft-bottom{margin-top:30px;gap:8px;font-size:.79rem}
+
+  .float-wpp{width:54px;height:54px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom))}
+  .float-wpp svg{width:28px;height:28px}
+}
+
+/* ---------- CELULAR PEQUENO ---------- */
+@media(max-width:380px){
+  .wrap{padding:0 15px}
+  .hero h1{font-size:1.85rem}
+  .hero-media{max-width:190px}
+  .float-card{max-width:158px;padding:7px 10px}
+  .float-card small{display:none}
+  .hstat b{font-size:1.02rem}
+  .hstat small{font-size:.65rem}
+  .gal{grid-template-columns:1fr}
+  .gal figure:first-child{grid-column:auto}
+  .gal img,.gal figure:first-child img{aspect-ratio:4/3}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
 </head>
-<body class="grid-bg">
+<body>
 
-    <header>
-        <div class="container">
-            <div class="nav-inner" id="nav">
-                <!-- Logo (menos de 40px) -->
-                <a href="#" class="logo">
-                    <!--  na pasta do projeto -->
-                    <img src="avatar.jpg" alt="Diogo Moreira" class="avatar-mini" onerror="this.style.display='none'">
-                    diogo<span>.dev</span>
-                </a>
-
-                <nav aria-label="Navegação Principal">
-                    <ul class="nav-menu">
-                        <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
-                        <li><a href="#cases" class="nav-link">Projetos</a></li>
-                        <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
-                        <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                        <li><a href="#contato" class="nav-link nav-cta">Solicitar</a></li>
-                    </ul>
-                </nav>
-                
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Menu Mobile -->
-        <ul class="mobile-nav" id="mobileNav">
-            <button class="mobile-close" id="closeMenu" aria-label="Fechar menu">
-                <i class="fas fa-times"></i>
-            </button>
-            <li><a href="#diferenciais" class="mobile-link">Diferenciais</a></li>
-            <li><a href="#cases" class="mobile-link">Projetos</a></li>
-            <li><a href="#como-funciona" class="mobile-link">Como Funciona</a></li>
-            <li><a href="#sobre" class="mobile-link">Sobre</a></li>
-            <li><a href="#contato" class="mobile-link nav-cta" style="color: #0A0E1A;">Solicitar Orçamento</a></li>
-        </ul>
-    </header>
-
-    <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="hero-tag">
-                    <span></span> Atendendo Em Todo Brasil
-                </div>
-                
-                <h1>Sites que trazem clientes direto pra <span class="acc">você.</span></h1>
-                
-                <p>Crio sites profissionais pra clínicas, terapeutas e pequenos negócios. O cliente vê, se interessa e te chama no WhatsApp.</p>
-                
-                <div class="hero-ctas">
-                    <a href="https://wa.me/5535999675196?text=Ol%C3%A1%20Diogo,%20vi%20seu%20portf%C3%B3lio%20e%20quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." class="btn-primary" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i> Iniciar Meu Projeto
-                    </a>
-                    <a href="#cases" class="btn-secondary">Ver Portfólio</a>
-                </div>
-
-                <div class="urgency-badge">
-                    <i class="fas fa-exclamation-circle"></i> Vagas abertas para essa semana.
-                </div>
-
-                <div class="hero-social-proof">
-                    <div class="proof-item">
-                        <span class="proof-number">100%</span>
-                        <span class="proof-text">Foco em Conversão</span>
-                    </div>
-                    <div class="proof-item">
-                        <span class="proof-number">15+</span>
-                        <span class="proof-text">Sites Entregues</span>
-                    </div>
-                    <div class="proof-item">
-                        <span class="proof-number">2 Dias</span>
-                        <span class="proof-text">Prazo Médio</span>
-                    </div>
-                    <div class="proof-item">
-                        <span class="proof-number">Suporte</span>
-                        <span class="proof-text">Direto e Personalizado</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Avatar Pequeno para Autenticidade (menos de 80px) -->
-            <div class="hero-image-wrapper">
-                <div class="hero-avatar-box">
-                    <!-- COLOQUE SUA FOTO AQUI: Salve a 3ª imagem como "hero.jpg" na pasta do projeto -->
-                    <img src="Captura de tela 2026-06-24 110814.png" alt="Diogo Moreira" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80'">
-                    <div class="hero-avatar-text">
-                        <strong>Diogo Moreira</strong>
-                        Desenvolvedor Web & UX
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="diferenciais" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Diferenciais</span>
-                <h2 class="section-title">A estrutura perfeita para transformar acessos em <span>faturamento</span></h2>
-                <p class="section-subtitle">Seu site não será apenas um cartão de visitas digital, mas sim uma máquina de captação comercial ativa 24 horas por dia.</p>
-            </div>
-
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Site Totalmente Responsivo</h3>
-                    <p>Experiência perfeita para smartphones. Seu cliente agenda consultas com poucos cliques, independentemente do dispositivo.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-search"></i></div>
-                    <h3>Otimização para o Google (SEO)</h3>
-                    <p>Código estruturado seguindo as diretrizes do Google para facilitar seu ranqueamento regional e alcançar novos clientes organicamente.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fab fa-whatsapp"></i></div>
-                    <h3>Integração Direta com WhatsApp</h3>
-                    <p>Botões estrategicamente posicionados para direcionar o usuário direto para o seu canal de atendimento, gerando leads qualificados.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Carregamento Ultra-rápido</h3>
-                    <p>Páginas extremamente leves que carregam instantaneamente. Menos desistências, maior retenção e melhor posicionamento nos mecanismos de busca.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-server"></i></div>
-                    <h3>Hospedagem Inclusa</h3>
-                    <p>Orientação e configuração nas plataformas de nuvem mais modernas do mercado (Vercel, Netlify), com garantia de estabilidade e segurança.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-user-shield"></i></div>
-                    <h3>Suporte Direto e Personalizado</h3>
-                    <p>Comunicação direta comigo via WhatsApp corporativo. Sem intermediários, sem chamados lentos. Agilidade máxima para suas necessidades.</p>
-                </div>
-            </div>
-
-            <div class="section-cta-block">
-                <a href="https://wa.me/5535999675196?text=Ol%C3%A1%20Diogo,%20gostei%20dos%20diferenciais.%20Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." class="btn-primary" target="_blank" rel="noopener noreferrer">Quero um Site de Alta Conversão</a>
-                <a href="#cases" class="cta-text-link">Ver cases de sucesso <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="cases" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Cases de Sucesso</span>
-                <h2 class="section-title">Entregando resultado real para os meus <span>clientes</span></h2>
-                <p class="section-subtitle">Soluções digitais de elite desenvolvidas exclusivamente para profissionais liberais e marcas que exigem excelência visual e comercial.</p>
-            </div>
-
-            <div class="cases-grid">
-                <article class="case-card">
-                    <img src="Captura de tela 2026-06-24 091817.png" alt="Case Atel0iê Lu Teixeira" class="case-image" loading="lazy">
-                    <div class="case-content">
-                        <div class="case-meta">
-                            <span class="case-segment">Artesanato & Alta Costura</span>
-                        </div>
-                        <h3 class="case-title">Ateliê Lu Teixeira</h3>
-                        
-                        <div class="case-result-box">
-                            <span class="case-result-label">Resultado Obtido</span>
-                            <p class="case-result-text">Mais clientes chegando direto pelo WhatsApp após o lançamento do site.</p>
-                        </div>
-
-                        <div class="case-techs">
-                            <span class="tech-badge">Site responsivo</span>
-                            <span class="tech-badge">Integração WhatsApp</span>
-                            <span class="tech-badge">Design personalizado</span>
-                            <span class="tech-badge">Hospedagem inclusa</span>
-                        </div>
-                        
-                        <a href="https://ateli-lu-teixeira.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-link">Acessar Projeto Online <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </article>
-
-                <article class="case-card">
-                    <img src="Captura de tela 2026-06-24 091735.png" alt="Case Elisângela Terapeuta Integrativa" class="case-image" loading="lazy">
-                    <div class="case-content">
-                        <div class="case-meta">
-                            <span class="case-segment">Saúde & Bem-Estar</span>
-                        </div>
-                        <h3 class="case-title">Elisângela Terapeuta Integrativa</h3>
-                        
-                        <div class="case-result-box">
-                            <span class="case-result-label">Resultado Obtido</span>
-                            <p class="case-result-text">Posicionamento de autoridade estruturado que permitiu a captação direta de 5 novas clientes na primeira semana de lançamento.</p>
-                        </div>
-
-                        <div class="case-techs">
-                            <span class="tech-badge">Design minimalista</span>
-                            <span class="tech-badge">Aparece no Google</span>
-                            <span class="tech-badge">Integração WhatsApp</span>
-                            <span class="tech-badge">Carrega rápido</span>
-                        </div>
-                        
-                        <a href="https://elisangela-terapeuta-integrativa.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-link">Acessar Projeto Online <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="como-funciona" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Metodologia</span>
-                <h2 class="section-title">Do alinhamento estratégico à publicação em 4 <span>etapas</span></h2>
-                <p class="section-subtitle">Um processo transparente, simples e focado em entregar valor comercial e agilidade para o seu negócio.</p>
-            </div>
-
-            <div class="process-grid">
-                <div class="process-item">
-                    <div class="card-icon" style="margin: 0 auto 16px auto; width: 56px; height: 56px; font-size: 1.5rem;"><i class="fas fa-comments"></i></div>
-                    <div class="process-number">01</div>
-                    <h3 class="process-title">Conversa Inicial</h3>
-                    <p class="process-text">Entrevista estratégica para mapear seus objetivos, público-alvo e as dores do seu nicho.</p>
-                </div>
-                <div class="process-item">
-                    <div class="card-icon" style="margin: 0 auto 16px auto; width: 56px; height: 56px; font-size: 1.5rem;"><i class="fas fa-pen-fancy"></i></div>
-                    <div class="process-number">02</div>
-                    <h3 class="process-title">Criação da Prévia</h3>
-                    <p class="process-text">Desenvolvimento do design, arquitetura da informação e copywriting persuasivo alinhado à sua marca.</p>
-                </div>
-                <div class="process-item">
-                    <div class="card-icon" style="margin: 0 auto 16px auto; width: 56px; height: 56px; font-size: 1.5rem;"><i class="fas fa-sliders-h"></i></div>
-                    <div class="process-number">03</div>
-                    <h3 class="process-title">Ajustes Finos</h3>
-                    <p class="process-text">Validação completa em conjunto. Refinamos cada detalhe visual e de texto até a excelência.</p>
-                </div>
-                <div class="process-item">
-                    <div class="card-icon" style="margin: 0 auto 16px auto; width: 56px; height: 56px; font-size: 1.5rem;"><i class="fas fa-rocket"></i></div>
-                    <div class="process-number">04</div>
-                    <h3 class="process-title">Publicação</h3>
-                    <p class="process-text">Configuração de SEO, testes de velocidade e lançamento oficial do site pronto para atrair clientes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="depoimentos" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Validação Comercial</span>
-                <h2 class="section-title">Quem já confia em nossos <span>resultados</span></h2>
-                <p class="section-subtitle">A satisfação e o retorno financeiro dos meus clientes são a minha prioridade máxima.</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"O Diogo é um profissional incrível. O site ficou super limpo, profissional e extremamente rápido. O melhor de tudo: meus pacientes chegam diariamente pelo link do WhatsApp integrado. Super recomendo!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">D.A</div>
-                        <div class="author-info">
-                            <h4>Dra. Amanda Lima</h4>
-                            <span>Psicóloga Clínica - Alfenas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Precisava de um site para o meu ateliê e encontrei no Diogo a solução perfeita. Ele entendeu exatamente o que eu queria, entregou em 2 dias e o resultado superou minhas expectativas."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">L.T</div>
-                        <div class="author-info">
-                            <h4>Lu Teixeira</h4>
-                            <span>Ateliê de Alta Costura</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="reveal">
-        <div class="container">
-            <div class="about-inner">
-                <div class="section-header">
-                    <span class="section-tag">Quem é o Desenvolvedor</span>
-                    <h2 class="section-title">Transformando código em clientes para o seu <span>negócio</span></h2>
-                </div>
-                <div class="about-text">
-                    <p>Meu nome é <strong>Diogo Moreira</strong>, sou graduando de Ciência da Computação na <strong>UNIFAL-MG</strong> e apaixonado por tecnologia e marketing. Desenvolvo sites profissionais sob medida para pequenos negócios, clínicas, psicólogos, terapeutas e advogados da região de Alfenas.</p>
-                    <p>Meu trabalho vai muito além de entregar um design bonito. Combino código de alto nível com as melhores práticas de UX/UI e copywriting para criar um ativo comercial que trabalha por você 24 horas por dia, gerando autoridade e convertendo visitantes em clientes.</p>
-                    <p>Minha filosofia é simples: atendimento direto, transparência total, código limpo e prazos cumpridos. Você não é só mais um projeto, é um parceiro que terá meu suporte completo desde o briefing até a publicação.</p>
-                </div>
-                <div class="section-cta-block" style="margin-top: 32px;">
-                    <a href="#contato" class="btn-secondary">Conversar pelo WhatsApp <i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="reveal">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin: 0 auto 56px auto;">
-                <span class="section-tag">Contato Direto</span>
-                <h2 class="section-title">Solicitar Análise de <span>Projeto</span></h2>
-                <p class="section-subtitle">Preencha os campos abaixo para avaliarmos sua demanda e agendarmos uma conversa rápida e estratégica.</p>
-            </div>
-
-            <div class="contact-wrapper">
-                <form id="project-form" action="#" method="POST" novalidate>
-                    <div class="form-group">
-                        <label for="name" class="form-label">Seu Nome Completo</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Ex: Roberto Silva" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="segment" class="form-label">Segmento Profissional</label>
-                        <input type="text" id="segment" name="segment" class="form-control" placeholder="Ex: Terapia, Advocacia, Clínica..." required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="whatsapp" class="form-label">WhatsApp com DDD</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ex: (35) 99999-9999" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">Breve descrição da sua necessidade</label>
-                        <textarea id="message" name="message" class="form-control" placeholder="Conte resumidamente sobre seu negócio e quais os seus principais objetivos com esse novo site." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit">
-                        <i class="fas fa-paper-plane"></i> Enviar Solicitação Comercial
-                    </button>
-                </form>
-
-                <div class="guarantee-box">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="guarantee-text">
-                        <h5>Garantia de Satisfação</h5>
-                        <p>Sua aprovação é fundamental. Ofereço suporte pós-publicação para garantir que seu site funcione perfeitamente.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-container">
-            <p>&copy; 2026 Diogo Moreira. Todos os direitos reservados.</p>
-            <p>Desenvolvimento de Sites de Alta Performance</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5535999675196?text=Ol%C3%A1%20Diogo,%20gostaria%20de%20um%20or%C3%A7amento%20para%20meu%20neg%C3%B3cio." class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Fale comigo diretamente no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+<!-- ===================== HEADER ===================== -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="#topo" class="brand" aria-label="Letícia Rocha — início">
+      <img src="assets/logo.png" alt="Letícia Rocha Fisioterapeuta">
     </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#agendar">Agendar</a>
+      <a href="#bebes">Bebês</a>
+      <a href="#atendimentos">Atendimentos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn btn-primary" href="#agendar">Agendar avaliação</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
 
-    <script>
-        // Efeito de background fixo ao rolar a página
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 30);
-        });
+<div class="drawer" id="drawer">
+  <a href="#agendar">Agendar</a>
+  <a href="#bebes">Bebês</a>
+  <a href="#atendimentos">Atendimentos</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#faq">Dúvidas</a>
+  <a class="btn btn-primary" href="#agendar">Agendar avaliação</a>
+</div>
 
-        // Intersection Observer para animação suave dos elementos
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="topo">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow rv"><i class="mark" aria-hidden="true"></i><span data-c="hero.selo">Fisioterapeuta · Osteopata</span></span>
+        <h1 class="rv d1"><span data-c="hero.titulo1">A dor tem uma causa.</span><br><span data-c="hero.titulo2">É dela que eu cuido.</span></h1>
+        <p class="lead rv d2" data-c="hero.texto">Há mais de 25 anos uso as mãos e a osteopatia para aliviar dores, devolver movimento e trazer bem-estar. Do recém-nascido ao idoso — com escuta, técnica e tempo.</p>
+        <div class="hero-cta rv d2">
+          <a class="btn btn-primary" href="#agendar" data-c="hero.botao1">Agendar minha avaliação</a>
+          <a class="btn btn-ghost" href="#bebes" data-c="hero.botao2">Osteopatia para bebês</a>
+        </div>
+        <div class="hero-stats rv d3" id="heroStats">
+          <div class="hstat"><b>+25</b><small>anos de<br>experiência</small></div>
+          <div class="hstat"><b>+10 mil</b><small>atendimentos<br>realizados</small></div>
+          <div class="hstat"><b>5,0 ★</b><small>avaliação<br>no Google</small></div>
+        </div>
+      </div>
 
-        document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+      <div class="hero-media rv d1">
+        <div class="blob">
+          <img src="assets/leticia-retrato.jpg" data-cimg="hero.foto" alt="Dra. Letícia Rocha, fisioterapeuta e osteopata" width="380" height="380" fetchpriority="high">
+        </div>
+        <div class="float-card fc-1">
+          <div class="fc-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <div><b data-c="hero.cardFoto1.titulo">Especialidade em bebês</b><small data-c="hero.cardFoto1.texto">Desde os primeiros dias</small></div>
+        </div>
+        <div class="float-card fc-2">
+          <div class="fc-ico"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><b data-c="hero.cardFoto2.titulo">Crefito2/25112F</b><small data-c="hero.cardFoto2.texto">Osteopatia · Posturologia</small></div>
+        </div>
+      </div>
+    </div>
 
-        // Menu Mobile Hamburguer
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        const closeMenu = document.getElementById('closeMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+    <div class="strip rv d2">
+      <ul id="stripList">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+          <div><b>Atendimento humanizado</b><small>Individual e sem pressa</small></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Hora marcada</b><small>Sem sala de espera lotada</small></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4z"/></svg>
+          <div><b>Tratamento da causa</b><small>Não apenas do sintoma</small></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <div><b>Sem encaminhamento</b><small>Agende direto comigo</small></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        function openMenu() {
-            mobileNav.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
+<!-- ===================== AGENDAMENTO ===================== -->
+<section class="sec book" id="agendar">
+  <div class="wrap book-grid">
+    <div class="book-side rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Agendamento</span>
+      <h2 data-c="agendamento.titulo">Vamos entender o seu caso antes da conversa</h2>
+      <p class="lead" data-c="agendamento.texto">Três perguntas rápidas. Ao final, sua mensagem chega até mim já organizada — e a gente ganha tempo para o que realmente importa.</p>
+      <div class="book-note">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <span>Nada é enviado automaticamente. No fim, o WhatsApp abre com a mensagem pronta e você ainda pode acrescentar o que quiser antes de mandar.</span>
+      </div>
+    </div>
 
-        function closeMenuFn() {
-            mobileNav.classList.remove('open');
-            document.body.style.overflow = 'auto';
-        }
+    <div class="wizard rv d1" id="wizard">
+      <div class="wz-top">
+        <h3>Agende sua avaliação</h3>
+        <span class="wz-count" id="wzCount">Passo 1 de 3</span>
+      </div>
+      <div class="bar"><i id="wzBar"></i></div>
 
-        menuToggle.addEventListener('click', openMenu);
-        closeMenu.addEventListener('click', closeMenuFn);
-        mobileLinks.forEach(link => link.addEventListener('click', closeMenuFn));
+      <!-- PASSO 1 -->
+      <div class="wz-step on" data-step="1">
+        <div class="wz-q">Para quem é o atendimento?</div>
+        <div class="wz-hint">Cada fase da vida pede uma abordagem diferente.</div>
+        <div class="opts" id="optPublico"></div>
+      </div>
 
-        // Validação e Feedback do Formulário
-        document.getElementById('project-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('name');
-            const segment = document.getElementById('segment');
-            const whatsapp = document.getElementById('whatsapp');
-            const message = document.getElementById('message');
-            
-            let isValid = true;
+      <!-- PASSO 2 -->
+      <div class="wz-step" data-step="2">
+        <div class="wz-q">O que está incomodando?</div>
+        <div class="wz-hint">Escolha o que mais se aproxima — detalhamos na conversa.</div>
+        <div class="opts chips" id="optQueixa"></div>
+        <div class="wz-nav">
+          <button class="wz-back" data-back><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Voltar</button>
+        </div>
+      </div>
 
-            // Validação Simples de Campo Requerido
-            [name, segment, whatsapp, message].forEach(field => {
-                if(!field.value.trim()) {
-                    field.classList.add('is-invalid');
-                    field.classList.remove('is-valid');
-                    isValid = false;
-                } else {
-                    field.classList.add('is-valid');
-                    field.classList.remove('is-invalid');
-                }
-            });
+      <!-- PASSO 3 -->
+      <div class="wz-step" data-step="3">
+        <div class="wz-q">Qual o melhor horário para você?</div>
+        <div class="wz-hint">Assim já procuro um encaixe que caiba na sua rotina.</div>
+        <div class="opts one" id="optHorario"></div>
+        <div class="wz-nav">
+          <button class="wz-back" data-back><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Voltar</button>
+        </div>
+      </div>
 
-            if(!isValid) {
-                alert('Por favor, preencha todos os campos corretamente para que eu possa avaliar seu projeto de forma assertiva.');
-                return;
-            }
-            
-            // Feedback Visual de Sucesso
-            const submitBtn = this.querySelector('.btn-submit');
-            submitBtn.style.backgroundColor = '#34c759';
-            submitBtn.style.color = '#ffffff';
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Solicitação Enviada com Sucesso!';
-            
-            setTimeout(() => {
-                alert('Obrigado pelo envio! Analisarei os detalhes e entrarei em contato via WhatsApp nas próximas horas.');
-                this.reset();
-                // Resetar classes visuais
-                [name, segment, whatsapp, message].forEach(field => {
-                    field.classList.remove('is-valid', 'is-invalid');
-                });
-                submitBtn.style.backgroundColor = 'var(--brand-primary)';
-                submitBtn.style.color = 'var(--bg-main)';
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Solicitação Comercial';
-            }, 500);
-        });
-    </script>
+      <!-- PASSO 4 — resumo -->
+      <div class="wz-step" data-step="4">
+        <div class="wz-q">Tudo certo. Só falta enviar.</div>
+        <div class="wz-hint">Confira o resumo — é isso que vai chegar até mim.</div>
+        <div class="resumo">
+          <h4>Resumo do seu agendamento</h4>
+          <dl>
+            <div class="row"><dt>Atendimento para</dt><dd id="rPublico">—</dd></div>
+            <div class="row"><dt>Queixa principal</dt><dd id="rQueixa">—</dd></div>
+            <div class="row"><dt>Melhor horário</dt><dd id="rHorario">—</dd></div>
+          </dl>
+        </div>
+        <p class="wz-final">Ao enviar, o WhatsApp abre com essa mensagem pronta. Você ainda pode acrescentar qualquer detalhe antes de mandar.</p>
+        <a class="btn btn-wpp wz-send" id="wzSend" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          Enviar no WhatsApp
+        </a>
+        <div class="wz-nav">
+          <button class="wz-back" data-back><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BEBÊS ===================== -->
+<section class="sec" id="bebes">
+  <div class="wrap baby-grid">
+    <div class="rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Especialidade</span>
+      <h2 data-c="bebes.titulo">Osteopatia para bebês: um cuidado delicado desde os primeiros dias</h2>
+      <p class="lead" data-c="bebes.texto">O nascimento é intenso para o corpo do bebê. Com toques extremamente suaves e seguros, a osteopatia pediátrica alivia tensões e desconfortos comuns dos primeiros meses — respeitando o tempo e a sensibilidade de cada pequeno.</p>
+      <ul class="checks" id="babyChecks">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Cólicas e gases</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Refluxo</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Dificuldade na amamentação</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Torcicolo congênito</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Assimetrias da cabecinha</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Sono agitado e irritabilidade</li>
+      </ul>
+      <div class="callout" data-c="bebes.destaque"><b>Para mamães e papais:</b> a primeira consulta inclui uma avaliação completa e uma conversa tranquila sobre tudo o que vocês quiserem perguntar. Vocês participam de todo o processo.</div>
+    </div>
+
+    <div class="baby-media rv d1">
+      <img src="assets/atendimento-bebe.jpg" data-cimg="bebes.foto" alt="Dra. Letícia Rocha em atendimento de osteopatia pediátrica" loading="lazy">
+      <span class="baby-badge"><i class="mark big" aria-hidden="true"></i><span data-c="bebes.selo">Desde os primeiros dias</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ATENDIMENTOS ===================== -->
+<section class="sec about" id="atendimentos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Atendimentos</span>
+      <h2 data-c="atendimentos.titulo">Um cuidado para cada fase da vida</h2>
+      <p class="lead" data-c="atendimentos.texto">Embora os bebês tenham um lugar especial no meu trabalho, atendo pessoas de todas as idades — cada uma com um plano de cuidado próprio.</p>
+    </div>
+
+    <div class="cards" id="cardsBox">
+      <article class="card rv">
+        <div class="card-ico">👶</div>
+        <h3>Bebês e crianças</h3>
+        <p>Toques suaves para os desconfortos dos primeiros meses e para o desenvolvimento saudável na infância.</p>
+        <ul class="tags"><li>Cólicas e refluxo</li><li>Amamentação</li><li>Torcicolo congênito</li></ul>
+      </article>
+      <article class="card rv d1">
+        <div class="card-ico">🤰</div>
+        <h3>Gestantes e pós-parto</h3>
+        <p>Alívio das dores da gestação, preparo do corpo para o parto e recuperação no puerpério.</p>
+        <ul class="tags"><li>Dor lombar e ciática</li><li>Preparo para o parto</li><li>Pós-parto</li></ul>
+      </article>
+      <article class="card rv d2">
+        <div class="card-ico">🧘</div>
+        <h3>Adultos</h3>
+        <p>Tratamento das dores do dia a dia e das tensões acumuladas pela rotina, pelo trabalho e pelo estresse.</p>
+        <ul class="tags"><li>Dores na coluna</li><li>Enxaqueca e ATM</li><li>Tensões musculares</li></ul>
+      </article>
+      <article class="card rv d3">
+        <div class="card-ico">🌿</div>
+        <h3>Idosos</h3>
+        <p>Mais mobilidade, equilíbrio e autonomia para viver essa fase com conforto e qualidade de vida.</p>
+        <ul class="tags"><li>Mobilidade</li><li>Dores articulares</li><li>Equilíbrio</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section class="sec" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-media rv">
+      <div class="main"><img src="assets/atendimento-adulto.jpg" data-cimg="sobre.foto" alt="Dra. Letícia Rocha realizando uma técnica manual" loading="lazy"></div>
+      <div class="mini"><img src="assets/bebe-bola.jpg" data-cimg="sobre.fotoMini" alt="Atendimento com bebê no consultório" loading="lazy"></div>
+    </div>
+
+    <div class="rv d1">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Quem cuida de você</span>
+      <h2 data-c="sobre.titulo">Letícia Rocha</h2>
+      <p class="lead" data-c="sobre.texto">Sou fisioterapeuta e osteopata, com mais de duas décadas e meia de estrada e mais de 10 mil atendimentos realizados. Ao longo desse caminho, aprendi que o alívio real começa quando a gente escuta o corpo em vez de só silenciar o sintoma.</p>
+      <div class="quote" data-c="sobre.citacao">"Cada corpo conta uma história. <b>Meu trabalho é ouvir com as mãos.</b>"</div>
+      <ul class="trail" id="trailBox">
+        <li><b>Fisioterapia</b><small>A base de tudo: anatomia, movimento e reabilitação.</small></li>
+        <li><b>Especialização em Osteopatia</b><small>A virada de chave: tratar o corpo como um todo.</small></li>
+        <li><b>Osteopatia pediátrica</b><small>O cuidado com bebês, que virou a marca do meu trabalho.</small></li>
+        <li><b>+10 mil atendimentos</b><small>Mais de 25 anos de prática clínica e atualização constante.</small></li>
+      </ul>
+      <span class="crefito">
+        <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        Fisioterapeuta · Osteopatia adulto e pediátrica · <span data-c="contato.crefito">Crefito2/25112F</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== A CONSULTA ===================== -->
+<section class="sec about" id="consulta">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>A consulta</span>
+      <h2 data-c="consulta.titulo">Sua primeira sessão, passo a passo</h2>
+      <p class="lead" data-c="consulta.texto">Sem mistério e sem pressa. Você entende o que está acontecendo no seu corpo e sai sabendo o próximo passo.</p>
+    </div>
+    <div class="steps" id="stepsBox">
+      <div class="step rv">
+        <span class="n">01</span>
+        <h3>Escuta e avaliação</h3>
+        <p>Conversamos sobre sua história, queixas e rotina. Em seguida, avalio o corpo por inteiro para encontrar a origem do desconforto — não apenas onde ele aparece.</p>
+      </div>
+      <div class="step rv d1">
+        <span class="n">02</span>
+        <h3>Tratamento manual</h3>
+        <p>Aplico técnicas de osteopatia e terapia manual escolhidas para o seu caso, com toques precisos, seguros e adaptados à sua idade e sensibilidade.</p>
+      </div>
+      <div class="step rv d2">
+        <span class="n">03</span>
+        <h3>Plano de cuidado</h3>
+        <p>Você sai sabendo o que foi encontrado, o que foi feito e quais os próximos passos — com orientações práticas para manter os resultados em casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section class="sec testi" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Depoimentos</span>
+      <h2 data-c="depoimentos.titulo">Quem já passou pelas minhas mãos</h2>
+      <p class="lead" data-c="depoimentos.texto">Bebês que voltam a dormir, adultos que voltam a se mover. Quem conta são os pacientes.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="rv">
+        <div class="video-box">
+          <div class="video-inner" id="videoSlot">
+            <!-- O link do vídeo é definido em CONFIG.videoDepoimento, no <script> lá embaixo -->
+            <div class="video-ph" id="videoPh">
+              <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <b>Depoimento em vídeo</b>
+              <small>Depoimento de uma mãe atendida no consultório.</small>
+            </div>
+          </div>
+        </div>
+        <div class="video-cap">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+          <span data-c="depoimentos.videoLegenda">Depoimento de uma mãe atendida no consultório</span>
+        </div>
+      </div>
+
+      <div class="reviews rv d1">
+        <div class="gbadge">
+          <div class="g">G</div>
+          <div>
+            <b>5,0 <span class="stars" aria-hidden="true">★★★★★</span></b>
+            <small>Avaliações do Google — pacientes verificados</small>
+          </div>
+        </div>
+
+        <div class="carousel" id="carousel">
+          <div class="viewport">
+            <div class="track" id="track" aria-live="polite">
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Simplesmente o melhor atendimento que já tive. Uma profissional incrível, humana e atenciosa. Me senti muito bem após o atendimento e me ajudou muito com a minha questão. Recomendo de olhos fechados!</p>
+                <footer><div class="avatar">M</div><div><b>Maria Clara Menezes</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Letícia é uma profissional impecável. Tem muito talento para cuidar de bebês: carinhosa, acolhedora e competente em todas as etapas. Fiquei feliz de ver o tamanho do cuidado que ela teve com a minha bebê, do início ao fim do tratamento.</p>
+                <footer><div class="avatar">N</div><div><b>Nathalia Cerqueira</b><small>Mãe de paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Minha consulta foi excepcional. Entrei uma e saí completamente outra. Atendimento impecável, personalizado, cheio de atenção e acolhimento. Se tivesse 6 estrelas eu daria.</p>
+                <footer><div class="avatar">F</div><div><b>Flávia Vasconcelos</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Maravilhosa! Uma profissional totalmente humanizada. Ela não cuida só do seu bebê, ela cuida de você. Fez um trabalho incrível com a minha pequena.</p>
+                <footer><div class="avatar">S</div><div><b>Sabrina Moura</b><small>Mãe de paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Tenho sido atendido pela Dra. Letícia por dores vindas de muitas horas de trabalho em posição desconfortável. Graças a ela melhorei significativamente e sigo nas minhas atividades profissionais sem dores.</p>
+                <footer><div class="avatar">M</div><div><b>Marco Santos</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Melhor clínica de osteopatia da região. O atendimento é humanizado da recepção à consulta, e o diferencial é que não tratam apenas o sintoma: buscam a causa do problema. Vale cada centavo.</p>
+                <footer><div class="avatar">L</div><div><b>Lucas Guimarães</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Com sua técnica, mãos mágicas e muito carinho, ajudou na minha recuperação — fez sumir dores que me acompanhavam havia dias e me devolveu tranquilidade.</p>
+                <footer><div class="avatar">O</div><div><b>Olga Monnerat</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Excelente profissional. Atendimento nota 10: entrei toda torcida e saí caminhando. Altamente recomendada.</p>
+                <footer><div class="avatar">S</div><div><b>Simone Accorsi</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Consulta profunda, com avaliação criteriosa e um cuidado ao mesmo tempo amoroso e técnico. O tratamento chegou na causa da dor e a eliminou por completo.</p>
+                <footer><div class="avatar">H</div><div><b>Heryan Egito</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+              <div class="slide"><figure class="review">
+                <div class="qm" aria-hidden="true">"</div>
+                <p>Melhor osteopata que conheço. Além de excelente profissional, o atendimento é super acolhedor. Já fui atendida em várias ocasiões e sempre saio 100%.</p>
+                <footer><div class="avatar">G</div><div><b>Gabriela Rocha Villalobos</b><small>Paciente</small></div><span class="stars" aria-hidden="true">★★★★★</span></footer>
+              </figure></div>
+
+            </div>
+          </div>
+          <div class="ctrls">
+            <button class="arrow" id="prev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="arrow" id="next" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+            <div class="dots" id="dots"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp real -->
+    <div class="wpp">
+      <div class="wpp-txt rv">
+        <span class="eyebrow">
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+          O resultado que chega no WhatsApp
+        </span>
+        <h2 data-c="whatsappReal.titulo">"Ele mama e dorme.<br>Está outra criança."</h2>
+        <p class="lead" data-c="whatsappReal.texto">Na manhã seguinte ao atendimento, essa mãe mandou uma mensagem. O bebê voltou a mamar, passou a dormir de 3 em 3 horas e acordou sorrindo.</p>
+        <p style="color:var(--muted);font-size:.97rem" data-c="whatsappReal.texto2">É esse o tipo de mudança que a osteopatia pediátrica busca: não silenciar o choro, mas resolver o que o está causando.</p>
+        <a class="btn btn-primary" href="#agendar">Contar o meu caso</a>
+      </div>
+
+      <div class="phone rv d1" role="img" aria-label="Conversa de WhatsApp em que a mãe de um paciente relata que o bebê voltou a mamar e a dormir bem após o atendimento">
+        <div class="phone-top">
+          <div class="pf">M</div>
+          <div><b>Mãe de paciente</b><small>online</small></div>
+        </div>
+        <div class="chat" id="chatBox">
+          <span class="day">sex., 8 de mai.</span>
+          <div class="bub in">Oie Dra. Letícia!! Bom dia…<br>Meu Deus!! Ele mama e dorme 🙏👏🙌<br><br>Glória a Deus, está outra criança!!<time>09:49</time></div>
+          <div class="bub in">Está de 3/3h<time>09:50</time></div>
+          <div class="bub in">Acordou de manhã, até sorriu, ficou no balanço e depois dormiu.<time>09:50</time></div>
+          <div class="bub in">Foi de Deus eu ter ido aí!!<time>09:50</time></div>
+          <div class="bub out">Graças a Deus!!!!<time>09:50 ✓✓</time></div>
+          <div class="bub out">Fico muito feliz!<time>09:51 ✓✓</time></div>
+        </div>
+        <div class="wpp-note">
+          <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+          Mensagem real, publicada com autorização
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESPAÇO ===================== -->
+<section class="sec space">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>O consultório</span>
+      <h2 data-c="consultorio.titulo">Um espaço calmo — porque o corpo só solta onde se sente seguro</h2>
+    </div>
+    <div class="gal" id="galBox">
+      <figure class="rv"><img src="assets/sala-atendimento.jpg" alt="Sala de atendimento com maca e bola terapêutica" loading="lazy"><figcaption>Sala de atendimento</figcaption></figure>
+      <figure class="rv d1"><img src="assets/consultorio.jpg" alt="Recepção do consultório" loading="lazy"><figcaption>Recepção</figcaption></figure>
+      <figure class="rv d2"><img src="assets/recepcao.jpg" alt="Espaço de avaliação" loading="lazy"><figcaption>Avaliação</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="sec faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Dúvidas frequentes</span>
+      <h2 data-c="faq.titulo">Perguntas que sempre me fazem</h2>
+    </div>
+    <div class="faq-list" id="faqBox">
+      <details class="rv" open>
+        <summary>O que é osteopatia?</summary>
+        <p>É uma abordagem terapêutica que usa técnicas manuais para avaliar e tratar o corpo como um todo. Em vez de olhar apenas para o local da dor, a osteopatia busca a causa do problema — que muitas vezes está em outra região — para promover um alívio real e duradouro.</p>
+      </details>
+      <details class="rv">
+        <summary>A partir de qual idade o bebê pode ser atendido?</summary>
+        <p>Desde os primeiros dias de vida. As técnicas usadas em bebês são extremamente suaves e seguras, completamente diferentes das aplicadas em adultos, e sempre respeitam o conforto do pequeno.</p>
+      </details>
+      <details class="rv">
+        <summary>O tratamento dói?</summary>
+        <p>Não. As técnicas são precisas e confortáveis. Em adultos, algumas manobras podem gerar uma sensação momentânea de pressão ou alongamento, mas o tratamento nunca deve ser doloroso — e em bebês o toque é sempre delicado.</p>
+      </details>
+      <details class="rv">
+        <summary>Quantas sessões são necessárias?</summary>
+        <p>Depende de cada caso. Muitas pessoas sentem melhora já na primeira sessão, mas o número ideal é definido na avaliação inicial, de acordo com a queixa, o histórico e a resposta do corpo ao tratamento.</p>
+      </details>
+      <details class="rv">
+        <summary>Preciso de encaminhamento médico?</summary>
+        <p>Não é necessário. Você pode agendar sua avaliação diretamente. Quando o caso pede acompanhamento médico em conjunto, eu mesma oriento e trabalho de forma integrada com outros profissionais.</p>
+      </details>
+      <details class="rv">
+        <summary>Onde acontecem os atendimentos?</summary>
+        <p>No consultório em Icaraí, Niterói (RJ) — Rua Miguel de Frias, 150, sala 1309 —, das 9h às 19h, sempre com hora marcada. Os valores e os horários disponíveis são passados na conversa pelo WhatsApp.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA + CONTATO ===================== -->
+<section class="sec cta" id="contato">
+  <div class="wrap cta-grid">
+    <div class="rv">
+      <h2 data-c="cta.titulo">Seu corpo merece esse cuidado</h2>
+      <p data-c="cta.texto">Seja para o seu bebê, para a sua gestação ou para aquela dor que já dura tempo demais — comece por uma conversa. Respondo pessoalmente.</p>
+      <a class="btn btn-white" href="#agendar">Agendar minha avaliação</a>
+    </div>
+
+    <div class="info rv d1">
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1 4.2 2 2 0 0 1 3 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L7.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 21 16.9z"/></svg>
+          <div><b>WhatsApp</b><span><a href="#" class="js-wpp">Enviar mensagem</a></span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Consultório</b><span><a href="#" class="js-maps" target="_blank" rel="noopener" data-c="contato.endereco">Rua Miguel de Frias, 150 / sala 1309<br>Icaraí — Niterói, RJ</a></span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Horários</b><span data-c="contato.horarios">Das 9h às 19h, com hora marcada</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>
+          <div><b>Instagram</b><span><a href="#" class="js-insta" target="_blank" rel="noopener">@leticia_rocha_osteo</a></span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <img src="assets/logo-branco.png" alt="Letícia Rocha Fisioterapeuta">
+        <p>Fisioterapeuta osteopata · +25 anos de experiência e +10 mil atendimentos. Osteopatia para bebês, gestantes, adultos e idosos.<br>Crefito2/25112F</p>
+      </div>
+      <div>
+        <h4>Atendimentos</h4>
+        <ul>
+          <li><a href="#bebes">Bebês e crianças</a></li>
+          <li><a href="#atendimentos">Gestantes e pós-parto</a></li>
+          <li><a href="#atendimentos">Adultos</a></li>
+          <li><a href="#atendimentos">Idosos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="#agendar">Agendar avaliação</a></li>
+          <li><a href="#sobre">Sobre a Letícia</a></li>
+          <li><a href="#consulta">A consulta</a></li>
+          <li><a href="#faq">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" class="js-maps" target="_blank" rel="noopener" data-c="contato.endereco">Rua Miguel de Frias, 150 / 1309<br>Icaraí — Niterói, RJ</a></li>
+          <li data-c="contato.horarios">Das 9h às 19h, com hora marcada</li>
+          <li><a href="#" class="js-wpp" data-c="contato.telefoneExibicao">(11) 91787-9980</a></li>
+          <li><a href="#" class="js-insta" target="_blank" rel="noopener">@leticia_rocha_osteo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© <span id="ano">2026</span> Letícia Rocha · Fisioterapeuta Osteopata</span>
+      <span>Desenvolvido por <a href="https://devdiogomoreira.com.br" target="_blank" rel="noopener">Diogo Moreira</a></span>
+      <span class="disclaimer">Este site não substitui avaliação ou acompanhamento médico.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wpp js-wpp" href="#" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm5.5-5.8c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MedicalBusiness",
+  "name":"Dra. Letícia Rocha — Fisioterapeuta Osteopata",
+  "description":"Osteopatia adulto e pediátrica e posturologia. Mais de 25 anos de experiência e +10 mil atendimentos.",
+  "image":"assets/leticia-retrato.jpg",
+  "medicalSpecialty":"Physiotherapy",
+  "priceRange":"$$",
+  "sameAs":["https://www.instagram.com/leticia_rocha_osteo"],
+  "telephone":"+5511917879980",
+  "address":{"@type":"PostalAddress","streetAddress":"Rua Miguel de Frias, 150, sala 1309","addressLocality":"Niterói","addressRegion":"RJ","addressCountry":"BR"},
+  "openingHours":"Mo-Fr 09:00-19:00",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5","reviewCount":"21"}
+}
+</script>
+
+<script>
+/* =========================================================
+   CONTEÚDO — tudo vem do arquivo content.json,
+   editável pelo painel em /admin.html
+   ========================================================= */
+const FALLBACK = {
+  contato: {
+    whatsapp: '5511917879980',
+    mensagem: 'Olá, Dra. Letícia! Vi seu site e gostaria de agendar uma avaliação.',
+    instagram: 'leticia_rocha_osteo',
+    endereco: 'Rua Miguel de Frias, 150 / sala 1309<br>Icaraí — Niterói, RJ',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Rua+Miguel+de+Frias,+150,+Icara%C3%AD,+Niter%C3%B3i,+RJ'
+  },
+  depoimentos: { video: 'assets/depoimento-mae.mp4' }
+};
+
+let C = FALLBACK;
+const get = (obj, path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj);
+const esc = t => String(t == null ? '' : t);
+
+/* ---------- aplica o conteúdo ---------- */
+function hidratar(c) {
+  // textos
+  document.querySelectorAll('[data-c]').forEach(el => {
+    const v = get(c, el.dataset.c);
+    if (v != null && v !== '') el.innerHTML = esc(v).replace(/\n/g, '<br>');
+  });
+  // imagens
+  document.querySelectorAll('[data-cimg]').forEach(el => {
+    const v = get(c, el.dataset.cimg);
+    if (v) el.src = v;
+  });
+
+  const box = id => document.getElementById(id);
+
+  // hero: números
+  if (c.hero?.stats && box('heroStats')) {
+    box('heroStats').innerHTML = c.hero.stats.map(s =>
+      `<div class="hstat"><b>${esc(s.numero)}</b><small>${esc(s.texto)}</small></div>`).join('');
+  }
+
+  // faixa de confiança
+  const ICO = [
+    '<path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/>',
+    '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    '<path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4z"/>',
+    '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'
+  ];
+  if (c.confianca && box('stripList')) {
+    box('stripList').innerHTML = c.confianca.map((it, n) =>
+      `<li><svg viewBox="0 0 24 24">${ICO[n % 4]}</svg><div><b>${esc(it.titulo)}</b><small>${esc(it.texto)}</small></div></li>`).join('');
+  }
+
+  // bebês: lista
+  if (c.bebes?.itens && box('babyChecks')) {
+    box('babyChecks').innerHTML = c.bebes.itens.map(it =>
+      `<li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>${esc(it)}</li>`).join('');
+  }
+
+  // atendimentos
+  if (c.atendimentos?.cards && box('cardsBox')) {
+    box('cardsBox').innerHTML = c.atendimentos.cards.map((cd, n) => `
+      <article class="card rv${n ? ' d' + n : ''}">
+        <div class="card-ico">${esc(cd.icone)}</div>
+        <h3>${esc(cd.titulo)}</h3>
+        <p>${esc(cd.texto)}</p>
+        <ul class="tags">${(cd.tags || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+      </article>`).join('');
+  }
+
+  // trajetória
+  if (c.sobre?.trajetoria && box('trailBox')) {
+    box('trailBox').innerHTML = c.sobre.trajetoria.map(t =>
+      `<li><b>${esc(t.titulo)}</b><small>${esc(t.texto)}</small></li>`).join('');
+  }
+
+  // passos da consulta
+  if (c.consulta?.passos && box('stepsBox')) {
+    box('stepsBox').innerHTML = c.consulta.passos.map((p, n) => `
+      <div class="step rv${n ? ' d' + n : ''}">
+        <span class="n">${String(n + 1).padStart(2, '0')}</span>
+        <h3>${esc(p.titulo)}</h3>
+        <p>${esc(p.texto)}</p>
+      </div>`).join('');
+  }
+
+  // avaliações
+  if (c.depoimentos?.avaliacoes && box('track')) {
+    box('track').innerHTML = c.depoimentos.avaliacoes.map(a => `
+      <div class="slide"><figure class="review">
+        <div class="qm" aria-hidden="true">"</div>
+        <p>${esc(a.texto)}</p>
+        <footer>
+          <div class="avatar">${esc(a.nome).charAt(0)}</div>
+          <div><b>${esc(a.nome)}</b><small>${esc(a.papel || 'Paciente')}</small></div>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+        </footer>
+      </figure></div>`).join('');
+  }
+
+  // conversa do whatsapp
+  if (c.whatsappReal?.mensagens && box('chatBox')) {
+    box('chatBox').innerHTML =
+      '<span class="day">sex., 8 de mai.</span>' +
+      c.whatsappReal.mensagens.map(m => {
+        const eu = m.de === 'leticia';
+        return `<div class="bub ${eu ? 'out' : 'in'}">${esc(m.texto)}<time>${esc(m.hora)}${eu ? ' ✓✓' : ''}</time></div>`;
+      }).join('');
+  }
+
+  // galeria
+  if (c.consultorio?.fotos && box('galBox')) {
+    box('galBox').innerHTML = c.consultorio.fotos.map((f, n) => `
+      <figure class="rv${n ? ' d' + n : ''}">
+        <img src="${esc(f.src)}" alt="${esc(f.legenda)}" loading="lazy">
+        <figcaption>${esc(f.legenda)}</figcaption>
+      </figure>`).join('');
+  }
+
+  // faq
+  if (c.faq?.itens && box('faqBox')) {
+    box('faqBox').innerHTML = c.faq.itens.map((f, n) => `
+      <details class="rv"${n === 0 ? ' open' : ''}>
+        <summary>${esc(f.pergunta)}</summary>
+        <p>${esc(f.resposta)}</p>
+      </details>`).join('');
+  }
+
+  // links
+  const wa = 'https://wa.me/' + (c.contato?.whatsapp || '') + '?text=' + encodeURIComponent(c.contato?.mensagem || '');
+  document.querySelectorAll('.js-wpp').forEach(a => { a.href = wa; a.target = '_blank'; a.rel = 'noopener'; });
+  document.querySelectorAll('.js-maps').forEach(a => { if (c.contato?.mapsUrl) a.href = c.contato.mapsUrl; });
+  document.querySelectorAll('.js-insta').forEach(a => {
+    if (c.contato?.instagram) {
+      a.href = 'https://www.instagram.com/' + c.contato.instagram;
+      a.textContent = '@' + c.contato.instagram;
+    }
+  });
+  window.WA_LINK = wa;
+}
+
+/* ---------- vídeo ---------- */
+function montarVideo(url) {
+  url = (url || '').trim();
+  const slot = document.getElementById('videoSlot');
+  const ph = document.getElementById('videoPh');
+  if (!url || !slot) return;
+  let el;
+  const yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+  const vm = url.match(/vimeo\.com\/(\d+)/);
+  if (yt) {
+    el = document.createElement('iframe');
+    el.src = 'https://www.youtube.com/embed/' + yt[1] + '?rel=0';
+    el.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
+    el.allowFullscreen = true; el.loading = 'lazy'; el.title = 'Depoimento em vídeo';
+  } else if (vm) {
+    el = document.createElement('iframe');
+    el.src = 'https://player.vimeo.com/video/' + vm[1];
+    el.allowFullscreen = true; el.loading = 'lazy'; el.title = 'Depoimento em vídeo';
+  } else {
+    el = document.createElement('video');
+    el.src = url; el.controls = true; el.playsInline = true; el.preload = 'none';
+    el.setAttribute('poster', 'assets/depoimento-poster.jpg');
+  }
+  if (ph) ph.remove();
+  slot.appendChild(el);
+}
+
+/* =========================================================
+   WIZARD DE AGENDAMENTO
+   ========================================================= */
+function iniciarWizard() {
+  const PUBLICOS = [
+    { id:'bebe',      em:'👶', t:'Bebê',                  s:'0 a 2 anos' },
+    { id:'crianca',   em:'🧒', t:'Criança',               s:'2 a 12 anos' },
+    { id:'gestante',  em:'🤰', t:'Gestante ou pós-parto', s:'gestação e puerpério' },
+    { id:'adulto',    em:'🧘', t:'Adulto',                s:'dores e tensões do dia a dia' },
+    { id:'idoso',     em:'🌿', t:'Idoso',                 s:'mobilidade e equilíbrio' },
+    { id:'conversar', em:'💬', t:'Prefiro conversar',     s:'me ajuda a entender' }
+  ];
+  const QUEIXAS = {
+    bebe:     ['Cólicas e gases','Refluxo','Dificuldade na amamentação','Torcicolo congênito','Assimetria da cabecinha','Sono agitado e choro','Outro / não sei dizer'],
+    crianca:  ['Postura','Dores de crescimento','Otites de repetição','Sono e irritabilidade','Desenvolvimento motor','Outro / não sei dizer'],
+    gestante: ['Dor lombar e ciática','Desconfortos da gestação','Preparo para o parto','Recuperação pós-parto','Outro / não sei dizer'],
+    adulto:   ['Dor lombar','Dor cervical e ombros','Enxaqueca','ATM (mandíbula)','Tensão do trabalho','Dor crônica','Outro / não sei dizer'],
+    idoso:    ['Mobilidade e equilíbrio','Dores articulares','Postura','Bem-estar geral','Outro / não sei dizer'],
+    conversar:['Prefiro explicar na conversa']
+  };
+  const HORARIOS = [
+    { em:'🌅', t:'Manhã',    s:'até 12h' },
+    { em:'☀️', t:'Tarde',    s:'12h às 18h' },
+    { em:'🗓️', t:'Flexível', s:'me adapto ao seu horário' }
+  ];
+
+  const wizard = document.getElementById('wizard');
+  if (!wizard) return;
+  const steps  = [...wizard.querySelectorAll('.wz-step')];
+  const bar    = document.getElementById('wzBar');
+  const count  = document.getElementById('wzCount');
+  const boxPub = document.getElementById('optPublico');
+  const boxQue = document.getElementById('optQueixa');
+  const boxHor = document.getElementById('optHorario');
+  const send   = document.getElementById('wzSend');
+  const base   = 'https://wa.me/' + (C.contato?.whatsapp || '') + '?text=';
+  const state  = { publico:null, queixa:null, horario:null };
+  let step = 1;
+
+  const show = n => {
+    step = n;
+    steps.forEach(s => s.classList.toggle('on', +s.dataset.step === n));
+    const v = Math.min(n, 3);
+    bar.style.width = (n >= 4 ? 100 : v * 33.34) + '%';
+    count.textContent = n >= 4 ? 'Tudo pronto' : 'Passo ' + v + ' de 3';
+    if (n > 1) wizard.scrollIntoView({ block:'nearest', behavior:'smooth' });
+  };
+
+  boxPub.innerHTML = '';
+  PUBLICOS.forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.innerHTML = `<span class="em">${p.em}</span><span><b>${p.t}</b><small>${p.s}</small></span>`;
+    b.onclick = () => {
+      state.publico = p.t; state.queixa = null;
+      [...boxPub.children].forEach(c => c.classList.remove('on'));
+      b.classList.add('on');
+      montarQueixas(p.id);
+      if (p.id === 'conversar') { state.queixa = 'Prefere explicar na conversa'; show(3); }
+      else show(2);
+    };
+    boxPub.appendChild(b);
+  });
+
+  function montarQueixas(id) {
+    boxQue.innerHTML = '';
+    (QUEIXAS[id] || QUEIXAS.adulto).forEach(q => {
+      const b = document.createElement('button');
+      b.className = 'opt';
+      b.innerHTML = `<span><b>${q}</b></span>`;
+      b.onclick = () => {
+        state.queixa = q;
+        [...boxQue.children].forEach(c => c.classList.remove('on'));
+        b.classList.add('on');
+        show(3);
+      };
+      boxQue.appendChild(b);
+    });
+  }
+
+  boxHor.innerHTML = '';
+  HORARIOS.forEach(h => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.innerHTML = `<span class="em">${h.em}</span><span><b>${h.t}</b><small>${h.s}</small></span>`;
+    b.onclick = () => {
+      state.horario = h.t + ' (' + h.s + ')';
+      [...boxHor.children].forEach(c => c.classList.remove('on'));
+      b.classList.add('on');
+      resumir(); show(4);
+    };
+    boxHor.appendChild(b);
+  });
+
+  function resumir() {
+    document.getElementById('rPublico').textContent = state.publico || '—';
+    document.getElementById('rQueixa').textContent  = state.queixa  || '—';
+    document.getElementById('rHorario').textContent = state.horario || '—';
+    const msg = 'Olá, Dra. Letícia! Vim pelo site e gostaria de agendar uma avaliação.\n\n' +
+      '• Atendimento para: ' + state.publico + '\n' +
+      '• Queixa principal: ' + state.queixa + '\n' +
+      '• Melhor horário: ' + state.horario + '\n\n' +
+      'Podemos conversar?';
+    send.href = base + encodeURIComponent(msg);
+  }
+
+  wizard.querySelectorAll('[data-back]').forEach(b => {
+    b.onclick = () => {
+      if (step === 3 && state.publico === 'Prefiro conversar') return show(1);
+      show(Math.max(1, step - 1));
+    };
+  });
+  show(1);
+}
+
+/* =========================================================
+   CARROSSEL
+   ========================================================= */
+function iniciarCarrossel() {
+  const track = document.getElementById('track');
+  const dotsBox = document.getElementById('dots');
+  const carousel = document.getElementById('carousel');
+  if (!track || !track.children.length) return;
+  const slides = [...track.children];
+  let i = 0, timer = null, dragging = false, startX = 0, deltaX = 0;
+
+  dotsBox.innerHTML = '';
+  slides.forEach((_, n) => {
+    const b = document.createElement('button');
+    b.className = 'dot' + (n === 0 ? ' on' : '');
+    b.setAttribute('aria-label', 'Ir para a avaliação ' + (n + 1));
+    b.onclick = () => go(n);
+    dotsBox.appendChild(b);
+  });
+  const dots = [...dotsBox.children];
+
+  const render = () => {
+    track.style.transform = 'translateX(' + (-i * 100) + '%)';
+    dots.forEach((d, n) => d.classList.toggle('on', n === i));
+  };
+  const go = n => { i = (n + slides.length) % slides.length; render(); restart(); };
+  const next = () => go(i + 1);
+  const prev = () => go(i - 1);
+
+  document.getElementById('next').onclick = next;
+  document.getElementById('prev').onclick = prev;
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const start = () => { if (!reduce) timer = setInterval(() => { i = (i + 1) % slides.length; render(); }, 6000); };
+  const stop = () => clearInterval(timer);
+  const restart = () => { stop(); start(); };
+  start();
+
+  carousel.onmouseenter = stop;
+  carousel.onmouseleave = start;
+  carousel.setAttribute('tabindex', '0');
+  carousel.onkeydown = e => {
+    if (e.key === 'ArrowRight') { next(); e.preventDefault(); }
+    if (e.key === 'ArrowLeft')  { prev(); e.preventDefault(); }
+  };
+
+  const down = x => { dragging = true; startX = x; deltaX = 0; stop(); track.style.transition = 'none'; };
+  const move = x => {
+    if (!dragging) return;
+    deltaX = x - startX;
+    track.style.transform = 'translateX(calc(' + (-i * 100) + '% + ' + deltaX + 'px))';
+  };
+  const up = () => {
+    if (!dragging) return;
+    dragging = false;
+    track.style.transition = '';
+    if (Math.abs(deltaX) > 60) { deltaX < 0 ? next() : prev(); } else { render(); start(); }
+  };
+  track.addEventListener('touchstart', e => down(e.touches[0].clientX), { passive:true });
+  track.addEventListener('touchmove',  e => move(e.touches[0].clientX), { passive:true });
+  track.addEventListener('touchend', up);
+  track.addEventListener('mousedown', e => { e.preventDefault(); down(e.clientX); });
+  addEventListener('mousemove', e => move(e.clientX));
+  addEventListener('mouseup', up);
+  render();
+}
+
+/* =========================================================
+   HEADER / MENU / REVEAL
+   ========================================================= */
+const hdr = document.getElementById('hdr');
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+const onScroll = () => hdr.classList.toggle('on', scrollY > 20);
+onScroll();
+addEventListener('scroll', onScroll, { passive:true });
+
+const toggleMenu = open => {
+  const o = open ?? !drawer.classList.contains('on');
+  drawer.classList.toggle('on', o);
+  burger.classList.toggle('on', o);
+  burger.setAttribute('aria-expanded', o);
+  document.body.style.overflow = o ? 'hidden' : '';
+};
+burger.onclick = () => toggleMenu();
+drawer.querySelectorAll('a').forEach(a => a.onclick = () => toggleMenu(false));
+addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+
+function revelar() {
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold:.12, rootMargin:'0px 0px -40px' });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+}
+
+/* =========================================================
+   START
+   ========================================================= */
+(async function () {
+  try {
+    const r = await fetch('content.json?v=' + Date.now());
+    if (r.ok) { C = await r.json(); hidratar(C); }
+  } catch (e) { /* sem content.json: mantém o conteúdo do HTML */ }
+  montarVideo(C.depoimentos?.video || FALLBACK.depoimentos.video);
+  iniciarWizard();
+  iniciarCarrossel();
+  revelar();
+  document.getElementById('ano').textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>

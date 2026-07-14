@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel — Letícia Rocha</title>
+<link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --magenta:#CC2F89; --coral:#FF8A98; --cream:#FCEFEC; --line:#EFDCD8;
+  --ink:#3B2130; --muted:#8A6C7C; --ok:#128C4A;
+  --grad:linear-gradient(135deg,var(--coral),var(--magenta));
+  --display:'Baloo 2',system-ui,sans-serif; --body:'Nunito Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.2}
+a{color:var(--magenta)}
+button{font:inherit;cursor:pointer;border:0}
+
+/* topo */
+.top{position:sticky;top:0;z-index:20;background:rgba(252,239,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px}
+.top img{height:34px}
+.top .sp{flex:1}
+.badge{font-size:.78rem;font-weight:700;color:var(--magenta);background:rgba(204,47,137,.09);padding:5px 11px;border-radius:100px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--display);font-weight:700;padding:11px 20px;border-radius:100px;transition:.25s;white-space:nowrap}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 20px rgba(204,47,137,.25)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:2px solid var(--line);color:var(--muted);background:#fff}
+.btn-ghost:hover{border-color:var(--magenta);color:var(--magenta)}
+.btn[disabled]{opacity:.5;pointer-events:none}
+
+.wrap{max-width:1000px;margin:0 auto;padding:26px 20px 120px}
+
+/* login */
+.login{max-width:520px;margin:8vh auto;background:#fff;border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:0 20px 50px rgba(159,40,110,.10)}
+.login img{height:64px;margin-bottom:18px}
+.login h1{font-size:1.6rem;margin-bottom:6px}
+.login p{color:var(--muted);font-size:.94rem;margin:0 0 20px}
+.help{background:var(--cream);border-radius:16px;padding:14px 16px;font-size:.86rem;color:var(--muted);margin-top:16px;line-height:1.5}
+.help b{color:var(--ink)}
+
+/* campos */
+label{display:block;font-family:var(--display);font-weight:700;font-size:.92rem;margin:0 0 6px}
+.hint{font-size:.8rem;color:var(--muted);font-weight:400;font-family:var(--body)}
+input[type=text],input[type=password],textarea{
+  width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;
+  font:inherit;font-size:.95rem;background:#fff;color:var(--ink);resize:vertical;
+}
+input:focus,textarea:focus{outline:0;border-color:var(--magenta);box-shadow:0 0 0 3px rgba(204,47,137,.1)}
+.field{margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* abas */
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:20px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:9px 16px;border-radius:100px;font-weight:700;font-family:var(--display);font-size:.9rem;background:#fff;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.tab.on{background:var(--grad);color:#fff;border-color:transparent}
+
+.panel{display:none}
+.panel.on{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:16px}
+.card > h3{font-size:1.1rem;margin-bottom:4px}
+.card > .sub{color:var(--muted);font-size:.88rem;margin-bottom:18px}
+
+/* imagem */
+.img-field{display:flex;gap:14px;align-items:center;background:var(--cream);border-radius:16px;padding:12px;margin-bottom:14px}
+.img-field img{width:74px;height:74px;object-fit:cover;border-radius:12px;background:#fff;flex:none}
+.img-field .info{flex:1;min-width:0}
+.img-field b{display:block;font-family:var(--display);font-size:.94rem}
+.img-field small{color:var(--muted);font-size:.78rem;word-break:break-all}
+.file-btn{position:relative;overflow:hidden;display:inline-block}
+.file-btn input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+
+/* listas */
+.item{border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px;background:#fff;position:relative}
+.item .del{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:var(--cream);color:var(--muted);font-size:1.1rem;line-height:1}
+.item .del:hover{background:#ffe0e6;color:#c0264f}
+.add{border:1.5px dashed rgba(204,47,137,.35);background:transparent;color:var(--magenta);border-radius:14px;padding:11px;width:100%;font-family:var(--display);font-weight:700}
+.add:hover{background:rgba(204,47,137,.05)}
+
+/* barra de publicar */
+.publish{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:14px 20px}
+.publish-in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.status{flex:1;font-size:.9rem;color:var(--muted);min-width:0}
+.status.ok{color:var(--ok);font-weight:700}
+.status.err{color:#c0264f;font-weight:700}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-2px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+@media(max-width:640px){
+  .grid2{grid-template-columns:1fr}
+  .wrap{padding:20px 16px 130px}
+  .top-in{padding:10px 16px}
+  .top .badge{display:none}
+  .publish-in{flex-wrap:wrap}
+  .status{width:100%;order:-1}
+  .publish .btn{flex:1}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<div id="login" class="login">
+  <img src="assets/logo.png" alt="Letícia Rocha">
+  <h1>Painel do site</h1>
+  <p>Aqui você edita os textos, as fotos e os depoimentos do seu site. As mudanças vão ao ar em cerca de 30 segundos.</p>
+  <div class="field">
+    <label>Chave de acesso <span class="hint">(cole a chave que o Diogo te enviou)</span></label>
+    <input type="password" id="token" placeholder="ghp_..." autocomplete="off">
+  </div>
+  <button class="btn btn-primary" style="width:100%" onclick="entrar()">Entrar</button>
+  <div id="loginErr" class="status err" style="margin-top:12px"></div>
+  <div class="help">
+    <b>Guarde essa chave.</b> Ela funciona como sua senha e fica salva só neste aparelho. Se trocar de celular ou computador, é só colar de novo.
+  </div>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="app" style="display:none">
+  <div class="top">
+    <div class="top-in">
+      <img src="assets/logo.png" alt="Letícia Rocha">
+      <span class="badge">Painel</span>
+      <div class="sp"></div>
+      <a class="btn btn-ghost" href="index.html" target="_blank">Ver site</a>
+      <button class="btn btn-ghost" onclick="sair()">Sair</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="tabs" id="tabs"></div>
+    <div id="panels"></div>
+  </div>
+
+  <div class="publish">
+    <div class="publish-in">
+      <div class="status" id="status">Tudo salvo.</div>
+      <button class="btn btn-ghost" onclick="recarregar()">Descartar mudanças</button>
+      <button class="btn btn-primary" id="btnPub" onclick="publicar()">Publicar no site</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO DO REPOSITÓRIO
+   ========================================================= */
+const REPO = { owner: 'DiogoSilvaMoreira', name: 'leticia-ostepata', branch: 'main' };
+const API = 'https://api.github.com/repos/' + REPO.owner + '/' + REPO.name;
+
+let TOKEN = localStorage.getItem('lr_token') || '';
+let DATA = null;      // content.json
+let SHA = null;       // sha do content.json
+let UPLOADS = [];     // imagens/vídeos novos a enviar
+let SUJO = false;
+
+/* ---------------- login ---------------- */
+if (TOKEN) entrar(true);
+
+async function entrar(auto) {
+  const err = document.getElementById('loginErr');
+  if (!auto) TOKEN = document.getElementById('token').value.trim();
+  if (!TOKEN) { err.textContent = 'Cole a chave de acesso.'; return; }
+  err.textContent = 'Verificando...';
+  try {
+    const r = await fetch(API, { headers: headers() });
+    if (!r.ok) throw new Error('Chave inválida ou sem permissão.');
+    localStorage.setItem('lr_token', TOKEN);
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    await carregar();
+  } catch (e) {
+    err.textContent = e.message;
+    if (auto) { localStorage.removeItem('lr_token'); TOKEN = ''; }
+  }
+}
+function sair() { localStorage.removeItem('lr_token'); location.reload(); }
+function headers() {
+  return { Authorization: 'Bearer ' + TOKEN, Accept: 'application/vnd.github+json' };
+}
+
+/* ---------------- carregar content.json ---------------- */
+async function carregar() {
+  setStatus('Carregando o conteúdo...');
+  const r = await fetch(API + '/contents/content.json?ref=' + REPO.branch + '&t=' + Date.now(), { headers: headers() });
+  const j = await r.json();
+  SHA = j.sha;
+  DATA = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, '')))));
+  UPLOADS = [];
+  SUJO = false;
+  render();
+  setStatus('Tudo salvo.');
+}
+function recarregar() {
+  if (SUJO && !confirm('Descartar as mudanças que você fez agora?')) return;
+  carregar();
+}
+
+/* ---------------- helpers ---------------- */
+const $ = (s, el = document) => el.querySelector(s);
+function setStatus(t, cls) {
+  const s = document.getElementById('status');
+  s.innerHTML = t; s.className = 'status ' + (cls || '');
+}
+function sujo() { SUJO = true; setStatus('Você tem mudanças não publicadas.', 'err'); }
+function get(p) { return p.split('.').reduce((o, k) => o?.[k], DATA); }
+function set(p, v) {
+  const ks = p.split('.'); const last = ks.pop();
+  ks.reduce((o, k) => (o[k] = o[k] || {}), DATA)[last] = v;
+  sujo();
+}
+
+
+/* renderiza um campo e já liga o evento (mais confiável que reconstruir o path) */
+function mkField(label, path, opts = {}) {
+  const wrap = document.createElement('div');
+  wrap.className = 'field';
+  const v = get(path) ?? '';
+  wrap.innerHTML = `<label>${label} ${opts.hint ? `<span class="hint">${opts.hint}</span>` : ''}</label>` +
+    (opts.linhas ? `<textarea rows="${opts.linhas}"></textarea>` : `<input type="text">`);
+  const el = wrap.querySelector('input,textarea');
+  el.value = v;
+  el.oninput = () => set(path, el.value);
+  return wrap;
+}
+
+function mkImage(label, path, hint) {
+  const wrap = document.createElement('div');
+  wrap.className = 'img-field';
+  const src = get(path) || '';
+  wrap.innerHTML = `
+    <img src="${src}" alt="" onerror="this.style.opacity=.2">
+    <div class="info"><b>${label}</b><small>${hint || src}</small></div>
+    <span class="btn btn-ghost file-btn">Trocar foto<input type="file" accept="image/*"></span>`;
+  const img = wrap.querySelector('img');
+  const inp = wrap.querySelector('input');
+  inp.onchange = async () => {
+    const file = inp.files[0];
+    if (!file) return;
+    setStatus('Preparando a imagem...');
+    const { dataUrl, base64, nome } = await prepararImagem(file);
+    img.src = dataUrl;
+    const caminho = 'assets/' + nome;
+    UPLOADS.push({ path: caminho, base64 });
+    set(path, caminho);
+    setStatus('Imagem pronta. Clique em <b>Publicar</b> para ir ao ar.', 'err');
+  };
+  return wrap;
+}
+
+/* redimensiona no navegador antes de enviar */
+function prepararImagem(file) {
+  return new Promise((res, rej) => {
+    const fr = new FileReader();
+    fr.onload = () => {
+      const im = new Image();
+      im.onload = () => {
+        const max = 1400;
+        let { width: w, height: h } = im;
+        if (w > max || h > max) { const k = max / Math.max(w, h); w = Math.round(w * k); h = Math.round(h * k); }
+        const cv = document.createElement('canvas');
+        cv.width = w; cv.height = h;
+        cv.getContext('2d').drawImage(im, 0, 0, w, h);
+        const dataUrl = cv.toDataURL('image/jpeg', 0.85);
+        const base64 = dataUrl.split(',')[1];
+        const nome = 'foto-' + Date.now() + '.jpg';
+        res({ dataUrl, base64, nome });
+      };
+      im.onerror = rej;
+      im.src = fr.result;
+    };
+    fr.onerror = rej;
+    fr.readAsDataURL(file);
+  });
+}
+
+function mkLista({ titulo, sub, path, campos, novo, rotulo }) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `<h3>${titulo}</h3><div class="sub">${sub || ''}</div><div class="lista"></div>`;
+  const box = card.querySelector('.lista');
+
+  const desenhar = () => {
+    box.innerHTML = '';
+    const arr = get(path) || [];
+    arr.forEach((it, n) => {
+      const item = document.createElement('div');
+      item.className = 'item';
+      item.innerHTML = `<button class="del" title="Remover">×</button>`;
+      item.querySelector('.del').onclick = () => {
+        if (!confirm('Remover este item?')) return;
+        arr.splice(n, 1); sujo(); desenhar();
+      };
+      campos.forEach(c => {
+        if (c.tipo === 'lista') {
+          const f = document.createElement('div');
+          f.className = 'field';
+          f.innerHTML = `<label>${c.label} <span class="hint">separe por vírgula</span></label><input type="text">`;
+          const el = f.querySelector('input');
+          el.value = (it[c.k] || []).join(', ');
+          el.oninput = () => { it[c.k] = el.value.split(',').map(x => x.trim()).filter(Boolean); sujo(); };
+          item.appendChild(f);
+        } else {
+          const f = document.createElement('div');
+          f.className = 'field';
+          f.innerHTML = `<label>${c.label}</label>` + (c.linhas ? `<textarea rows="${c.linhas}"></textarea>` : `<input type="text">`);
+          const el = f.querySelector('input,textarea');
+          el.value = it[c.k] ?? '';
+          el.oninput = () => { it[c.k] = el.value; sujo(); };
+          item.appendChild(f);
+        }
+      });
+      box.appendChild(item);
+    });
+    const add = document.createElement('button');
+    add.className = 'add';
+    add.textContent = '+ ' + (rotulo || 'Adicionar item');
+    add.onclick = () => { (get(path) || []).push(JSON.parse(JSON.stringify(novo))); sujo(); desenhar(); };
+    box.appendChild(add);
+  };
+  desenhar();
+  return card;
+}
+
+/* ---------------- telas ---------------- */
+const ABAS = [
+  { id: 'contato',  nome: 'Contato' },
+  { id: 'inicio',   nome: 'Início' },
+  { id: 'bebes',    nome: 'Bebês' },
+  { id: 'atend',    nome: 'Atendimentos' },
+  { id: 'sobre',    nome: 'Sobre você' },
+  { id: 'depo',     nome: 'Depoimentos' },
+  { id: 'fotos',    nome: 'Consultório' },
+  { id: 'faq',      nome: 'Dúvidas' }
+];
+
+function render() {
+  const tabs = document.getElementById('tabs');
+  const panels = document.getElementById('panels');
+  tabs.innerHTML = ''; panels.innerHTML = '';
+
+  ABAS.forEach((a, n) => {
+    const b = document.createElement('button');
+    b.className = 'tab' + (n === 0 ? ' on' : '');
+    b.textContent = a.nome;
+    b.onclick = () => {
+      [...tabs.children].forEach(x => x.classList.remove('on'));
+      [...panels.children].forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      document.getElementById('p_' + a.id).classList.add('on');
+      scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    tabs.appendChild(b);
+
+    const p = document.createElement('div');
+    p.className = 'panel' + (n === 0 ? ' on' : '');
+    p.id = 'p_' + a.id;
+    panels.appendChild(p);
+  });
+
+  /* ---- CONTATO ---- */
+  const c = document.getElementById('p_contato');
+  const c1 = card('Contato e agendamento', 'É por aqui que os pacientes chegam até você.');
+  c1.append(
+    mkField('WhatsApp', 'contato.whatsapp', { hint: '55 + DDD + número, só números' }),
+    mkField('Como aparece no site', 'contato.telefoneExibicao', { hint: 'ex: (11) 91787-9980' }),
+    mkField('Mensagem automática', 'contato.mensagem', { linhas: 2, hint: 'o que já vem escrito quando o paciente te chama' }),
+    mkField('Endereço', 'contato.endereco', { linhas: 2 }),
+    mkField('Link do Google Maps', 'contato.mapsUrl'),
+    mkField('Horários', 'contato.horarios'),
+    mkField('Instagram', 'contato.instagram', { hint: 'só o @, sem o arroba' }),
+    mkField('Crefito', 'contato.crefito')
+  );
+  c.append(c1);
+
+  /* ---- INÍCIO ---- */
+  const i = document.getElementById('p_inicio');
+  const i1 = card('Primeira tela', 'O que a pessoa vê antes de rolar a página.');
+  i1.append(
+    mkImage('Sua foto', 'hero.foto'),
+    mkField('Selo pequeno', 'hero.selo'),
+    mkField('Título — primeira linha', 'hero.titulo1'),
+    mkField('Título — segunda linha (em rosa)', 'hero.titulo2'),
+    mkField('Texto de apresentação', 'hero.texto', { linhas: 3 }),
+    mkField('Botão principal', 'hero.botao1'),
+    mkField('Botão secundário', 'hero.botao2')
+  );
+  i.append(i1);
+  i.append(mkLista({
+    titulo: 'Números em destaque', sub: 'Os três números embaixo dos botões.',
+    path: 'hero.stats', rotulo: 'Adicionar número',
+    campos: [{ k: 'numero', label: 'Número' }, { k: 'texto', label: 'Descrição' }],
+    novo: { numero: '', texto: '' }
+  }));
+  i.append(mkLista({
+    titulo: 'Faixa de confiança', sub: 'Os quatro itens da faixa branca.',
+    path: 'confianca', rotulo: 'Adicionar item',
+    campos: [{ k: 'titulo', label: 'Título' }, { k: 'texto', label: 'Descrição' }],
+    novo: { titulo: '', texto: '' }
+  }));
+
+  /* ---- BEBÊS ---- */
+  const b = document.getElementById('p_bebes');
+  const b1 = card('Osteopatia para bebês', 'A seção que mais atrai as mães.');
+  b1.append(
+    mkImage('Foto do atendimento', 'bebes.foto'),
+    mkField('Título', 'bebes.titulo', { linhas: 2 }),
+    mkField('Texto', 'bebes.texto', { linhas: 4 }),
+    mkField('Selo na foto', 'bebes.selo'),
+    mkField('Recado para os pais', 'bebes.destaque', { linhas: 3, hint: 'aceita <b>negrito</b>' })
+  );
+  b.append(b1);
+  b.append(listaSimples('O que a osteopatia pediátrica trata', 'A lista com os vistos ao lado da foto.', 'bebes.itens'));
+
+  /* ---- ATENDIMENTOS ---- */
+  const at = document.getElementById('p_atend');
+  const a1 = card('Seção de atendimentos', '');
+  a1.append(mkField('Título', 'atendimentos.titulo'), mkField('Texto', 'atendimentos.texto', { linhas: 2 }));
+  at.append(a1);
+  at.append(mkLista({
+    titulo: 'Públicos atendidos', sub: 'Os cards de bebês, gestantes, adultos e idosos.',
+    path: 'atendimentos.cards', rotulo: 'Adicionar público',
+    campos: [
+      { k: 'icone', label: 'Emoji' },
+      { k: 'titulo', label: 'Título' },
+      { k: 'texto', label: 'Descrição', linhas: 3 },
+      { k: 'tags', label: 'Etiquetas', tipo: 'lista' }
+    ],
+    novo: { icone: '💗', titulo: '', texto: '', tags: [] }
+  }));
+  const a2 = card('Como funciona a consulta', '');
+  a2.append(mkField('Título', 'consulta.titulo'), mkField('Texto', 'consulta.texto', { linhas: 2 }));
+  at.append(a2);
+  at.append(mkLista({
+    titulo: 'Passos da consulta', sub: '',
+    path: 'consulta.passos', rotulo: 'Adicionar passo',
+    campos: [{ k: 'titulo', label: 'Título' }, { k: 'texto', label: 'Descrição', linhas: 3 }],
+    novo: { titulo: '', texto: '' }
+  }));
+
+  /* ---- SOBRE ---- */
+  const so = document.getElementById('p_sobre');
+  const s1 = card('Sobre você', '');
+  s1.append(
+    mkImage('Foto principal', 'sobre.foto'),
+    mkImage('Foto menor (sobreposta)', 'sobre.fotoMini'),
+    mkField('Título', 'sobre.titulo'),
+    mkField('Texto', 'sobre.texto', { linhas: 4 }),
+    mkField('Frase em destaque', 'sobre.citacao', { linhas: 2, hint: 'aceita <b>negrito</b>' })
+  );
+  so.append(s1);
+  so.append(mkLista({
+    titulo: 'Sua trajetória', sub: 'Os quatro quadradinhos de formação.',
+    path: 'sobre.trajetoria', rotulo: 'Adicionar etapa',
+    campos: [{ k: 'titulo', label: 'Título' }, { k: 'texto', label: 'Descrição', linhas: 2 }],
+    novo: { titulo: '', texto: '' }
+  }));
+
+  /* ---- DEPOIMENTOS ---- */
+  const d = document.getElementById('p_depo');
+  const d1 = card('Depoimentos', '');
+  d1.append(
+    mkField('Título', 'depoimentos.titulo'),
+    mkField('Texto', 'depoimentos.texto', { linhas: 2 }),
+    mkField('Legenda do vídeo', 'depoimentos.videoLegenda'),
+    mkField('Vídeo', 'depoimentos.video', { hint: 'arquivo em assets/ ou link do YouTube' })
+  );
+  d.append(d1);
+  d.append(mkLista({
+    titulo: 'Avaliações', sub: 'As avaliações que passam no carrossel.',
+    path: 'depoimentos.avaliacoes', rotulo: 'Adicionar avaliação',
+    campos: [
+      { k: 'nome', label: 'Nome' },
+      { k: 'papel', label: 'Quem é', },
+      { k: 'texto', label: 'Depoimento', linhas: 4 }
+    ],
+    novo: { nome: '', papel: 'Paciente', texto: '' }
+  }));
+  const d2 = card('Conversa do WhatsApp', 'O print recriado, com a mensagem da mãe.');
+  d2.append(
+    mkField('Título', 'whatsappReal.titulo', { linhas: 2, hint: 'use <br> para quebrar linha' }),
+    mkField('Texto', 'whatsappReal.texto', { linhas: 3 }),
+    mkField('Texto secundário', 'whatsappReal.texto2', { linhas: 2 })
+  );
+  d.append(d2);
+  d.append(mkLista({
+    titulo: 'Mensagens da conversa', sub: 'Escreva "mae" ou "leticia" em Quem enviou.',
+    path: 'whatsappReal.mensagens', rotulo: 'Adicionar mensagem',
+    campos: [
+      { k: 'de', label: 'Quem enviou (mae / leticia)' },
+      { k: 'texto', label: 'Mensagem', linhas: 2 },
+      { k: 'hora', label: 'Hora' }
+    ],
+    novo: { de: 'mae', texto: '', hora: '09:00' }
+  }));
+
+  /* ---- CONSULTÓRIO ---- */
+  const f = document.getElementById('p_fotos');
+  const f1 = card('O consultório', '');
+  f1.append(mkField('Título', 'consultorio.titulo', { linhas: 2 }));
+  f.append(f1);
+  const f2 = card('Fotos do espaço', 'Troque a foto e a legenda de cada uma.');
+  (DATA.consultorio?.fotos || []).forEach((_, n) => {
+    f2.append(mkImage('Foto ' + (n + 1), `consultorio.fotos.${n}.src`));
+    f2.append(mkField('Legenda da foto ' + (n + 1), `consultorio.fotos.${n}.legenda`));
+  });
+  f.append(f2);
+
+  /* ---- FAQ ---- */
+  const q = document.getElementById('p_faq');
+  const q1 = card('Dúvidas frequentes', '');
+  q1.append(mkField('Título', 'faq.titulo'));
+  q.append(q1);
+  q.append(mkLista({
+    titulo: 'Perguntas', sub: '',
+    path: 'faq.itens', rotulo: 'Adicionar pergunta',
+    campos: [{ k: 'pergunta', label: 'Pergunta' }, { k: 'resposta', label: 'Resposta', linhas: 4 }],
+    novo: { pergunta: '', resposta: '' }
+  }));
+  const q2 = card('Chamada final', 'O bloco rosa no fim da página.');
+  q2.append(mkField('Título', 'cta.titulo'), mkField('Texto', 'cta.texto', { linhas: 3 }));
+  q.append(q2);
+}
+
+function card(titulo, sub) {
+  const el = document.createElement('div');
+  el.className = 'card';
+  el.innerHTML = `<h3>${titulo}</h3><div class="sub">${sub || ''}</div>`;
+  return el;
+}
+
+/* lista de textos simples (array de strings) */
+function listaSimples(titulo, sub, path) {
+  const el = card(titulo, sub);
+  const box = document.createElement('div');
+  el.append(box);
+  const desenhar = () => {
+    box.innerHTML = '';
+    const arr = get(path) || [];
+    arr.forEach((v, n) => {
+      const item = document.createElement('div');
+      item.className = 'item';
+      item.style.padding = '10px 46px 10px 14px';
+      item.innerHTML = `<input type="text"><button class="del" title="Remover">×</button>`;
+      const inp = item.querySelector('input');
+      inp.value = v;
+      inp.oninput = () => { arr[n] = inp.value; sujo(); };
+      item.querySelector('.del').onclick = () => { arr.splice(n, 1); sujo(); desenhar(); };
+      box.append(item);
+    });
+    const add = document.createElement('button');
+    add.className = 'add';
+    add.textContent = '+ Adicionar item';
+    add.onclick = () => { (get(path) || []).push(''); sujo(); desenhar(); };
+    box.append(add);
+  };
+  desenhar();
+  return el;
+}
+
+/* ---------------- publicar ---------------- */
+async function publicar() {
+  const btn = document.getElementById('btnPub');
+  btn.disabled = true;
+  try {
+    // 1) envia as imagens novas
+    for (let n = 0; n < UPLOADS.length; n++) {
+      const u = UPLOADS[n];
+      setStatus(`<span class="spin"></span> Enviando imagem ${n + 1} de ${UPLOADS.length}...`);
+      await put(u.path, u.base64, 'Nova imagem pelo painel');
+    }
+    // 2) envia o conteúdo
+    setStatus('<span class="spin"></span> Publicando o conteúdo...');
+    const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(DATA, null, 2))));
+    const r = await put('content.json', b64, 'Atualiza o conteúdo pelo painel', SHA);
+    SHA = r.content.sha;
+    UPLOADS = [];
+    SUJO = false;
+    setStatus('✓ Publicado! O site atualiza em cerca de 30 segundos.', 'ok');
+  } catch (e) {
+    setStatus('Não deu certo: ' + e.message, 'err');
+  }
+  btn.disabled = false;
+}
+
+async function put(path, contentB64, msg, sha) {
+  if (!sha) {
+    // procura o sha se o arquivo já existir
+    const g = await fetch(API + '/contents/' + path + '?ref=' + REPO.branch, { headers: headers() });
+    if (g.ok) sha = (await g.json()).sha;
+  }
+  const r = await fetch(API + '/contents/' + path, {
+    method: 'PUT',
+    headers: { ...headers(), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: msg, content: contentB64, branch: REPO.branch, sha })
+  });
+  if (!r.ok) {
+    const e = await r.json().catch(() => ({}));
+    throw new Error(e.message || 'erro ' + r.status);
+  }
+  return r.json();
+}
+
+addEventListener('beforeunload', e => { if (SUJO) { e.preventDefault(); e.returnValue = ''; } });
+</script>
+</body>
+</html>

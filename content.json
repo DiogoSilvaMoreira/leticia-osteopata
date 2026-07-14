@@ -1,0 +1,159 @@
+{
+  "contato": {
+    "whatsapp": "5511917879880",
+    "mensagem": "Olá, Dra. Letícia! Vi seu site e gostaria de agendar uma avaliação.",
+    "telefoneExibicao": "(11) 91787-9880",
+    "endereco": "Rua Miguel de Frias, 150 / sala 1309\nIcaraí — Niterói, RJ",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Miguel+de+Frias,+150,+Icara%C3%AD,+Niter%C3%B3i,+RJ",
+    "horarios": "Das 9h às 19h, com hora marcada",
+    "instagram": "leticia_rocha_osteo",
+    "crefito": "Crefito2/25112F"
+  },
+  "hero": {
+    "selo": "Fisioterapeuta · Osteopata",
+    "titulo1": "A dor tem uma causa.",
+    "titulo2": "É dela que eu cuido.",
+    "texto": "Há mais de 25 anos uso as mãos e a osteopatia para aliviar dores, devolver movimento e trazer bem-estar. Do recém-nascido ao idoso — com escuta, técnica e tempo.",
+    "botao1": "Agendar minha avaliação",
+    "botao2": "Osteopatia para bebês",
+    "foto": "assets/leticia-retrato.jpg",
+    "stats": [
+      { "numero": "+25", "texto": "anos de experiência" },
+      { "numero": "+10 mil", "texto": "atendimentos realizados" },
+      { "numero": "5,0 ★", "texto": "avaliação no Google" }
+    ],
+    "cardFoto1": { "titulo": "Especialidade em bebês", "texto": "Desde os primeiros dias" },
+    "cardFoto2": { "titulo": "Crefito2/25112F", "texto": "Osteopatia · Posturologia" }
+  },
+  "confianca": [
+    { "titulo": "Atendimento humanizado", "texto": "Individual e sem pressa" },
+    { "titulo": "Hora marcada", "texto": "Sem sala de espera lotada" },
+    { "titulo": "Tratamento da causa", "texto": "Não apenas do sintoma" },
+    { "titulo": "Sem encaminhamento", "texto": "Agende direto comigo" }
+  ],
+  "agendamento": {
+    "titulo": "Vamos entender o seu caso antes da conversa",
+    "texto": "Três perguntas rápidas. Ao final, sua mensagem chega até mim já organizada — e a gente ganha tempo para o que realmente importa."
+  },
+  "bebes": {
+    "titulo": "Osteopatia para bebês: um cuidado delicado desde os primeiros dias",
+    "texto": "O nascimento é intenso para o corpo do bebê. Com toques extremamente suaves e seguros, a osteopatia pediátrica alivia tensões e desconfortos comuns dos primeiros meses — respeitando o tempo e a sensibilidade de cada pequeno.",
+    "itens": [
+      "Cólicas e gases",
+      "Refluxo",
+      "Dificuldade na amamentação",
+      "Torcicolo congênito",
+      "Assimetrias da cabecinha",
+      "Sono agitado e irritabilidade"
+    ],
+    "destaque": "<b>Para mamães e papais:</b> a primeira consulta inclui uma avaliação completa e uma conversa tranquila sobre tudo o que vocês quiserem perguntar. Vocês participam de todo o processo.",
+    "foto": "assets/atendimento-bebe.jpg",
+    "selo": "Desde os primeiros dias"
+  },
+  "atendimentos": {
+    "titulo": "Um cuidado para cada fase da vida",
+    "texto": "Embora os bebês tenham um lugar especial no meu trabalho, atendo pessoas de todas as idades — cada uma com um plano de cuidado próprio.",
+    "cards": [
+      {
+        "icone": "👶",
+        "titulo": "Bebês e crianças",
+        "texto": "Toques suaves para os desconfortos dos primeiros meses e para o desenvolvimento saudável na infância.",
+        "tags": ["Cólicas e refluxo", "Amamentação", "Torcicolo congênito"]
+      },
+      {
+        "icone": "🤰",
+        "titulo": "Gestantes e pós-parto",
+        "texto": "Alívio das dores da gestação, preparo do corpo para o parto e recuperação no puerpério.",
+        "tags": ["Dor lombar e ciática", "Preparo para o parto", "Pós-parto"]
+      },
+      {
+        "icone": "🧘",
+        "titulo": "Adultos",
+        "texto": "Tratamento das dores do dia a dia e das tensões acumuladas pela rotina, pelo trabalho e pelo estresse.",
+        "tags": ["Dores na coluna", "Enxaqueca e ATM", "Tensões musculares"]
+      },
+      {
+        "icone": "🌿",
+        "titulo": "Idosos",
+        "texto": "Mais mobilidade, equilíbrio e autonomia para viver essa fase com conforto e qualidade de vida.",
+        "tags": ["Mobilidade", "Dores articulares", "Equilíbrio"]
+      }
+    ]
+  },
+  "sobre": {
+    "titulo": "Letícia Rocha",
+    "texto": "Sou fisioterapeuta e osteopata, com mais de duas décadas e meia de estrada e mais de 10 mil atendimentos realizados. Ao longo desse caminho, aprendi que o alívio real começa quando a gente escuta o corpo em vez de só silenciar o sintoma.",
+    "citacao": "\"Cada corpo conta uma história. <b>Meu trabalho é ouvir com as mãos.</b>\"",
+    "foto": "assets/atendimento-adulto.jpg",
+    "fotoMini": "assets/bebe-bola.jpg",
+    "trajetoria": [
+      { "titulo": "Fisioterapia", "texto": "A base de tudo: anatomia, movimento e reabilitação." },
+      { "titulo": "Especialização em Osteopatia", "texto": "A virada de chave: tratar o corpo como um todo." },
+      { "titulo": "Osteopatia pediátrica", "texto": "O cuidado com bebês, que virou a marca do meu trabalho." },
+      { "titulo": "+10 mil atendimentos", "texto": "Mais de 25 anos de prática clínica e atualização constante." }
+    ]
+  },
+  "consulta": {
+    "titulo": "Sua primeira sessão, passo a passo",
+    "texto": "Sem mistério e sem pressa. Você entende o que está acontecendo no seu corpo e sai sabendo o próximo passo.",
+    "passos": [
+      { "titulo": "Escuta e avaliação", "texto": "Conversamos sobre sua história, queixas e rotina. Em seguida, avalio o corpo por inteiro para encontrar a origem do desconforto — não apenas onde ele aparece." },
+      { "titulo": "Tratamento manual", "texto": "Aplico técnicas de osteopatia e terapia manual escolhidas para o seu caso, com toques precisos, seguros e adaptados à sua idade e sensibilidade." },
+      { "titulo": "Plano de cuidado", "texto": "Você sai sabendo o que foi encontrado, o que foi feito e quais os próximos passos — com orientações práticas para manter os resultados em casa." }
+    ]
+  },
+  "depoimentos": {
+    "titulo": "Quem já passou pelas minhas mãos",
+    "texto": "Bebês que voltam a dormir, adultos que voltam a se mover. Quem conta são os pacientes.",
+    "video": "assets/depoimento-mae.mp4",
+    "videoLegenda": "Depoimento de uma mãe atendida no consultório",
+    "avaliacoes": [
+      { "nome": "Maria Clara Menezes", "papel": "Paciente", "texto": "Simplesmente o melhor atendimento que já tive. Uma profissional incrível, humana e atenciosa. Me senti muito bem após o atendimento e me ajudou muito com a minha questão. Recomendo de olhos fechados!" },
+      { "nome": "Nathalia Cerqueira", "papel": "Mãe de paciente", "texto": "Letícia é uma profissional impecável. Tem muito talento para cuidar de bebês: carinhosa, acolhedora e competente em todas as etapas. Fiquei feliz de ver o tamanho do cuidado que ela teve com a minha bebê, do início ao fim do tratamento." },
+      { "nome": "Flávia Vasconcelos", "papel": "Paciente", "texto": "Minha consulta foi excepcional. Entrei uma e saí completamente outra. Atendimento impecável, personalizado, cheio de atenção e acolhimento. Se tivesse 6 estrelas eu daria." },
+      { "nome": "Sabrina Moura", "papel": "Mãe de paciente", "texto": "Maravilhosa! Uma profissional totalmente humanizada. Ela não cuida só do seu bebê, ela cuida de você. Fez um trabalho incrível com a minha pequena." },
+      { "nome": "Marco Santos", "papel": "Paciente", "texto": "Tenho sido atendido pela Dra. Letícia por dores vindas de muitas horas de trabalho em posição desconfortável. Graças a ela melhorei significativamente e sigo nas minhas atividades profissionais sem dores." },
+      { "nome": "Lucas Guimarães", "papel": "Paciente", "texto": "Melhor clínica de osteopatia da região. O atendimento é humanizado da recepção à consulta, e o diferencial é que não tratam apenas o sintoma: buscam a causa do problema. Vale cada centavo." },
+      { "nome": "Olga Monnerat", "papel": "Paciente", "texto": "Com sua técnica, mãos mágicas e muito carinho, ajudou na minha recuperação — fez sumir dores que me acompanhavam havia dias e me devolveu tranquilidade." },
+      { "nome": "Simone Accorsi", "papel": "Paciente", "texto": "Excelente profissional. Atendimento nota 10: entrei toda torcida e saí caminhando. Altamente recomendada." },
+      { "nome": "Heryan Egito", "papel": "Paciente", "texto": "Consulta profunda, com avaliação criteriosa e um cuidado ao mesmo tempo amoroso e técnico. O tratamento chegou na causa da dor e a eliminou por completo." },
+      { "nome": "Gabriela Rocha Villalobos", "papel": "Paciente", "texto": "Melhor osteopata que conheço. Além de excelente profissional, o atendimento é super acolhedor. Já fui atendida em várias ocasiões e sempre saio 100%." }
+    ]
+  },
+  "whatsappReal": {
+    "titulo": "\"Ele mama e dorme.<br>Está outra criança.\"",
+    "texto": "Na manhã seguinte ao atendimento, essa mãe mandou uma mensagem. O bebê voltou a mamar, passou a dormir de 3 em 3 horas e acordou sorrindo.",
+    "texto2": "É esse o tipo de mudança que a osteopatia pediátrica busca: não silenciar o choro, mas resolver o que o está causando.",
+    "mensagens": [
+      { "de": "mae", "texto": "Oie Dra. Letícia!! Bom dia…<br>Meu Deus!! Ele mama e dorme 🙏👏🙌<br><br>Glória a Deus, está outra criança!!", "hora": "09:49" },
+      { "de": "mae", "texto": "Está de 3/3h", "hora": "09:50" },
+      { "de": "mae", "texto": "Acordou de manhã, até sorriu, ficou no balanço e depois dormiu.", "hora": "09:50" },
+      { "de": "mae", "texto": "Foi de Deus eu ter ido aí!!", "hora": "09:50" },
+      { "de": "leticia", "texto": "Graças a Deus!!!!", "hora": "09:50" },
+      { "de": "leticia", "texto": "Fico muito feliz!", "hora": "09:51" }
+    ]
+  },
+  "consultorio": {
+    "titulo": "Um espaço calmo — porque o corpo só solta onde se sente seguro",
+    "fotos": [
+      { "src": "assets/sala-atendimento.jpg", "legenda": "Sala de atendimento" },
+      { "src": "assets/consultorio.jpg", "legenda": "Recepção" },
+      { "src": "assets/recepcao.jpg", "legenda": "Avaliação" }
+    ]
+  },
+  "faq": {
+    "titulo": "Perguntas que sempre me fazem",
+    "itens": [
+      { "pergunta": "O que é osteopatia?", "resposta": "É uma abordagem terapêutica que usa técnicas manuais para avaliar e tratar o corpo como um todo. Em vez de olhar apenas para o local da dor, a osteopatia busca a causa do problema — que muitas vezes está em outra região — para promover um alívio real e duradouro." },
+      { "pergunta": "A partir de qual idade o bebê pode ser atendido?", "resposta": "Desde os primeiros dias de vida. As técnicas usadas em bebês são extremamente suaves e seguras, completamente diferentes das aplicadas em adultos, e sempre respeitam o conforto do pequeno." },
+      { "pergunta": "O tratamento dói?", "resposta": "Não. As técnicas são precisas e confortáveis. Em adultos, algumas manobras podem gerar uma sensação momentânea de pressão ou alongamento, mas o tratamento nunca deve ser doloroso — e em bebês o toque é sempre delicado." },
+      { "pergunta": "Quantas sessões são necessárias?", "resposta": "Depende de cada caso. Muitas pessoas sentem melhora já na primeira sessão, mas o número ideal é definido na avaliação inicial, de acordo com a queixa, o histórico e a resposta do corpo ao tratamento." },
+      { "pergunta": "Preciso de encaminhamento médico?", "resposta": "Não é necessário. Você pode agendar sua avaliação diretamente. Quando o caso pede acompanhamento médico em conjunto, eu mesma oriento e trabalho de forma integrada com outros profissionais." },
+      { "pergunta": "Onde acontecem os atendimentos?", "resposta": "No consultório em Icaraí, Niterói (RJ) — Rua Miguel de Frias, 150, sala 1309 —, das 9h às 19h, sempre com hora marcada. Os valores e os horários disponíveis são passados na conversa pelo WhatsApp." }
+    ]
+  },
+  "cta": {
+    "titulo": "Seu corpo merece esse cuidado",
+    "texto": "Seja para o seu bebê, para a sua gestação ou para aquela dor que já dura tempo demais — comece por uma conversa. Respondo pessoalmente."
+  }
+}
