@@ -1,0 +1,40 @@
+# =====================================================================
+#  Mantém o projeto do Supabase sempre ativo
+#  ---------------------------------------------------------------------
+#  O plano gratuito do Supabase pausa o projeto após ~7 dias sem uso.
+#  Este robô faz uma consulta simples a cada 3 dias, o que conta como
+#  atividade e impede a pausa. Roda sozinho, de graça, pelo GitHub.
+#
+#  PARA FUNCIONAR, cadastre 2 "secrets" no repositório:
+#    GitHub -> Settings -> Secrets and variables -> Actions -> New secret
+#      SUPABASE_URL       =  a mesma Project URL do config.js
+#      SUPABASE_ANON_KEY  =  a mesma anon public do config.js
+# =====================================================================
+name: Manter Supabase ativo
+
+on:
+  schedule:
+    - cron: '17 9 */3 * *'   # a cada 3 dias, 09:17 UTC
+  workflow_dispatch:          # permite rodar manualmente pelo botão "Run workflow"
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consultar o banco (mantém ativo)
+        run: |
+          if [ -z "${{ secrets.SUPABASE_URL }}" ] || [ -z "${{ secrets.SUPABASE_ANON_KEY }}" ]; then
+            echo "Secrets SUPABASE_URL / SUPABASE_ANON_KEY não configurados."
+            exit 1
+          fi
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/site_config?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+          echo "Resposta do Supabase: HTTP $CODE"
+          if [ "$CODE" -ge 200 ] && [ "$CODE" -lt 300 ]; then
+            echo "OK — projeto mantido ativo."
+          else
+            echo "Falha ao consultar (HTTP $CODE)."
+            exit 1
+          fi
