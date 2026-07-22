@@ -404,6 +404,32 @@ p{margin:0 0 1rem}
 .gal figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.93);backdrop-filter:blur(6px);padding:7px 14px;border-radius:100px;font-size:.8rem;font-weight:700;font-family:var(--display);color:var(--magenta)}
 
 /* =========================================================
+   BLOG
+   ========================================================= */
+.blog-sec{display:none;background:var(--white)}
+.blog-sec.on{display:block}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--shadow-s);transition:.34s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.post-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-l);border-color:var(--coral-soft)}
+.post-cover{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--grad)}
+.post-cover img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.post-card:hover .post-cover img{transform:scale(1.06)}
+.post-cover.ph{display:flex;align-items:center;justify-content:center}
+.post-cover.ph .mark{
+  width:40px;height:47px;background:#fff;
+  -webkit-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20702%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M294.5%20701.0C294.2%20700.5%20293.0%20700.0%20291.9%20700.0C285.6%20700.0%20280.5%20695.1%20162.4%20576.8C97.5%20511.7%2042.5%20456.2%2040.3%20453.5C30.9%20441.8%2019.2%20422.1%2011.7%20405.0C8.6%20398.1%204.2%20383.4%203.1%20376.0C2.4%20371.9%201.4%20366.9%200.9%20364.9C-0.3%20360.2%20-0.3%20334.2%200.9%20328.7C1.4%20326.4%202.4%20321.4%203.0%20317.5C5.6%20303.2%2013.3%20283.1%2021.5%20269.5C33.7%20249.3%2051.7%20231.1%2072.0%20218.5C94.4%20204.6%20123.6%20196.0%20148.5%20196.0C156.9%20196.0%20158.6%20195.5%20157.1%20193.6C156.6%20193.0%20156.0%20191.2%20155.7%20189.5C155.4%20187.8%20154.6%20184.0%20154.0%20181.0C151.7%20169.8%20151.2%20162.1%20151.5%20146.5C152.0%20123.0%20155.8%20107.2%20166.1%2085.3C177.3%2061.3%20200.0%2036.3%20223.0%2022.4C239.1%2012.6%20257.2%205.7%20273.5%203.1C277.4%202.4%20282.4%201.5%20284.8%201.0C290.6%20-0.3%20312.0%20-0.3%20319.4%201.1C354.0%207.4%20374.4%2016.1%20396.6%2034.1C418.8%2052.2%20439.6%2082.6%20446.1%20106.8C446.6%20108.5%20447.5%20111.7%20448.0%20113.8C450.9%20124.6%20452.0%20134.5%20451.9%20151.5C451.9%20166.7%20451.6%20171.2%20449.6%20180.5C448.3%20186.6%20446.9%20192.5%20446.5%20193.7C445.8%20195.9%20446.0%20196.0%20452.7%20196.0C472.8%20196.0%20498.5%20202.7%20518.7%20213.1C556.0%20232.5%20582.5%20265.2%20594.9%20307.5C595.4%20309.1%20596.3%20313.6%20597.0%20317.5C597.6%20321.4%20598.6%20325.9%20599.1%20327.6C600.3%20331.6%20600.3%20360.2%20599.1%20364.9C598.6%20366.9%20597.6%20371.9%20597.0%20376.0C593.0%20402.0%20579.7%20432.0%20561.9%20454.9C553.1%20466.3%20329.1%20691.4%20322.1%20695.9C319.5%20697.6%20315.9%20699.3%20314.2%20699.6C312.4%20700.0%20310.7%20700.7%20310.4%20701.1C309.7%20702.3%20295.3%20702.2%20294.5%20701.0ZM319.1%20610.7C323.9%20608.3%20339.7%20592.9%20421.2%20510.7C480.2%20451.2%20519.2%20411.1%20521.8%20407.4C526.7%20400.1%20532.0%20389.9%20532.0%20387.7C532.0%20386.8%20532.4%20385.9%20532.9%20385.6C533.4%20385.3%20534.0%20383.8%20534.3%20382.3C534.6%20380.7%20535.5%20376.4%20536.4%20372.5C538.9%20361.7%20538.6%20337.3%20535.9%20326.2C531.0%20306.0%20518.7%20287.4%20501.7%20274.7C494.4%20269.3%20479.4%20262.4%20469.8%20260.1C457.7%20257.2%20433.1%20257.1%20421.5%20260.0C413.3%20262.1%20405.4%20264.9%20398.7%20268.2L395.0%20270.1L408.4%20283.3C427.3%20301.9%20439.2%20320.5%20446.8%20343.5C453.1%20362.5%20454.4%20371.1%20454.4%20394.5C454.5%20417.3%20454.2%20418.7%20446.4%20427.0C439.7%20434.2%20434.4%20436.4%20423.9%20436.4C416.3%20436.4%20414.8%20436.1%20410.4%20433.6C404.1%20429.9%20398.9%20424.5%20396.2%20418.7C394.4%20414.8%20394.0%20412.2%20394.0%20403.3C393.9%20368.7%20385.7%20347.3%20365.0%20327.0C353.1%20315.3%20338.2%20307.1%20321.7%20303.1C316.1%20301.8%20286.6%20301.6%20282.4%20302.9C280.8%20303.4%20277.5%20304.3%20275.0%20305.1C263.3%20308.4%20246.4%20318.5%20237.5%20327.4C228.6%20336.3%20221.2%20347.5%20216.6%20359.0C212.2%20369.8%20211.0%20377.0%20210.2%20397.0C209.4%20416.7%20208.3%20420.3%20200.9%20427.9C194.9%20434.0%20188.9%20436.4%20179.5%20436.4C169.7%20436.4%20163.8%20433.9%20156.9%20426.9C148.9%20418.7%20146.7%20406.4%20148.9%20382.6C151.3%20357.7%20156.2%20340.4%20166.3%20321.0C174.7%20305.0%20189.5%20286.5%20202.0%20276.4C205.8%20273.3%20208.7%20270.4%20208.4%20269.9C207.0%20267.5%20192.1%20262.1%20180.0%20259.4C171.5%20257.6%20141.8%20257.6%20133.5%20259.4C101.6%20266.6%2077.8%20287.4%2066.5%20317.9C63.6%20325.9%2062.0%20336.0%2062.0%20347.1C62.0%20357.4%2062.5%20361.6%2065.2%20371.5C67.6%20380.7%2075.7%20396.8%2083.8%20408.7C86.1%20412.0%20130.2%20457.0%20185.1%20512.2C296.2%20623.5%20285.3%20614.2%20303.5%20613.7C312.2%20613.5%20314.2%20613.1%20319.1%20610.7ZM319.0%20238.6C347.0%20232.6%20370.0%20214.6%20382.3%20188.9C396.9%20158.5%20392.5%20121.4%20370.9%2094.5C358.0%2078.5%20337.9%2066.6%20317.4%2063.0C304.6%2060.7%20280.9%2062.8%20271.5%2066.9C256.1%2073.7%20247.2%2079.6%20238.3%2088.6C219.7%20107.7%20210.2%20134.4%20213.1%20159.7C214.3%20170.5%20215.2%20174.3%20219.2%20184.4C225.4%20200.1%20235.6%20212.9%20249.3%20222.3C263.3%20232.0%20271.8%20235.9%20284.5%20238.5C292.8%20240.2%20311.2%20240.3%20319.0%20238.6Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20702%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M294.5%20701.0C294.2%20700.5%20293.0%20700.0%20291.9%20700.0C285.6%20700.0%20280.5%20695.1%20162.4%20576.8C97.5%20511.7%2042.5%20456.2%2040.3%20453.5C30.9%20441.8%2019.2%20422.1%2011.7%20405.0C8.6%20398.1%204.2%20383.4%203.1%20376.0C2.4%20371.9%201.4%20366.9%200.9%20364.9C-0.3%20360.2%20-0.3%20334.2%200.9%20328.7C1.4%20326.4%202.4%20321.4%203.0%20317.5C5.6%20303.2%2013.3%20283.1%2021.5%20269.5C33.7%20249.3%2051.7%20231.1%2072.0%20218.5C94.4%20204.6%20123.6%20196.0%20148.5%20196.0C156.9%20196.0%20158.6%20195.5%20157.1%20193.6C156.6%20193.0%20156.0%20191.2%20155.7%20189.5C155.4%20187.8%20154.6%20184.0%20154.0%20181.0C151.7%20169.8%20151.2%20162.1%20151.5%20146.5C152.0%20123.0%20155.8%20107.2%20166.1%2085.3C177.3%2061.3%20200.0%2036.3%20223.0%2022.4C239.1%2012.6%20257.2%205.7%20273.5%203.1C277.4%202.4%20282.4%201.5%20284.8%201.0C290.6%20-0.3%20312.0%20-0.3%20319.4%201.1C354.0%207.4%20374.4%2016.1%20396.6%2034.1C418.8%2052.2%20439.6%2082.6%20446.1%20106.8C446.6%20108.5%20447.5%20111.7%20448.0%20113.8C450.9%20124.6%20452.0%20134.5%20451.9%20151.5C451.9%20166.7%20451.6%20171.2%20449.6%20180.5C448.3%20186.6%20446.9%20192.5%20446.5%20193.7C445.8%20195.9%20446.0%20196.0%20452.7%20196.0C472.8%20196.0%20498.5%20202.7%20518.7%20213.1C556.0%20232.5%20582.5%20265.2%20594.9%20307.5C595.4%20309.1%20596.3%20313.6%20597.0%20317.5C597.6%20321.4%20598.6%20325.9%20599.1%20327.6C600.3%20331.6%20600.3%20360.2%20599.1%20364.9C598.6%20366.9%20597.6%20371.9%20597.0%20376.0C593.0%20402.0%20579.7%20432.0%20561.9%20454.9C553.1%20466.3%20329.1%20691.4%20322.1%20695.9C319.5%20697.6%20315.9%20699.3%20314.2%20699.6C312.4%20700.0%20310.7%20700.7%20310.4%20701.1C309.7%20702.3%20295.3%20702.2%20294.5%20701.0ZM319.1%20610.7C323.9%20608.3%20339.7%20592.9%20421.2%20510.7C480.2%20451.2%20519.2%20411.1%20521.8%20407.4C526.7%20400.1%20532.0%20389.9%20532.0%20387.7C532.0%20386.8%20532.4%20385.9%20532.9%20385.6C533.4%20385.3%20534.0%20383.8%20534.3%20382.3C534.6%20380.7%20535.5%20376.4%20536.4%20372.5C538.9%20361.7%20538.6%20337.3%20535.9%20326.2C531.0%20306.0%20518.7%20287.4%20501.7%20274.7C494.4%20269.3%20479.4%20262.4%20469.8%20260.1C457.7%20257.2%20433.1%20257.1%20421.5%20260.0C413.3%20262.1%20405.4%20264.9%20398.7%20268.2L395.0%20270.1L408.4%20283.3C427.3%20301.9%20439.2%20320.5%20446.8%20343.5C453.1%20362.5%20454.4%20371.1%20454.4%20394.5C454.5%20417.3%20454.2%20418.7%20446.4%20427.0C439.7%20434.2%20434.4%20436.4%20423.9%20436.4C416.3%20436.4%20414.8%20436.1%20410.4%20433.6C404.1%20429.9%20398.9%20424.5%20396.2%20418.7C394.4%20414.8%20394.0%20412.2%20394.0%20403.3C393.9%20368.7%20385.7%20347.3%20365.0%20327.0C353.1%20315.3%20338.2%20307.1%20321.7%20303.1C316.1%20301.8%20286.6%20301.6%20282.4%20302.9C280.8%20303.4%20277.5%20304.3%20275.0%20305.1C263.3%20308.4%20246.4%20318.5%20237.5%20327.4C228.6%20336.3%20221.2%20347.5%20216.6%20359.0C212.2%20369.8%20211.0%20377.0%20210.2%20397.0C209.4%20416.7%20208.3%20420.3%20200.9%20427.9C194.9%20434.0%20188.9%20436.4%20179.5%20436.4C169.7%20436.4%20163.8%20433.9%20156.9%20426.9C148.9%20418.7%20146.7%20406.4%20148.9%20382.6C151.3%20357.7%20156.2%20340.4%20166.3%20321.0C174.7%20305.0%20189.5%20286.5%20202.0%20276.4C205.8%20273.3%20208.7%20270.4%20208.4%20269.9C207.0%20267.5%20192.1%20262.1%20180.0%20259.4C171.5%20257.6%20141.8%20257.6%20133.5%20259.4C101.6%20266.6%2077.8%20287.4%2066.5%20317.9C63.6%20325.9%2062.0%20336.0%2062.0%20347.1C62.0%20357.4%2062.5%20361.6%2065.2%20371.5C67.6%20380.7%2075.7%20396.8%2083.8%20408.7C86.1%20412.0%20130.2%20457.0%20185.1%20512.2C296.2%20623.5%20285.3%20614.2%20303.5%20613.7C312.2%20613.5%20314.2%20613.1%20319.1%20610.7ZM319.0%20238.6C347.0%20232.6%20370.0%20214.6%20382.3%20188.9C396.9%20158.5%20392.5%20121.4%20370.9%2094.5C358.0%2078.5%20337.9%2066.6%20317.4%2063.0C304.6%2060.7%20280.9%2062.8%20271.5%2066.9C256.1%2073.7%20247.2%2079.6%20238.3%2088.6C219.7%20107.7%20210.2%20134.4%20213.1%20159.7C214.3%20170.5%20215.2%20174.3%20219.2%20184.4C225.4%20200.1%20235.6%20212.9%20249.3%20222.3C263.3%20232.0%20271.8%20235.9%20284.5%20238.5C292.8%20240.2%20311.2%20240.3%20319.0%20238.6Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;
+}
+.post-body{padding:24px 22px 26px;display:flex;flex-direction:column;flex:1}
+.post-date{font-family:var(--display);font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--magenta);margin-bottom:8px}
+.post-body h3{margin-bottom:10px;font-size:1.12rem}
+.post-body p{color:var(--muted);font-size:.94rem;margin-bottom:16px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.post-more{font-family:var(--display);font-weight:700;color:var(--magenta);font-size:.9rem;display:inline-flex;align-items:center;gap:6px;margin-top:auto}
+.post-more .arrow-ico{display:inline-block;transition:transform .25s}
+.post-card:hover .post-more .arrow-ico{transform:translateX(4px)}
+.blog-more{text-align:center;margin-top:38px}
+
+/* =========================================================
    FAQ
    ========================================================= */
 .faq{background:var(--white)}
@@ -501,6 +527,7 @@ details p{padding:0 24px 20px;margin:0;color:var(--muted);font-size:.97rem}
   .strip li + li{border-left:0;padding-left:0}
 
   .sec-head{margin-bottom:40px}
+  .blog-grid{grid-template-columns:1fr 1fr}
   .book-grid{gap:36px}
   .baby-grid{gap:46px}
   .baby-media{max-width:460px;margin:0 auto}
@@ -672,6 +699,10 @@ details p{padding:0 24px 20px;margin:0;color:var(--muted);font-size:.97rem}
   .gal figure:first-child img{aspect-ratio:16/10}
   .gal figcaption{left:11px;bottom:11px;padding:7px 13px;font-size:.76rem}
 
+  /* ---- BLOG ---- */
+  .blog-grid{grid-template-columns:1fr;gap:16px}
+  .blog-more{margin-top:26px}
+
   /* ---- FAQ ---- */
   summary{padding:17px 20px;font-size:1rem;gap:12px}
   summary::after{font-size:1.4rem}
@@ -741,6 +772,7 @@ details p{padding:0 24px 20px;margin:0;color:var(--muted);font-size:.97rem}
       <a href="#atendimentos">Atendimentos</a>
       <a href="#sobre">Sobre</a>
       <a href="#depoimentos">Depoimentos</a>
+      <a href="#artigos">Artigos</a>
       <a href="#faq">Dúvidas</a>
     </nav>
     <a class="btn btn-primary" href="#agendar">Agendar avaliação</a>
@@ -754,6 +786,7 @@ details p{padding:0 24px 20px;margin:0;color:var(--muted);font-size:.97rem}
   <a href="#atendimentos">Atendimentos</a>
   <a href="#sobre">Sobre</a>
   <a href="#depoimentos">Depoimentos</a>
+  <a href="#artigos">Artigos</a>
   <a href="#faq">Dúvidas</a>
   <a class="btn btn-primary" href="#agendar">Agendar avaliação</a>
 </div>
@@ -1163,6 +1196,21 @@ details p{padding:0 24px 20px;margin:0;color:var(--muted);font-size:.97rem}
       <figure class="rv"><img src="assets/sala-atendimento.jpg" alt="Sala de atendimento com maca e bola terapêutica" loading="lazy"><figcaption>Sala de atendimento</figcaption></figure>
       <figure class="rv d1"><img src="assets/consultorio.jpg" alt="Recepção do consultório" loading="lazy"><figcaption>Recepção</figcaption></figure>
       <figure class="rv d2"><img src="assets/recepcao.jpg" alt="Espaço de avaliação" loading="lazy"><figcaption>Avaliação</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BLOG ===================== -->
+<section class="sec blog-sec" id="artigos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Blog</span>
+      <h2>Artigos para cuidar de quem você ama</h2>
+      <p class="lead">Orientações práticas sobre osteopatia, bebês e bem-estar — escritas por quem tem 29 anos de consultório.</p>
+    </div>
+    <div class="blog-grid" id="blogGrid"></div>
+    <div class="blog-more">
+      <a class="btn btn-ghost" href="blog.html">Ver todos os artigos</a>
     </div>
   </div>
 </section>
@@ -1687,15 +1735,62 @@ function revelar() {
 /* =========================================================
    START
    ========================================================= */
-async function carregarContato() {
+async function carregarContato(sb) {
   // busca os campos editáveis (contato) no Supabase, se estiver configurado
   try {
-    if (!window.supabase || !window.SUPABASE_URL || window.SUPABASE_URL.includes('SEU-PROJETO')) return;
-    const sb = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+    if (!sb) return;
     const { data, error } = await sb.from('site_config').select('dados').eq('id', 1).single();
     if (error || !data || !data.dados) return;
     C.contato = Object.assign({}, C.contato, data.dados);
   } catch (e) { /* mantém o conteúdo do content.json */ }
+}
+
+function escapeHtml(t) {
+  return String(t == null ? '' : t)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function formatarDataPost(iso) {
+  try { return new Date(iso).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }); }
+  catch (e) { return ''; }
+}
+
+function renderPostCard(p, n) {
+  const capa = p.capa
+    ? `<div class="post-cover"><img src="${p.capa}" alt="${escapeHtml(p.titulo)}" loading="lazy"></div>`
+    : `<div class="post-cover ph"><i class="mark" aria-hidden="true"></i></div>`;
+  return `
+    <a class="post-card rv${n ? ' d' + n : ''}" href="post.html?id=${encodeURIComponent(p.id)}">
+      ${capa}
+      <div class="post-body">
+        <span class="post-date">${escapeHtml(formatarDataPost(p.criado_em))}</span>
+        <h3>${escapeHtml(p.titulo)}</h3>
+        <p>${escapeHtml(p.resumo || '')}</p>
+        <span class="post-more">Ler artigo <span class="arrow-ico">→</span></span>
+      </div>
+    </a>`;
+}
+
+async function carregarArtigos(sb) {
+  // busca os 3 artigos publicados mais recentes; some silenciosamente se falhar ou não houver posts
+  try {
+    if (!sb) return;
+    const { data, error } = await sb.from('posts')
+      .select('id,titulo,resumo,capa,criado_em')
+      .eq('publicado', true)
+      .order('criado_em', { ascending: false })
+      .limit(3);
+    if (error || !data || !data.length) return;
+    const grid = document.getElementById('blogGrid');
+    const sec = document.getElementById('artigos');
+    if (!grid || !sec) return;
+    grid.innerHTML = data.map((p, n) => renderPostCard(p, n)).join('');
+    sec.classList.add('on');
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: '0px 0px -40px' });
+    grid.querySelectorAll('.rv').forEach(el => io.observe(el));
+  } catch (e) { /* mantém a seção oculta */ }
 }
 
 (async function () {
@@ -1703,7 +1798,16 @@ async function carregarContato() {
     const r = await fetch('content.json?v=' + Date.now());
     if (r.ok) { C = await r.json(); }
   } catch (e) { /* sem content.json: mantém o conteúdo do HTML */ }
-  await carregarContato();
+
+  let sb = null;
+  try {
+    if (window.supabase && window.SUPABASE_URL && !window.SUPABASE_URL.includes('SEU-PROJETO')) {
+      sb = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+    }
+  } catch (e) { /* sem Supabase configurado */ }
+
+  carregarArtigos(sb); // não bloqueia o carregamento do contato
+  await carregarContato(sb);
   hidratar(C);
   montarVideo(C.depoimentos?.video || FALLBACK.depoimentos.video);
   iniciarWizard();

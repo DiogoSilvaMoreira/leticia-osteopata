@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Artigos — Dra. Létícia Rocha</title>
+<meta name="description" content="Artigos sobre osteopatia, bebês e bem-estar escritos pela Dra. Letícia Rocha, fisioterapeuta osteopata com 29 anos de experiência.">
+<meta name="theme-color" content="#CC2F89">
+<link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --magenta:#CC2F89; --magenta-dark:#9E2069; --coral:#FF8A98; --coral-soft:#FFC2CA;
+  --cream:#FCEFEC; --cream-deep:#F4DFDA; --line:#EFDCD8; --ink:#3B2130; --muted:#8A6C7C; --white:#fff;
+  --grad:linear-gradient(135deg,var(--coral) 0%,var(--magenta) 100%);
+  --shadow-s:0 2px 10px rgba(159,40,110,.05);
+  --shadow-m:0 14px 38px rgba(159,40,110,.08);
+  --shadow-l:0 32px 70px rgba(159,40,110,.14);
+  --r-s:14px; --r-m:22px; --r-l:30px; --r-xl:44px;
+  --maxw:1180px;
+  --display:'Baloo 2',system-ui,sans-serif;
+  --body:'Nunito Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.12;margin:0;font-weight:700;letter-spacing:-.018em}
+h1{font-size:clamp(2.1rem,5vw,3.2rem);font-weight:800;letter-spacing:-.025em}
+p{margin:0 0 1rem}
+:focus-visible{outline:3px solid var(--magenta);outline-offset:3px;border-radius:8px}
+
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1rem;padding:15px 28px;border-radius:100px;transition:.28s cubic-bezier(.2,.8,.2,1)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 24px rgba(204,47,137,.24)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(204,47,137,.32)}
+.btn-ghost{border:2px solid rgba(204,47,137,.25);color:var(--magenta)}
+.btn-ghost:hover{background:rgba(204,47,137,.06)}
+
+.mark{width:16px;height:19px;flex:none;display:block;background:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20702%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22lrg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF8A98%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23CC2F89%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20fill%3D%22url%28%23lrg%29%22%20fill-rule%3D%22evenodd%22%20d%3D%22M294.5%20701.0C294.2%20700.5%20293.0%20700.0%20291.9%20700.0C285.6%20700.0%20280.5%20695.1%20162.4%20576.8C97.5%20511.7%2042.5%20456.2%2040.3%20453.5C30.9%20441.8%2019.2%20422.1%2011.7%20405.0C8.6%20398.1%204.2%20383.4%203.1%20376.0C2.4%20371.9%201.4%20366.9%200.9%20364.9C-0.3%20360.2%20-0.3%20334.2%200.9%20328.7C1.4%20326.4%202.4%20321.4%203.0%20317.5C5.6%20303.2%2013.3%20283.1%2021.5%20269.5C33.7%20249.3%2051.7%20231.1%2072.0%20218.5C94.4%20204.6%20123.6%20196.0%20148.5%20196.0C156.9%20196.0%20158.6%20195.5%20157.1%20193.6C156.6%20193.0%20156.0%20191.2%20155.7%20189.5C155.4%20187.8%20154.6%20184.0%20154.0%20181.0C151.7%20169.8%20151.2%20162.1%20151.5%20146.5C152.0%20123.0%20155.8%20107.2%20166.1%2085.3C177.3%2061.3%20200.0%2036.3%20223.0%2022.4C239.1%2012.6%20257.2%205.7%20273.5%203.1C277.4%202.4%20282.4%201.5%20284.8%201.0C290.6%20-0.3%20312.0%20-0.3%20319.4%201.1C354.0%207.4%20374.4%2016.1%20396.6%2034.1C418.8%2052.2%20439.6%2082.6%20446.1%20106.8C446.6%20108.5%20447.5%20111.7%20448.0%20113.8C450.9%20124.6%20452.0%20134.5%20451.9%20151.5C451.9%20166.7%20451.6%20171.2%20449.6%20180.5C448.3%20186.6%20446.9%20192.5%20446.5%20193.7C445.8%20195.9%20446.0%20196.0%20452.7%20196.0C472.8%20196.0%20498.5%20202.7%20518.7%20213.1C556.0%20232.5%20582.5%20265.2%20594.9%20307.5C595.4%20309.1%20596.3%20313.6%20597.0%20317.5C597.6%20321.4%20598.6%20325.9%20599.1%20327.6C600.3%20331.6%20600.3%20360.2%20599.1%20364.9C598.6%20366.9%20597.6%20371.9%20597.0%20376.0C593.0%20402.0%20579.7%20432.0%20561.9%20454.9C553.1%20466.3%20329.1%20691.4%20322.1%20695.9C319.5%20697.6%20315.9%20699.3%20314.2%20699.6C312.4%20700.0%20310.7%20700.7%20310.4%20701.1C309.7%20702.3%20295.3%20702.2%20294.5%20701.0ZM319.1%20610.7C323.9%20608.3%20339.7%20592.9%20421.2%20510.7C480.2%20451.2%20519.2%20411.1%20521.8%20407.4C526.7%20400.1%20532.0%20389.9%20532.0%20387.7C532.0%20386.8%20532.4%20385.9%20532.9%20385.6C533.4%20385.3%20534.0%20383.8%20534.3%20382.3C534.6%20380.7%20535.5%20376.4%20536.4%20372.5C538.9%20361.7%20538.6%20337.3%20535.9%20326.2C531.0%20306.0%20518.7%20287.4%20501.7%20274.7C494.4%20269.3%20479.4%20262.4%20469.8%20260.1C457.7%20257.2%20433.1%20257.1%20421.5%20260.0C413.3%20262.1%20405.4%20264.9%20398.7%20268.2L395.0%20270.1L408.4%20283.3C427.3%20301.9%20439.2%20320.5%20446.8%20343.5C453.1%20362.5%20454.4%20371.1%20454.4%20394.5C454.5%20417.3%20454.2%20418.7%20446.4%20427.0C439.7%20434.2%20434.4%20436.4%20423.9%20436.4C416.3%20436.4%20414.8%20436.1%20410.4%20433.6C404.1%20429.9%20398.9%20424.5%20396.2%20418.7C394.4%20414.8%20394.0%20412.2%20394.0%20403.3C393.9%20368.7%20385.7%20347.3%20365.0%20327.0C353.1%20315.3%20338.2%20307.1%20321.7%20303.1C316.1%20301.8%20286.6%20301.6%20282.4%20302.9C280.8%20303.4%20277.5%20304.3%20275.0%20305.1C263.3%20308.4%20246.4%20318.5%20237.5%20327.4C228.6%20336.3%20221.2%20347.5%20216.6%20359.0C212.2%20369.8%20211.0%20377.0%20210.2%20397.0C209.4%20416.7%20208.3%20420.3%20200.9%20427.9C194.9%20434.0%20188.9%20436.4%20179.5%20436.4C169.7%20436.4%20163.8%20433.9%20156.9%20426.9C148.9%20418.7%20146.7%20406.4%20148.9%20382.6C151.3%20357.7%20156.2%20340.4%20166.3%20321.0C174.7%20305.0%20189.5%20286.5%20202.0%20276.4C205.8%20273.3%20208.7%20270.4%20208.4%20269.9C207.0%20267.5%20192.1%20262.1%20180.0%20259.4C171.5%20257.6%20141.8%20257.6%20133.5%20259.4C101.6%20266.6%2077.8%20287.4%2066.5%20317.9C63.6%20325.9%2062.0%20336.0%2062.0%20347.1C62.0%20357.4%2062.5%20361.6%2065.2%20371.5C67.6%20380.7%2075.7%20396.8%2083.8%20408.7C86.1%20412.0%20130.2%20457.0%20185.1%20512.2C296.2%20623.5%20285.3%20614.2%20303.5%20613.7C312.2%20613.5%20314.2%20613.1%20319.1%20610.7ZM319.0%20238.6C347.0%20232.6%20370.0%20214.6%20382.3%20188.9C396.9%20158.5%20392.5%20121.4%20370.9%2094.5C358.0%2078.5%20337.9%2066.6%20317.4%2063.0C304.6%2060.7%20280.9%2062.8%20271.5%2066.9C256.1%2073.7%20247.2%2079.6%20238.3%2088.6C219.7%20107.7%20210.2%20134.4%20213.1%20159.7C214.3%20170.5%20215.2%20174.3%20219.2%20184.4C225.4%20200.1%20235.6%20212.9%20249.3%20222.3C263.3%20232.0%20271.8%20235.9%20284.5%20238.5C292.8%20240.2%20311.2%20240.3%20319.0%20238.6Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto;z-index:60;background:rgba(252,239,236,.82);backdrop-filter:blur(18px) saturate(1.2);box-shadow:0 2px 24px rgba(159,40,110,.06)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.brand img{height:40px;width:auto}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-weight:600;font-size:.94rem;position:relative;opacity:.78;transition:opacity .25s}
+.nav a:hover{opacity:1}
+.nav a.on{opacity:1;color:var(--magenta)}
+.hdr .btn{padding:11px 21px;font-size:.93rem}
+
+/* hero */
+.hero{padding:150px 0 40px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta);background:rgba(204,47,137,.07);padding:9px 17px;border-radius:100px;margin-bottom:20px}
+.hero p{color:var(--muted);max-width:56ch;margin:18px auto 0;font-size:1.08rem;line-height:1.7}
+
+/* grid + cards (mesmo padrão da home) */
+.sec{padding:40px 0 100px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--shadow-s);transition:.34s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.post-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-l);border-color:var(--coral-soft)}
+.post-cover{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--grad)}
+.post-cover img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.post-card:hover .post-cover img{transform:scale(1.06)}
+.post-cover.ph{display:flex;align-items:center;justify-content:center}
+.post-cover.ph .mark{width:40px;height:47px;background:#fff;-webkit-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20702%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M294.5%20701.0C294.2%20700.5%20293.0%20700.0%20291.9%20700.0C285.6%20700.0%20280.5%20695.1%20162.4%20576.8C97.5%20511.7%2042.5%20456.2%2040.3%20453.5C30.9%20441.8%2019.2%20422.1%2011.7%20405.0C8.6%20398.1%204.2%20383.4%203.1%20376.0C2.4%20371.9%201.4%20366.9%200.9%20364.9C-0.3%20360.2%20-0.3%20334.2%200.9%20328.7C1.4%20326.4%202.4%20321.4%203.0%20317.5C5.6%20303.2%2013.3%20283.1%2021.5%20269.5C33.7%20249.3%2051.7%20231.1%2072.0%20218.5C94.4%20204.6%20123.6%20196.0%20148.5%20196.0C156.9%20196.0%20158.6%20195.5%20157.1%20193.6C156.6%20193.0%20156.0%20191.2%20155.7%20189.5C155.4%20187.8%20154.6%20184.0%20154.0%20181.0C151.7%20169.8%20151.2%20162.1%20151.5%20146.5C152.0%20123.0%20155.8%20107.2%20166.1%2085.3C177.3%2061.3%20200.0%2036.3%20223.0%2022.4C239.1%2012.6%20257.2%205.7%20273.5%203.1C277.4%202.4%20282.4%201.5%20284.8%201.0C290.6%20-0.3%20312.0%20-0.3%20319.4%201.1C354.0%207.4%20374.4%2016.1%20396.6%2034.1C418.8%2052.2%20439.6%2082.6%20446.1%20106.8C446.6%20108.5%20447.5%20111.7%20448.0%20113.8C450.9%20124.6%20452.0%20134.5%20451.9%20151.5C451.9%20166.7%20451.6%20171.2%20449.6%20180.5C448.3%20186.6%20446.9%20192.5%20446.5%20193.7C445.8%20195.9%20446.0%20196.0%20452.7%20196.0C472.8%20196.0%20498.5%20202.7%20518.7%20213.1C556.0%20232.5%20582.5%20265.2%20594.9%20307.5C595.4%20309.1%20596.3%20313.6%20597.0%20317.5C597.6%20321.4%20598.6%20325.9%20599.1%20327.6C600.3%20331.6%20600.3%20360.2%20599.1%20364.9C598.6%20366.9%20597.6%20371.9%20597.0%20376.0C593.0%20402.0%20579.7%20432.0%20561.9%20454.9C553.1%20466.3%20329.1%20691.4%20322.1%20695.9C319.5%20697.6%20315.9%20699.3%20314.2%20699.6C312.4%20700.0%20310.7%20700.7%20310.4%20701.1C309.7%20702.3%20295.3%20702.2%20294.5%20701.0ZM319.1%20610.7C323.9%20608.3%20339.7%20592.9%20421.2%20510.7C480.2%20451.2%20519.2%20411.1%20521.8%20407.4C526.7%20400.1%20532.0%20389.9%20532.0%20387.7C532.0%20386.8%20532.4%20385.9%20532.9%20385.6C533.4%20385.3%20534.0%20383.8%20534.3%20382.3C534.6%20380.7%20535.5%20376.4%20536.4%20372.5C538.9%20361.7%20538.6%20337.3%20535.9%20326.2C531.0%20306.0%20518.7%20287.4%20501.7%20274.7C494.4%20269.3%20479.4%20262.4%20469.8%20260.1C457.7%20257.2%20433.1%20257.1%20421.5%20260.0C413.3%20262.1%20405.4%20264.9%20398.7%20268.2L395.0%20270.1L408.4%20283.3C427.3%20301.9%20439.2%20320.5%20446.8%20343.5C453.1%20362.5%20454.4%20371.1%20454.4%20394.5C454.5%20417.3%20454.2%20418.7%20446.4%20427.0C439.7%20434.2%20434.4%20436.4%20423.9%20436.4C416.3%20436.4%20414.8%20436.1%20410.4%20433.6C404.1%20429.9%20398.9%20424.5%20396.2%20418.7C394.4%20414.8%20394.0%20412.2%20394.0%20403.3C393.9%20368.7%20385.7%20347.3%20365.0%20327.0C353.1%20315.3%20338.2%20307.1%20321.7%20303.1C316.1%20301.8%20286.6%20301.6%20282.4%20302.9C280.8%20303.4%20277.5%20304.3%20275.0%20305.1C263.3%20308.4%20246.4%20318.5%20237.5%20327.4C228.6%20336.3%20221.2%20347.5%20216.6%20359.0C212.2%20369.8%20211.0%20377.0%20210.2%20397.0C209.4%20416.7%20208.3%20420.3%20200.9%20427.9C194.9%20434.0%20188.9%20436.4%20179.5%20436.4C169.7%20436.4%20163.8%20433.9%20156.9%20426.9C148.9%20418.7%20146.7%20406.4%20148.9%20382.6C151.3%20357.7%20156.2%20340.4%20166.3%20321.0C174.7%20305.0%20189.5%20286.5%20202.0%20276.4C205.8%20273.3%20208.7%20270.4%20208.4%20269.9C207.0%20267.5%20192.1%20262.1%20180.0%20259.4C171.5%20257.6%20141.8%20257.6%20133.5%20259.4C101.6%20266.6%2077.8%20287.4%2066.5%20317.9C63.6%20325.9%2062.0%20336.0%2062.0%20347.1C62.0%20357.4%2062.5%20361.6%2065.2%20371.5C67.6%20380.7%2075.7%20396.8%2083.8%20408.7C86.1%20412.0%20130.2%20457.0%20185.1%20512.2C296.2%20623.5%20285.3%20614.2%20303.5%20613.7C312.2%20613.5%20314.2%20613.1%20319.1%20610.7ZM319.0%20238.6C347.0%20232.6%20370.0%20214.6%20382.3%20188.9C396.9%20158.5%20392.5%20121.4%20370.9%2094.5C358.0%2078.5%20337.9%2066.6%20317.4%2063.0C304.6%2060.7%20280.9%2062.8%20271.5%2066.9C256.1%2073.7%20247.2%2079.6%20238.3%2088.6C219.7%20107.7%20210.2%20134.4%20213.1%20159.7C214.3%20170.5%20215.2%20174.3%20219.2%20184.4C225.4%20200.1%20235.6%20212.9%20249.3%20222.3C263.3%20232.0%20271.8%20235.9%20284.5%20238.5C292.8%20240.2%20311.2%20240.3%20319.0%20238.6Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat}
+.post-body{padding:24px 22px 26px;display:flex;flex-direction:column;flex:1}
+.post-date{font-family:var(--display);font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--magenta);margin-bottom:8px}
+.post-body h3{margin-bottom:10px;font-size:1.12rem}
+.post-body p{color:var(--muted);font-size:.94rem;margin-bottom:16px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.post-more{font-family:var(--display);font-weight:700;color:var(--magenta);font-size:.9rem;display:inline-flex;align-items:center;gap:6px;margin-top:auto}
+.post-more .arrow-ico{display:inline-block;transition:transform .25s}
+.post-card:hover .post-more .arrow-ico{transform:translateX(4px)}
+
+/* estados */
+.state{grid-column:1/-1;text-align:center;padding:60px 20px}
+.spinner{width:38px;height:38px;border-radius:50%;border:3px solid var(--cream-deep);border-top-color:var(--magenta);animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.state p{color:var(--muted)}
+.empty-card{background:#fff;border:1px dashed rgba(204,47,137,.3);border-radius:var(--r-l);padding:44px 30px;max-width:480px;margin:0 auto}
+.empty-card h3{font-size:1.2rem;margin-bottom:10px}
+.empty-card p{color:var(--muted);margin-bottom:18px}
+
+/* footer */
+.ft{background:#2E1926;color:rgba(255,255,255,.62);padding:44px 0 24px;font-size:.91rem;text-align:center}
+.ft img{height:56px;margin:0 auto 16px}
+.ft-bottom{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;gap:10px;justify-content:center;font-size:.85rem}
+.ft-bottom a{color:var(--coral-soft)}
+
+@media(max-width:640px){
+  .nav{display:none}
+  .hero{padding:120px 0 30px}
+  .sec{padding:30px 0 70px}
+  .blog-grid{grid-template-columns:1fr;gap:16px}
+}
+@media(min-width:641px) and (max-width:1000px){
+  :root{--maxw:760px}
+  .blog-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a href="index.html" class="brand" aria-label="Letícia Rocha — início">
+      <img src="assets/logo.png" alt="Letícia Rocha Fisioterapeuta">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html#bebes">Bebês</a>
+      <a href="index.html#atendimentos">Atendimentos</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="blog.html" class="on">Artigos</a>
+      <a href="index.html#faq">Dúvidas</a>
+    </nav>
+    <a class="btn btn-primary" href="index.html#agendar">Agendar avaliação</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><i class="mark" aria-hidden="true"></i>Blog</span>
+    <h1>Artigos para cuidar de quem você ama</h1>
+    <p>Conteúdo escrito pela Dra. Letícia Rocha — 29 anos de osteopatia traduzidos em orientações práticas para a sua família.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="blog-grid" id="blogGrid">
+      <div class="state" id="loadingState"><div class="spinner"></div><p>Carregando artigos...</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <img src="assets/logo-branco.png" alt="Letícia Rocha Fisioterapeuta">
+    <div class="ft-bottom">
+      <span>© <span id="ano"></span> Letícia Rocha · Fisioterapeuta Osteopata</span>
+      <a href="index.html">Voltar ao site</a>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+function escapeHtml(t) {
+  return String(t == null ? '' : t)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function formatarDataPost(iso) {
+  try { return new Date(iso).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }); }
+  catch (e) { return ''; }
+}
+
+function renderPostCard(p) {
+  const capa = p.capa
+    ? `<div class="post-cover"><img src="${p.capa}" alt="${escapeHtml(p.titulo)}" loading="lazy"></div>`
+    : `<div class="post-cover ph"><i class="mark" aria-hidden="true"></i></div>`;
+  return `
+    <a class="post-card" href="post.html?id=${encodeURIComponent(p.id)}">
+      ${capa}
+      <div class="post-body">
+        <span class="post-date">${escapeHtml(formatarDataPost(p.criado_em))}</span>
+        <h3>${escapeHtml(p.titulo)}</h3>
+        <p>${escapeHtml(p.resumo || '')}</p>
+        <span class="post-more">Ler artigo <span class="arrow-ico">→</span></span>
+      </div>
+    </a>`;
+}
+
+function mostrarVazio(grid) {
+  grid.innerHTML = `
+    <div class="state">
+      <div class="empty-card">
+        <h3>Os primeiros artigos estão a caminho</h3>
+        <p>Em breve novos conteúdos sobre osteopatia, bebês e bem-estar por aqui.</p>
+        <a class="btn btn-ghost" href="index.html">Voltar ao site</a>
+      </div>
+    </div>`;
+}
+
+async function carregarPosts() {
+  const grid = document.getElementById('blogGrid');
+  try {
+    if (!window.supabase || !window.SUPABASE_URL || window.SUPABASE_URL.includes('SEU-PROJETO')) {
+      mostrarVazio(grid); return;
+    }
+    const sb = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+    const { data, error } = await sb.from('posts')
+      .select('id,titulo,resumo,capa,criado_em')
+      .eq('publicado', true)
+      .order('criado_em', { ascending: false });
+    if (error || !data || !data.length) { mostrarVazio(grid); return; }
+    grid.innerHTML = data.map(renderPostCard).join('');
+  } catch (e) {
+    mostrarVazio(grid);
+  }
+}
+
+carregarPosts();
+document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
