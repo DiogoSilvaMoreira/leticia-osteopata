@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /blog/_modelo-post
+
+Sitemap: https://www.osteopataleticiarocha.com.br/sitemap.xml

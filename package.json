@@ -1,0 +1,12 @@
+{
+  "name": "site-leticia-rocha",
+  "private": true,
+  "description": "Site estático da Dra. Letícia Rocha, Osteopata. Este arquivo serve só para as ferramentas locais (npm run imagens); a Vercel publica os HTML direto.",
+  "scripts": {
+    "imagens": "node scripts/imagens.mjs",
+    "servir": "npx serve ."
+  },
+  "devDependencies": {
+    "sharp": "0.33.5"
+  }
+}

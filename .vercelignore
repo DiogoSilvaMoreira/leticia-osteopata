@@ -1,0 +1,9 @@
+# Arquivos que ficam no repositório mas não vão para o site publicado
+node_modules
+_backup
+_relatorio
+package.json
+package-lock.json
+scripts
+assets/originais
+README.txt

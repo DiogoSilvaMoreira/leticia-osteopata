@@ -1,0 +1,12 @@
+# dependências das ferramentas locais (npm run imagens)
+node_modules/
+
+# cópia local dos dados do banco antigo e relatórios de análise (não publicar)
+_backup/
+_relatorio/
+
+# segredos e arquivos de sistema
+.env
+.env.*
+.DS_Store
+Thumbs.db
