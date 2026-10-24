@@ -99,15 +99,16 @@ function iniciarMapa() {
 }
 
 /* =========================================================
-   HEADER / MENU
+   HEADER
    ========================================================= */
 const hdr = document.getElementById('hdr');
 const burger = document.getElementById('burger');
-const drawer = document.getElementById('drawer');
+let menuAberto = false;
 // rolagem: lê scrollY uma vez por frame e só mexe na classe quando o estado muda
 let hdrOn = null, scrollTick = false;
 function atualizarHeader() {
   scrollTick = false;
+  if (menuAberto) return; // com o menu aberto o body fica fixo e o scrollY vira 0
   const on = scrollY > 20;
   if (on !== hdrOn && hdr) { hdrOn = on; hdr.classList.toggle('on', on); }
 }
@@ -116,31 +117,132 @@ addEventListener('scroll', () => {
   if (!scrollTick) { scrollTick = true; requestAnimationFrame(atualizarHeader); }
 }, { passive: true });
 
+/* =========================================================
+   MENU LATERAL (drawer, até 1023px)
+   Montado aqui a partir do menu do header (.nav), então é o mesmo em
+   todas as páginas, inclusive no blog. Para mudar as abas, edite o .nav.
+   ========================================================= */
+const ICONES_MENU = {
+  index: '<path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5H15v-6H9v6H5.5A1.5 1.5 0 0 1 4 19z"/>',
+  bebes: ICONES.bebe,
+  atendimentos: '<path d="M7 11V6.5a1.5 1.5 0 0 1 3 0V11"/><path d="M10 10V5a1.5 1.5 0 0 1 3 0v5"/><path d="M13 10V6a1.5 1.5 0 0 1 3 0v6"/><path d="M16 9.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-.5a6.5 6.5 0 0 1-5.4-2.9L3.5 14a1.5 1.5 0 0 1 2.4-1.8L7 13.5"/>',
+  sobre: '<circle cx="12" cy="8" r="4"/><path d="M4.5 21c.8-4 3.8-6.5 7.5-6.5s6.7 2.5 7.5 6.5"/>',
+  depoimentos: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
+  blog: '<path d="M3.5 5.5A1.5 1.5 0 0 1 5 4h4.5A2.5 2.5 0 0 1 12 6.5V20a2 2 0 0 0-2-2H3.5z"/><path d="M20.5 5.5A1.5 1.5 0 0 0 19 4h-4.5A2.5 2.5 0 0 0 12 6.5V20a2 2 0 0 1 2-2h6.5z"/>',
+  duvidas: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.4"/><path d="M12 17h.01"/>',
+  contato: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'
+};
+const SVG_WPP = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
+const SVG_INSTA = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>';
+
+function montarDrawer() {
+  const nav = hdr && hdr.querySelector('.nav');
+  if (!nav || !burger) return null;
+  const brand = hdr.querySelector('.brand');
+  const agendar = hdr.querySelector('.hdr-cta');
+  const itens = [...nav.querySelectorAll('a')].map((a, n) => {
+    const pagina = (a.getAttribute('href').split('/').pop().split(/[.#]/)[0]) || 'index';
+    const atual = a.getAttribute('aria-current');
+    return `<li style="--i:${n}"><a href="${a.getAttribute('href')}"${atual ? ` aria-current="${atual}"` : ''}>` +
+      `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${ICONES_MENU[pagina] || ''}</svg>` +
+      `<span>${escapeHtml(a.textContent)}</span>` +
+      `<svg class="dw-ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>`;
+  }).join('');
+  const raiz = document.createElement('div');
+  raiz.className = 'dw';
+  raiz.inert = true;
+  raiz.innerHTML = `
+    <div class="dw-ov" data-fechar></div>
+    <div class="dw-panel" id="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="dw-top">
+        <a class="dw-brand" href="${brand.getAttribute('href')}" aria-label="${brand.getAttribute('aria-label')}">${brand.innerHTML}</a>
+        <button type="button" class="dw-x" data-fechar aria-label="Fechar menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <nav class="dw-nav" aria-label="Menu"><ul>${itens}</ul></nav>
+      <div class="dw-foot">
+        <a class="btn btn-primary dw-cta" href="${agendar ? agendar.getAttribute('href') : 'index.html#agendar'}">Agendar consulta</a>
+        <div class="dw-contatos">
+          <a class="js-wpp dw-wa" href="https://wa.me/">${SVG_WPP}<span>${escapeHtml(SITE.telefone)}</span></a>
+          <a class="js-insta" href="https://www.instagram.com/">${SVG_INSTA}<span>Instagram</span></a>
+        </div>
+        <p class="dw-end">Icaraí, Niterói/RJ</p>
+      </div>
+    </div>`;
+  hdr.after(raiz);
+  return raiz;
+}
+const dw = montarDrawer();
+const dwPanel = dw && dw.querySelector('.dw-panel');
+let scrollSalvo = 0;
+
 function toggleMenu(open) {
-  if (!drawer || !burger) return;
-  const aberto = drawer.classList.contains('on');
-  const o = open ?? !aberto;
-  if (o === aberto) return;
-  drawer.classList.toggle('on', o);
-  drawer.inert = !o;
+  if (!dw) return;
+  const o = open ?? !menuAberto;
+  if (o === menuAberto) return;
+  menuAberto = o;
+  const b = document.body.style;
+  if (o) {
+    // trava o fundo (inclusive no iOS) guardando a posição, sem pulo de layout
+    scrollSalvo = scrollY;
+    b.position = 'fixed'; b.top = -scrollSalvo + 'px'; b.left = '0'; b.right = '0';
+  } else {
+    b.position = b.top = b.left = b.right = '';
+    scrollTo({ top: scrollSalvo, behavior: 'instant' });
+  }
+  dwPanel.style.transform = '';
+  dw.classList.toggle('on', o);
+  dw.inert = !o;
   burger.setAttribute('aria-expanded', String(o));
   burger.setAttribute('aria-label', o ? 'Fechar menu' : 'Abrir menu');
-  // trava a rolagem do fundo (inclusive no iOS, que ignora overflow:hidden no body)
-  document.documentElement.style.overflow = o ? 'hidden' : '';
-  document.body.style.overflow = o ? 'hidden' : '';
   document.body.classList.toggle('menu-aberto', o);
-  if (o) setTimeout(() => { const a = drawer.querySelector('a'); a && a.focus({ preventScroll: true }); }, 60);
+  if (o) dw.querySelector('.dw-x').focus({ preventScroll: true });
   else burger.focus({ preventScroll: true });
 }
-if (burger && drawer) {
-  drawer.inert = true;
+
+if (dw) {
   burger.addEventListener('click', () => toggleMenu());
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
-  // tocar fora dos links (no fundo do menu) fecha
-  drawer.addEventListener('click', e => { if (!e.target.closest('a,button')) toggleMenu(false); });
-  drawer.addEventListener('touchmove', e => { if (drawer.scrollHeight <= drawer.clientHeight) e.preventDefault(); }, { passive: false });
-  addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('on')) toggleMenu(false); });
-  matchMedia('(min-width:1121px)').addEventListener('change', e => { if (e.matches) toggleMenu(false); });
+  dw.querySelectorAll('[data-fechar]').forEach(el => el.addEventListener('click', () => toggleMenu(false)));
+  // o clique segue para o link depois que a rolagem do fundo é restaurada
+  dw.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+  addEventListener('keydown', e => {
+    if (!menuAberto) return;
+    if (e.key === 'Escape') { e.preventDefault(); toggleMenu(false); return; }
+    if (e.key !== 'Tab') return;
+    // foco preso dentro do painel
+    const foco = [...dwPanel.querySelectorAll('a[href],button')];
+    const primeiro = foco[0], ultimo = foco[foco.length - 1];
+    if (!dwPanel.contains(document.activeElement)) { e.preventDefault(); primeiro.focus(); }
+    else if (e.shiftKey && document.activeElement === primeiro) { e.preventDefault(); ultimo.focus(); }
+    else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primeiro.focus(); }
+  });
+
+  // arrastar o painel para a direita fecha (o painel acompanha o dedo)
+  let x0 = 0, y0 = 0, t0 = 0, dx = 0, eixo = null;
+  dwPanel.addEventListener('touchstart', e => {
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = e.timeStamp; dx = 0; eixo = null;
+  }, { passive: true });
+  dwPanel.addEventListener('touchmove', e => {
+    const t = e.touches[0];
+    const mx = t.clientX - x0, my = t.clientY - y0;
+    if (!eixo && Math.abs(mx) + Math.abs(my) > 8) eixo = Math.abs(mx) > Math.abs(my) ? 'x' : 'y';
+    if (eixo !== 'x') return;
+    dx = Math.max(0, mx);
+    dwPanel.classList.add('drag');
+    dwPanel.style.transform = 'translate3d(' + dx + 'px,0,0)';
+  }, { passive: true });
+  const soltar = e => {
+    if (eixo !== 'x') return;
+    dwPanel.classList.remove('drag');
+    const rapido = dx > 30 && dx / Math.max(1, e.timeStamp - t0) > .5;
+    if (dx > dwPanel.offsetWidth * .3 || rapido) toggleMenu(false);
+    else dwPanel.style.transform = '';
+    eixo = null;
+  };
+  dwPanel.addEventListener('touchend', soltar);
+  dwPanel.addEventListener('touchcancel', soltar);
+
+  matchMedia('(min-width:1024px)').addEventListener('change', e => { if (e.matches) toggleMenu(false); });
 }
 
 /* =========================================================
@@ -197,7 +299,7 @@ function iniciarWhatsappFlutuante() {
   const mobile = matchMedia('(max-width:768px)');
   let ultimoY = scrollY, parado = 0;
   addEventListener('scroll', () => {
-    if (!mobile.matches) return;
+    if (!mobile.matches || menuAberto) return;
     const y = scrollY, desce = y > ultimoY + 4, sobe = y < ultimoY - 4;
     if (desce || sobe) ultimoY = y;
     const antes = fabLendo;
@@ -257,6 +359,39 @@ function iniciarLightbox() {
     if (e.key === 'ArrowRight') mostrar(i + 1);
     if (e.key === 'ArrowLeft') mostrar(i - 1);
   });
+  // deslizar para os lados troca a foto
+  let x0 = null, y0 = 0;
+  dlg.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  dlg.addEventListener('touchend', e => {
+    if (x0 == null) return;
+    const t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+    x0 = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) mostrar(i + (dx < 0 ? 1 : -1));
+  });
+}
+
+/* =========================================================
+   FAQ: abre e fecha com animação de altura
+   ========================================================= */
+function iniciarFaq() {
+  const reduz = matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('.faq-list details').forEach(d => {
+    const s = d.querySelector('summary'), c = d.querySelector('.ans');
+    if (!s || !c || !c.animate) return;
+    let alvo = d.open, anim = null;
+    s.addEventListener('click', e => {
+      if (reduz.matches) { alvo = !d.open; return; }
+      e.preventDefault();
+      alvo = !alvo;
+      // altura atual (no meio de uma animação, é a altura animada)
+      const de = d.open ? c.offsetHeight : 0;
+      if (anim) anim.cancel();
+      d.open = true;
+      const ate = alvo ? c.offsetHeight : 0;
+      anim = c.animate({ height: [de + 'px', ate + 'px'] }, { duration: 300, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      anim.onfinish = () => { anim = null; if (!alvo) d.open = false; };
+    });
+  });
 }
 
 /* =========================================================
@@ -269,4 +404,5 @@ revelar();
 pausarForaDaTela();
 iniciarWhatsappFlutuante();
 iniciarLightbox();
+iniciarFaq();
 iniciarMapa();

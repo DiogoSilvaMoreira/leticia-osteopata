@@ -26,6 +26,8 @@ Todo o conteúdo é editado direto nos arquivos.
 
   assets/css/site.css   Estilos de todas as páginas
   assets/js/site.js     Dados de contato (objeto SITE), menu, animações
+                        O menu lateral do celular é montado a partir do
+                        menu do header (.nav): mude as abas só no .nav
   assets/js/wizard.js   Agendamento passo a passo do Início
   assets/js/depoimentos.js  Carrossel de avaliações
   assets/img/           Fotos otimizadas (geradas por npm run imagens)

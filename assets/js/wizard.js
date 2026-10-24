@@ -79,6 +79,9 @@ function iniciarWizard() {
     boxPub.appendChild(b);
   });
 
+  // a etapa 2 já começa com a lista mais longa: no celular as etapas ocupam a mesma área,
+  // então a altura do wizard fica fixa desde o início
+  montarQueixas('adulto');
   function montarQueixas(id) {
     boxQue.innerHTML = '';
     (QUEIXAS[id] || QUEIXAS.adulto).forEach(q => {
@@ -131,6 +134,21 @@ function iniciarWizard() {
     };
   });
   show(1);
+
+  // no celular a altura do wizard é travada na maior etapa (medida com a lista mais longa),
+  // então a tela não pula ao trocar de etapa nem quando a lista da etapa 2 é menor
+  const celular = matchMedia('(max-width:767px)');
+  let largura = 0;
+  const travarAltura = () => {
+    if (innerWidth === largura) return;
+    largura = innerWidth;
+    wizard.style.minHeight = '';
+    if (celular.matches) wizard.style.minHeight = wizard.offsetHeight + 'px';
+  };
+  travarAltura();
+  addEventListener('resize', travarAltura);
+  // mede de novo quando as fontes terminam de carregar (o texto pode mudar de altura)
+  if (document.fonts) document.fonts.ready.then(() => { largura = 0; travarAltura(); });
 }
 
 iniciarWizard();
