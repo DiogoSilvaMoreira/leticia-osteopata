@@ -211,8 +211,8 @@ p{margin:0 0 1rem}
 
 .hero-media{position:relative;justify-self:center;width:100%;max-width:380px}
 .blob{position:relative;z-index:1;overflow:hidden;background:var(--coral-soft);border-radius:var(--r-xl);box-shadow:var(--shadow-l)}
-.blob img{width:100%;object-fit:cover;object-position:center 22%;aspect-ratio:1/1}
-.hero-media::after{
+.blob img{width:100%;object-fit:cover;object-position:50% 25%;aspect-ratio:4/5}
+.hf-main::after{
   content:"";position:absolute;inset:-14px;pointer-events:none;z-index:0;
   border-radius:calc(var(--r-xl) + 14px);border:2px solid rgba(204,47,137,.18);
 }
@@ -723,7 +723,7 @@ p{margin:0 0 1rem}
   .hero .lead{margin:18px auto 26px}
   .hero-cta,.hero-stats{justify-content:center}
   .hero-media{order:-1;max-width:320px;margin:0 auto 4px}
-  .hero-media::after{inset:-12px}
+  .hf-main::after{inset:-12px}
   .strip{margin-top:46px;padding:26px}
   .strip ul{grid-template-columns:1fr 1fr;gap:22px}
   .strip li + li{border-left:0;padding-left:0}
@@ -791,7 +791,7 @@ p{margin:0 0 1rem}
   .hero .lead{margin:15px auto 24px;max-width:38ch}
   .hero-media{max-width:min(300px,78vw)}
   .blob{border-radius:28px}
-  .hero-media::after{border-radius:38px;inset:-10px}
+  .hf-main::after{border-radius:38px;inset:-10px}
   .float-card{max-width:186px;padding:9px 13px;border-radius:15px;gap:10px}
   .float-card b{font-size:.82rem}
   .float-card small{font-size:.75rem}
@@ -1179,8 +1179,8 @@ p{margin:0 0 1rem}
   .hero{padding:88px 0 var(--sec-y)}
   .hero-grid{gap:36px}
   .hero-media{order:0;max-width:340px;width:100%;margin:0 auto}
-  .hero-media::after{inset:-8px;border-radius:calc(var(--r-l) + 8px)}
-  .blob img{aspect-ratio:4/5;object-position:center 18%}
+  .hf-main::after{inset:-8px;border-radius:calc(var(--r-l) + 8px)}
+  .blob img{aspect-ratio:4/5;object-position:50% 25%}
   .hero .lead{margin:16px auto 28px}
   .hero-cta{width:100%}
   /* cards da foto: dentro da área da foto, empilhados no canto inferior */
@@ -1310,6 +1310,45 @@ p{margin:0 0 1rem}
   .hdr .hdr-cta{padding:0 12px;font-size:.8rem}
   .ctrls{gap:2px}
 }
+
+/* =========================================================
+   HERO: composição com as 3 fotos (retrato, consultório e bebês)
+   ========================================================= */
+.hf-main{position:relative}
+.hf{overflow:hidden;background:var(--coral-soft);border-radius:var(--r-l)}
+.hf img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.hf-b img{object-position:50% 60%}
+.hf-c img{object-position:50% 75%}
+.baby-media img{object-position:50% 62%}
+
+/* tablet e desktop: fotos menores sobrepostas nos cantos da principal */
+@media(min-width:768px){
+  .hf{position:absolute;z-index:2;width:42%;border:6px solid #fff;box-shadow:var(--shadow-m)}
+  .hf-b{left:-18%;top:-7%}
+  .hf-c{right:-18%;bottom:-7%}
+  /* com três fotos, um card só: o do registro ficaria encostado no cabelo e poluiria a composição */
+  .fc-1{left:-40px;right:auto;top:auto;bottom:22px}
+  .fc-2{display:none}
+}
+@media(min-width:768px) and (max-width:1000px){
+  .hero-media{max-width:300px;margin:28px auto 34px}
+  .fc-1{left:-24px;text-align:left}
+}
+
+/* celular: principal em largura total e as duas menores lado a lado logo abaixo */
+@media(max-width:767px){
+  .hero-media{max-width:none}
+  .hf-minis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .hf img{aspect-ratio:4/5}
+  .hf-b img{object-position:50% 50%}
+}
+
+/* entrada discreta: principal primeiro, as menores 80ms depois */
+@media(prefers-reduced-motion:no-preference){
+  .hero-media .blob{animation:hfEntra .7s cubic-bezier(.2,.8,.2,1) both}
+  .hf{animation:hfEntra .7s cubic-bezier(.2,.8,.2,1) .08s both}
+}
+@keyframes hfEntra{from{opacity:0;transform:translate3d(0,16px,0)}}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}

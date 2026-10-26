@@ -10,3 +10,6 @@ _relatorio/
 .env.*
 .DS_Store
 Thumbs.db
+
+# fotos originais em alta resolução (só para o npm run imagens, não publicar)
+material/

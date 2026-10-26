@@ -32,7 +32,9 @@ Todo o conteúdo é editado direto nos arquivos.
   assets/js/depoimentos.js  Carrossel de avaliações
   assets/img/           Fotos otimizadas (geradas por npm run imagens)
   assets/originais/     Fotos originais (fonte das versões otimizadas)
-  assets/leticia-retrato.jpg   Foto de perfil original
+  assets/fotos/         Fotos da Letícia otimizadas (Início, Sobre, Bebês)
+  material/             Originais em alta resolução das fotos da Letícia
+                        (só no computador, não vai para o GitHub)
   assets/og-image.jpg   Imagem de compartilhamento (WhatsApp, redes)
   assets/fonts/         Fontes do site
   assets/blog/          Capas dos artigos do blog
@@ -73,13 +75,16 @@ e contato.html.
 ---------------------------------------------------------------------
 Na primeira vez, instale as ferramentas:   npm install
 
-Foto de perfil:
-  1. Substitua assets/leticia-retrato.jpg pela foto nova, com o MESMO
-     nome (de preferência vertical, 800x1100 ou maior).
+Fotos da Letícia (hero do Início, Sobre e Bebês):
+  1. Coloque a foto nova na pasta material/ com o MESMO nome
+     (verticais, de preferência 2:3 e em alta resolução):
+       material/retrato.jpeg      blusa verde (foto principal do Início)
+       material/consultorio.jpeg  jaleco branco (Início e Sobre)
+       material/bebes.jpeg        jaleco preto com o boneco (Início e Bebês)
   2. Rode:   npm run imagens
   3. Confira no navegador e publique.
-  O comando gera as versões WebP e JPG (400 e 800 px) usadas no Início
-  e nos artigos e também refaz assets/og-image.jpg com a foto nova.
+  O comando gera em assets/fotos/ as versões WebP e JPG (480, 800 e
+  1200 px, sem metadados) e refaz assets/og-image.jpg com o retrato.
 
 Outras fotos (bebês, sobre, consultório, pôster do vídeo):
   substitua o arquivo com o mesmo nome em assets/originais/ e rode

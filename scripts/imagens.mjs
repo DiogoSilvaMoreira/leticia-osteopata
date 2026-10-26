@@ -5,9 +5,10 @@
    imagem de compartilhamento (assets/og-image.jpg).
 
    Para trocar uma foto:
-   1. Substitua o original (veja a lista FOTOS abaixo):
-      - foto de perfil:  assets/leticia-retrato.jpg
-      - demais fotos:    assets/originais/NOME.jpg
+   1. Substitua o original (veja as listas abaixo):
+      - fotos da Letícia: material/retrato.jpeg, material/consultorio.jpeg
+        e material/bebes.jpeg (a pasta material/ não vai para o GitHub)
+      - demais fotos:     assets/originais/NOME.jpg
    2. Rode:  npm install   (só na primeira vez)
              npm run imagens
    3. Confira no navegador e publique.
@@ -16,11 +17,19 @@ import sharp from 'sharp';
 import { mkdirSync, writeFileSync, statSync } from 'node:fs';
 
 const OUT = 'assets/img';
+const OUT_FOTOS = 'assets/fotos';
 mkdirSync(OUT, { recursive: true });
+mkdirSync(OUT_FOTOS, { recursive: true });
+
+// fotos da Letícia (originais em alta resolução na pasta material/), usadas no Início, Sobre e Bebês
+const RETRATOS = [
+  { origem: 'material/retrato.jpeg', nome: 'leticia-retrato' },         // blusa verde: hero e og-image
+  { origem: 'material/consultorio.jpeg', nome: 'leticia-consultorio' }, // jaleco branco: hero e Sobre
+  { origem: 'material/bebes.jpeg', nome: 'leticia-bebes' }              // jaleco preto e boneco: hero e Bebês
+];
 
 // origem, nome de saída e larguras usadas nos srcset das páginas
 const FOTOS = [
-  { origem: 'assets/leticia-retrato.jpg', nome: 'leticia-retrato', larguras: [400, 800] },
   { origem: 'assets/originais/atendimento-bebe.jpg', nome: 'atendimento-bebe', larguras: [480, 736] },
   { origem: 'assets/originais/atendimento-adulto.jpg', nome: 'atendimento-adulto', larguras: [480, 771] },
   { origem: 'assets/originais/bebe-bola.jpg', nome: 'bebe-bola', larguras: [320, 471] },
@@ -42,6 +51,15 @@ for (const f of FOTOS) {
     await base.clone().webp({ quality: 74, effort: 6 }).toFile(`${OUT}/${f.nome}-${w}.webp`);
     if (!f.soWebp) await base.clone().jpeg({ quality: 78, progressive: true, mozjpeg: true }).toFile(`${OUT}/${f.nome}-${w}.jpg`);
     console.log(`${f.nome}-${w}: webp ${kb(`${OUT}/${f.nome}-${w}.webp`)}`);
+  }
+}
+// metadados (EXIF, GPS, perfil da câmera) não são copiados: o sharp só mantém se pedir withMetadata
+for (const f of RETRATOS) {
+  for (const w of [480, 800, 1200]) {
+    const base = sharp(f.origem).rotate().resize({ width: w, withoutEnlargement: true });
+    await base.clone().webp({ quality: 78, effort: 6 }).toFile(`${OUT_FOTOS}/${f.nome}-${w}.webp`);
+    await base.clone().jpeg({ quality: 78, progressive: true, mozjpeg: true }).toFile(`${OUT_FOTOS}/${f.nome}-${w}.jpg`);
+    console.log(`${f.nome}-${w}: webp ${kb(`${OUT_FOTOS}/${f.nome}-${w}.webp`)} | jpg ${kb(`${OUT_FOTOS}/${f.nome}-${w}.jpg`)}`);
   }
 }
 for (const l of LOGOS) {
@@ -74,12 +92,13 @@ writeFileSync('favicon.ico', Buffer.concat([cab, ...pngs]));
 console.log('ícones: apple-touch-icon', kb('assets/apple-touch-icon.png'), '| favicon.ico', kb('favicon.ico'));
 
 /* ---------- imagem de compartilhamento 1200x630 ---------- */
-// base (fundo, logo e texto) em assets/originais/og-base.png + foto de perfil na moldura
+// base (fundo, logo e texto) em assets/originais/og-base.png + retrato (blusa verde) na moldura
 const FX = 742, FY = 62, FW = 392, FH = 506, R = 44;
-const meta = await sharp('assets/leticia-retrato.jpg').rotate().metadata();
+const RETRATO = 'material/retrato.jpeg';
+const meta = await sharp(RETRATO).rotate().metadata();
 const alturaRed = Math.round(meta.height * FW / meta.width);
 const topo = Math.max(0, Math.round((alturaRed - FH) * 0.22)); // mesmo enquadramento do site (rosto no terço de cima)
-const foto = await sharp('assets/leticia-retrato.jpg').rotate()
+const foto = await sharp(RETRATO).rotate()
   .resize({ width: FW, height: Math.max(FH, alturaRed), fit: 'cover' })
   .extract({ left: 0, top: Math.min(topo, Math.max(0, alturaRed - FH)), width: FW, height: FH })
   .composite([{ input: Buffer.from(`<svg width="${FW}" height="${FH}"><rect width="${FW}" height="${FH}" rx="${R}" ry="${R}"/></svg>`), blend: 'dest-in' }])
