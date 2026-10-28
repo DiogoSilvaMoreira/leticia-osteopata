@@ -17,7 +17,7 @@ const SITE = {
   // como o telefone aparece escrito no site
   telefone: '(21) 99983-9880',
   // texto que já vem pronto quando o paciente abre o WhatsApp
-  mensagem: 'Olá, Dra. Letícia! Vi seu site e gostaria de agendar uma consulta.',
+  mensagem: 'Olá! Vim pelo site da Dra. Letícia Rocha e gostaria de agendar uma consulta.',
   // endereço (use <br> para quebrar a linha)
   endereco: 'Rua Miguel de Frias, 150 / sala 1309<br>Icaraí, Niterói, RJ',
   // link que abre o endereço no Google Maps

@@ -118,7 +118,7 @@ function iniciarWizard() {
     document.getElementById('rPublico').textContent = state.publico || '';
     document.getElementById('rQueixa').textContent  = state.queixa  || '';
     document.getElementById('rHorario').textContent = state.horario || '';
-    const msg = 'Olá, Dra. Letícia! Vim pelo site e gostaria de agendar uma consulta.\n\n' +
+    const msg = 'Olá! Vim pelo site da Dra. Letícia Rocha e gostaria de agendar uma consulta.\n\n' +
       '• Atendimento para: ' + state.publico + '\n' +
       '• Queixa principal: ' + state.queixa + '\n' +
       '• Melhor horário: ' + state.horario + '\n\n' +
